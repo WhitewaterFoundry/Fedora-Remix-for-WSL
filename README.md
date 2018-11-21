@@ -10,8 +10,8 @@ Goal:
 
 Current Status:
 
-- install.tar.gz builds
-- WLE wrapper builds
+- install.tar.gz builds OK
+- WLE wrapper builds OK
 
 Roadblock:
 
@@ -22,9 +22,8 @@ Roadblock:
 Todo:
 
 - Add in WLinux config file tweaks.
-- Update license details.
+- Fill in license details.
 - License better icon/logo.
-- Move install/config of sudo from DistInfo to actual build script.
 
 Built images and .appx: 
 
