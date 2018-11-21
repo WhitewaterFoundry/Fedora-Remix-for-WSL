@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" IgnorableNamespaces="uap mp uap2 uap3 rescap desktop">
-  <Identity Name="WhitewaterFoundryLtd.Co.WLE" Version="1.0.1.0" Publisher="CN=9879127B-9E92-4DE5-9C32-0B1F09F95DCF" ProcessorArchitecture="x64" />
+  <Identity Name="WhitewaterFoundryLtd.Co.WLE" Version="1.0.4.0" Publisher="CN=9879127B-9E92-4DE5-9C32-0B1F09F95DCF" ProcessorArchitecture="x64" />
   <mp:PhoneIdentity PhoneProductId="1408067e-9b1d-46cc-9518-2ca7f3f7c076" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>WLE</DisplayName>
@@ -8,7 +8,7 @@
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
-    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.16215.0" MaxVersionTested="10.0.16240.0" />
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17134.0" MaxVersionTested="10.0.17763.0" />
   </Dependencies>
   <Capabilities>
     <rescap:Capability Name="runFullTrust" />
@@ -29,7 +29,7 @@
         <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#ffffff" />
       </uap:VisualElements>
       <Extensions>
-        <uap3:Extension Category="windows.appExecutionAlias" Executable="mydistro.exe" EntryPoint="Windows.FullTrustApplication">
+        <uap3:Extension Category="windows.appExecutionAlias" Executable="wle.exe" EntryPoint="Windows.FullTrustApplication">
           <uap3:AppExecutionAlias>
             <desktop:ExecutionAlias Alias="wle.exe" />
           </uap3:AppExecutionAlias>
