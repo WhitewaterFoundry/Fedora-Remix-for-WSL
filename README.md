@@ -1,2 +1,3 @@
-# WLinux-Enterprise
-CentOS-based.
+# WLinux Enterprise Edition
+
+CentOS-compatible.
