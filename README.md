@@ -17,11 +17,14 @@ Roadblock:
 
 ![Roadblock](https://github.com/sirredbeard/WLE/raw/master/Capture3.PNG)
 
-- Need to figure out "networking" issue, either in build script or need to tweak DistributionInfo, see [what OpenSUSE did](https://build.opensuse.org/package/show/home:favogt:wsl-leap-15.0/wsl-launcher) in patches on their rpm-based distro for clues, also see [here](https://github.com/SequencesIO/WSL-DistroCentos7).
+- Need to figure out "networking" issue above. "The specified network name is no longer available." is a Windows I/O error message, not a Windows one.
 
 Todo:
 
 - Add in WLinux config file tweaks.
+- Update license details.
+- License better icon/logo.
+- Move install/config of sudo from DistInfo to actual build script.
 
 Built images and .appx: 
 
