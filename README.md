@@ -9,14 +9,16 @@ Current Status:
 
 Roadblock:
 
-- Need to figure out "networking" issue, either in build script or need to tweak DistributionInfo, see .patch file for what OpenSUSE did on their rpm-based distro.
+![Roadblock](https://github.com/sirredbeard/WLE/raw/master/Capture3.PNG)
+
+- Need to figure out "networking" issue, either in build script or need to tweak DistributionInfo, see .patch file for what OpenSUSE did on their rpm-based distro for clues.
 
 Built images and .appx: 
 
-https://1drv.ms/f/s!AspPK83V8Sf2hehnsrw8p0a7rUkkJQ
+- https://1drv.ms/f/s!AspPK83V8Sf2hehnsrw8p0a7rUkkJQ
 
 CentOS VPS server for testing: 
 
-45.76.248.144
-root
-T+4t7zPepCj?P@x+
+- 45.76.248.144
+- root
+- T+4t7zPepCj?P@x+
