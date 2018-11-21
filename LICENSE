@@ -24,10 +24,10 @@ WSL-Distro-Launcher:
 
 Add:
 
-   Icons
-   https://www.iconfinder.com/icons/3406427/animal_antarctic_bird_penguin_sea_wildlife_icon
+   Icon License
 
-   Image Build Script
+   Credit Image Build Script
    https://github.com/moby/moby/blob/master/contrib/mkimage-yum.sh
 
-   CentOS
+   Credit
+   https://github.com/SequencesIO/WSL-DistroCentos7/compare
