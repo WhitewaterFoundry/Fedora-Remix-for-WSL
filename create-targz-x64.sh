@@ -19,13 +19,13 @@ sudo mknod -m 666 "$target"/dev/zero c 1 5
 
 sudo yum --installroot="$target" --releasever=/ groupinstall "Core"
 
-sudo yum --installroot="$target" --releasever=/ install git curl python3
+sudo yum --installroot="$target" --releasever=/ install git curl sudo
 
 sudo yum --installroot="$target" -y clean all
 
 cat > "$target"/etc/sysconfig/network <<EOF
 NETWORKING=yes
-HOSTNAME=localhost.localdomain
+#HOSTNAME=localhost.localdomain
 EOF
 
 sudo rm -rf "$target"/var/cache/yum
