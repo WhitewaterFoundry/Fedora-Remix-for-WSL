@@ -1,7 +1,7 @@
 set -e
 
 target=$(mktemp -d --tmpdir)
-yum_config=/etc/yum.conf
+yum_config=/etc/yum.conf # optionally change to ./linux_files/yum.conf
 
 set -x
 
@@ -17,21 +17,21 @@ sudo mknod -m 666 "$target"/dev/tty0 c 4 0
 sudo mknod -m 666 "$target"/dev/urandom c 1 9
 sudo mknod -m 666 "$target"/dev/zero c 1 5
 
-yum -c "$yum_config" --installroot="$target" --releasever=/ groupinstall "Core"
+sudo yum --installroot="$target" --releasever=/ groupinstall "Core"
 
-yum -c "$yum_config" --installroot="$target" --releasever=/ install "git curl python3"
+sudo yum --installroot="$target" --releasever=/ install git curl python3
 
-yum -c "$yum_config" --installroot="$target" -y clean all
+sudo yum --installroot="$target" -y clean all
 
 cat > "$target"/etc/sysconfig/network <<EOF
 NETWORKING=yes
 HOSTNAME=localhost.localdomain
 EOF
 
-rm -rf "$target"/var/cache/yum
-mkdir -p --mode=0755 "$target"/var/cache/yum
+sudo rm -rf "$target"/var/cache/yum
+sudo mkdir -p --mode=0755 "$target"/var/cache/yum
 
-rm -rf "$target"/etc/ld.so.cache "$target"/var/cache/ldconfig
-mkdir -p --mode=0755 "$target"/var/cache/ldconfig
+sudo rm -rf "$target"/etc/ld.so.cache "$target"/var/cache/ldconfig
+sudo mkdir -p --mode=0755 "$target"/var/cache/ldconfig
 
 tar --ignore-failed-read --numeric-owner -czvf install.tar.gz $target/*

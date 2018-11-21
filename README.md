@@ -17,7 +17,7 @@ Roadblock:
 
 ![Roadblock](https://github.com/sirredbeard/WLE/raw/master/Capture3.PNG)
 
-- Need to figure out "networking" issue, either in build script or need to tweak DistributionInfo, see .patch file for what OpenSUSE did on their rpm-based distro for clues.
+- Need to figure out "networking" issue, either in build script or need to tweak DistributionInfo, see [what OpenSUSE did](https://build.opensuse.org/package/show/home:favogt:wsl-leap-15.0/wsl-launcher) in patches on their rpm-based distro for clues, also see [here](https://github.com/SequencesIO/WSL-DistroCentos7).
 
 Todo:
 
