@@ -8,15 +8,6 @@
 bool DistributionInfo::CreateUser(std::wstring_view userName)
 {
 
-    // Install sudo. 
-
-	DWORD exitCode; 
-    std::wstring commandLine = L"/usr/bin/yum install -y sudo"; 
-    HRESULT hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode); 
-    if ((FAILED(hr)) || (exitCode != 0)) { 
-		return false; 
-	}
-
     // Create the user account.
     commandLine = L"/usr/sbin/adduser ";
     commandLine += userName;
