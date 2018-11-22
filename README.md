@@ -17,7 +17,7 @@ Roadblock:
 
 ![Roadblock](https://github.com/sirredbeard/WLE/raw/master/Capture3.PNG)
 
-- Need to figure out "networking" issue above. "The specified network name is no longer available." is a Windows I/O error message, not a Windows one.
+- Need to figure out "networking" issue above. "The specified network name is no longer available." is a Windows I/O error message, not a Windows one. Likely need to tweak DistributionInfo.h/.cpp.
 
 Todo:
 
