@@ -16,16 +16,17 @@ sudo mknod -m 666 "$target"/dev/tty0 c 4 0
 sudo mknod -m 666 "$target"/dev/urandom c 1 9
 sudo mknod -m 666 "$target"/dev/zero c 1 5
 
-sudo yum --installroot="$target" --releasever=/ groupinstall "Core"
+sudo yum --installroot="$target" --releasever=/ groupinstall "Core" --exclude=kernel*,plymouth,*-firmware,microcode_ctl
 
-sudo yum --installroot="$target" --releasever=/ install git curl sudo
+sudo yum --installroot="$target" --releasever=/ install git curl sudo 
 
 sudo yum --installroot="$target" -y clean all
 
-cat > "$target"/etc/sysconfig/network <<EOF
+cat > network <<EOF
 NETWORKING=yes
 #HOSTNAME=localhost.localdomain
 EOF
+sudo cp network "$target"/etc/sysconfig/network
 
 sudo rm -rf "$target"/var/cache/yum
 sudo mkdir -p --mode=0755 "$target"/var/cache/yum
@@ -37,8 +38,8 @@ sudo cp ./linux_files/wsl.conf "$target"/etc/wsl.conf
 #sudo cp ./linux_files/yum.conf "$target"/etc/yum.conf
 #sudo cp ./linux_files/wslu.yum.conf "$target"/etc/yum.conf.d/wslu.yum.conf
 
-echo "export DISPLAY=:0" | sudo tee >> "$target"/etc/profile
-echo "LIBGL_ALWAYS_INDIRECT=1" | sudo tee >> "$target"/etc/profile
-echo "export NO_AT_BRIDGE=1" | sudo tee >> "$target"/etc/profile
+sudo bash -c "echo 'export DISPLAY=:0' >> $target/etc/profile"
+sudo bash -c "echo 'export LIBGL_ALWAYS_INDIRECT=1' >> $target/etc/profile"
+sudo bash -c "echo 'export NO_AT_BRIDGE=1' >> $target/etc/profile"
 
 tar --ignore-failed-read --numeric-owner -czvf install.tar.gz $target/*
