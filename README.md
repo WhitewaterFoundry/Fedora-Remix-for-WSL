@@ -22,12 +22,8 @@ Roadblock:
 Todo:
 
 - Fix issue above.
-- Add tweaks to create-targz-x64.sh:
-    - DISPLAY=:0
-    - LIBGL_ALWAYS_INDIRECT=1
-    - NO_AT_BRIDGE=1
-    - Copy wsl.conf to /etc/wsl.conf
-    - Copy local.conf to /etc/local.conf
+- Fill in yum.conf.
+- Fill in wslu.yum.conf.
 - Fill in LICENSE.md details.
 - Move to Whitewater Foundry account and open source.
 

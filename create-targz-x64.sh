@@ -1,7 +1,6 @@
 set -e
 
 target=$(mktemp -d --tmpdir)
-yum_config=/etc/yum.conf # optionally change to ./linux_files/yum.conf
 
 set -x
 
@@ -33,5 +32,13 @@ sudo mkdir -p --mode=0755 "$target"/var/cache/yum
 
 sudo rm -rf "$target"/etc/ld.so.cache "$target"/var/cache/ldconfig
 sudo mkdir -p --mode=0755 "$target"/var/cache/ldconfig
+
+sudo cp ./linux_files/wsl.conf "$target"/etc/wsl.conf
+#sudo cp ./linux_files/yum.conf "$target"/etc/yum.conf
+#sudo cp ./linux_files/wslu.yum.conf "$target"/etc/yum.conf.d/wslu.yum.conf
+
+echo "export DISPLAY=:0" | sudo tee >> "$target"/etc/profile
+echo "LIBGL_ALWAYS_INDIRECT=1" | sudo tee >> "$target"/etc/profile
+echo "export NO_AT_BRIDGE=1" | sudo tee >> "$target"/etc/profile
 
 tar --ignore-failed-read --numeric-owner -czvf install.tar.gz $target/*
