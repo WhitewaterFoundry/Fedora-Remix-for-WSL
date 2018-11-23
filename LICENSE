@@ -25,9 +25,13 @@ WSL-Distro-Launcher:
 Add:
 
    Icon License
+   https://www.iconfinder.com/icons/401296/linux_tox_icon
 
-   Credit Image Build Script
+   Credit
    https://github.com/moby/moby/blob/master/contrib/mkimage-yum.sh
 
    Credit
    https://github.com/SequencesIO/WSL-DistroCentos7/compare
+
+   Credit
+   https://build.opensuse.org/package/view_file/home:favogt:wsl-leap-15.0/wsl-launcher/
