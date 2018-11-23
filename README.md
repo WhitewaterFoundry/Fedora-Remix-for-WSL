@@ -19,6 +19,8 @@ Roadblock:
 
 - Need to figure out "networking" issue above. "The specified network name is no longer available." is a Windows I/O error message, not a Windows one. Likely need to tweak DistributionInfo.h/.cpp.
 
+- [Event trace files](https://1drv.ms/u/s!AspPK83V8Sf2hfQDVLRWabRAENoBOg).
+
 - Note: See edits OpenSUSE made [here](https://build.opensuse.org/package/view_file/home:favogt:wsl-leap-15.0/wsl-launcher/SUSE-distros.patch?expand=1).
 
 Todo:
