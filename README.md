@@ -31,7 +31,7 @@ Todo:
 
 Built images and .appx for testing: 
 
-- https://1drv.ms/f/s!AspPK83V8Sf2hehnsrw8p0a7rUkkJQ
+- https://1drv.ms/f/s!AspPK83V8Sf2hehmnS0fND3QWrE5_w 23 Nov
 
 CentOS VPS server for building images: 
 
