@@ -1,6 +1,6 @@
 # WLinux Enterprise Edition
 
-CentOS-compatible WSL distro.
+CentOS-compatible WSL distro template.
 
 Goal:
 
@@ -19,7 +19,7 @@ Roadblock:
 
 - Need to figure out "networking" issue above. "The specified network name is no longer available." is a Windows I/O error message, not a Windows one. Likely need to tweak DistributionInfo.h/.cpp.
 
-Note: See edits OpenSUSE made [here](https://build.opensuse.org/package/view_file/home:favogt:wsl-leap-15.0/wsl-launcher/SUSE-distros.patch?expand=1).
+- Note: See edits OpenSUSE made [here](https://build.opensuse.org/package/view_file/home:favogt:wsl-leap-15.0/wsl-launcher/SUSE-distros.patch?expand=1).
 
 Todo:
 
