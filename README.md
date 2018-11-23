@@ -4,8 +4,8 @@ CentOS-compatible WSL distro.
 
 Goal:
 
-- CentOS-compatible WSL distro.
-- Includes WLinux config file tweaks.
+- CentOS-compatible WSL distro template.
+- Includes basic WLinux config file tweaks.
 - Does not include wlinux-setup.
 
 Current Status:
