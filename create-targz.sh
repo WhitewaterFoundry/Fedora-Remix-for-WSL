@@ -46,6 +46,12 @@ sudo bash -c "echo 'export DISPLAY=:0' >> $BUILDDIR/etc/profile"
 sudo bash -c "echo 'export LIBGL_ALWAYS_INDIRECT=1' >> $BUILDDIR/etc/profile"
 sudo bash -c "echo 'export NO_AT_BRIDGE=1' >> $BUILDDIR/etc/profile"
 
-tar --ignore-failed-read --numeric-owner -czvf $ORIGINDIR/x64/install.tar.gz $BUILDDIR/*
+cd $BUILDDIR
+tar --ignore-failed-read --numeric-owner -czvf $ORIGINDIR/install.tar.gz *
 
+cd $ORIGINDIR
+
+sudo rm -r $BUILDDIR
+sudo rm -r $TMPDIR
 sudo rm /tmp/install.iso
+sudo rm /var/tmp/install.tar.xz
