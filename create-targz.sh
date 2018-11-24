@@ -48,7 +48,7 @@ sudo bash -c "echo 'export DISPLAY=:0' >> $BUILDDIR/etc/profile"
 sudo bash -c "echo 'export LIBGL_ALWAYS_INDIRECT=1' >> $BUILDDIR/etc/profile"
 sudo bash -c "echo 'export NO_AT_BRIDGE=1' >> $BUILDDIR/etc/profile"
 
-sudo pwconv --root $BUILDDIR
+sudo chroot $BUILDDIR pwconv
 
 cd $BUILDDIR
 tar --ignore-failed-read --numeric-owner -czvf $ORIGINDIR/install.tar.gz *
