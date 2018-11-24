@@ -5,6 +5,25 @@
 
 #include "stdafx.h"
 
+bool DistributionInfo::SetRootPassword()
+{
+	DWORD exitCode;
+	std::wstring commandLine = L"/usr/bin/passwd ";
+	commandLine += L"root";
+
+	wprintf(L"[DEBUG] Setting root user password...\n");
+	HRESULT hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
+	if (FAILED(hr) || exitCode != 0) {
+		wprintf(L"[DEBUG] Setting root user password failed.\n");
+		wprintf(L"[DEBUG] hr = %i\n", hr);
+		wprintf(L"[DEBUG] exitCode = %i\n", exitCode);
+		return false;
+	}
+	wprintf(L"[DEBUG] Finished setting password\n");
+
+	return true;
+}
+
 bool DistributionInfo::CreateUser(std::wstring_view userName)
 {
 	// Create the user account.
