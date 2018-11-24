@@ -8,6 +8,10 @@ BUILDDIR=$(mktemp -d)
 BOOTISO="http://mirror.centos.org/centos/7.5.1804/os/x86_64/images/boot.iso"
 KSFILE="https://raw.githubusercontent.com/CentOS/sig-cloud-instance-build/master/docker/centos-7.ks"
 
+# CentOS ARM64
+# BOOTISO="http://mirror.centos.org/altarch/7/os/aarch64/images/boot.iso"
+# KSFILE="https://raw.githubusercontent.com/CentOS/sig-cloud-instance-build/master/docker/centos-7arm64.ks"
+
 # Fedora
 # BOOTISO="http://fedora.mirror.constant.com/fedora/linux/releases/29/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-29-1.2.iso"
 # KSFILE="https://pagure.io/fedora-kickstarts/raw/master/f/fedora-docker-base.ks"
