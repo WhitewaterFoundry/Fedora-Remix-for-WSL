@@ -148,6 +148,12 @@ int wmain(int argc, wchar_t const *argv[])
         }
     }
 
+	// Run custom commands on each launch.
+	// hr = g_wslApi.WslLaunchInteractive(L"sudo yum update", true, &exitCode);
+	// if (FAILED(hr)) {
+	//	return hr;
+	// }
+
     // If an error was encountered, print an error message.
     if (FAILED(hr)) {
         if (hr == HRESULT_FROM_WIN32(ERROR_LINUX_SUBSYSTEM_NOT_PRESENT)) {
