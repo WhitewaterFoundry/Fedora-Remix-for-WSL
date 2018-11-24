@@ -26,6 +26,8 @@ KSFILE="https://raw.githubusercontent.com/CentOS/sig-cloud-instance-build/master
 
 cd $TMPDIR
 
+sudo yum update
+
 sudo yum install libvirt lorax virt-install libvirt-daemon-config-network libvirt-daemon-kvm libvirt-daemon-driver-qemu
 
 sudo systemctl restart libvirtd
@@ -45,6 +47,8 @@ sudo cp $ORIGINDIR/linux_files/local.conf $BUILDDIR/etc/local.conf
 sudo bash -c "echo 'export DISPLAY=:0' >> $BUILDDIR/etc/profile"
 sudo bash -c "echo 'export LIBGL_ALWAYS_INDIRECT=1' >> $BUILDDIR/etc/profile"
 sudo bash -c "echo 'export NO_AT_BRIDGE=1' >> $BUILDDIR/etc/profile"
+
+sudo pwconv --root $BUILDDIR
 
 cd $BUILDDIR
 tar --ignore-failed-read --numeric-owner -czvf $ORIGINDIR/install.tar.gz *
