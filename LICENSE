@@ -1,4 +1,20 @@
-WSL-Distro-Launcher:
+# Artwork
+
+- Icon is by 
+
+- "Tux" the Penguin is an image created by Larry Ewing and is [used with permission](http://isc.tamu.edu/~lewing/linux/).
+
+# Trademarks
+
+- WLinux is a trademark of Whitewater Foundry, Ltd. Co. You may use the WLinux trademark in any lawful manner in compliance with your local trademark laws.
+
+- Microsoft®, Windows®, and Visual Studio® are registered trademarks of [Microsoft Corporation](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/en-us.aspx) and are used in compliance with the [Microsoft Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general.aspx).
+
+- Linux® is the registered trademark of Linus Torvalds in the U.S. and other countries. Used in compliance with a [Linux sublicense](https://www.linuxmark.org/programs/legal/trademark/sublicense-agreement) obtained from the Linux Foundation.
+
+# Copyright and Licenses
+
+Components from WSL-Distro-Launcher:
 
     MIT License
 
@@ -22,7 +38,26 @@ WSL-Distro-Launcher:
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE
 
-Add:
+Components from Whitewater Foundry, Ltd. Co.:
 
-   Icon License
-   https://www.iconfinder.com/icons/401296/linux_tox_icon
+ MIT License
+
+    Copyright (c) 2018 Whitewater Foundry, Ltd. Co.. All rights reserved.
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE

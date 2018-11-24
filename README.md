@@ -10,15 +10,14 @@ Goal:
 
 Current Status:
 
-- install.tar.gz builds OK
-- WLE wrapper builds OK
+- Alpha
+- Adding an initial user is broken. Exit, open Command Prompt, type 'wle install -root', exit, and then re-open WLE. 
 
 Todo:
 
-- Fill in yum.conf.
+- Test alternate configurations.
 - Fill in wslu.yum.conf.
 - Fill in LICENSE.md details.
-- Move to Whitewater Foundry account and open source.
 
 Built images and .appx for testing: 
 
