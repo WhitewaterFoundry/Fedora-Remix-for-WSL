@@ -12,10 +12,3 @@ Current Status:
 
 - Alpha.
 - Adding an initial user is broken. Exit, open Command Prompt, type 'wle install -root', exit, and then re-open WLE. 
-
-Todo:
-
-- Fix initial user handling.
-- Test alternate configurations.
-- Fill in wslu.yum.conf.
-- Fill in LICENSE.md details.
