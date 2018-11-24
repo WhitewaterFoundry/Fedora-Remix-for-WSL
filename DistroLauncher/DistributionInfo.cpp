@@ -28,7 +28,7 @@ bool DistributionInfo::CreateUser(std::wstring_view userName)
 {
 	// Create the user account.
 	DWORD exitCode;
-	std::wstring commandLine = L"/usr/sbin/useradd -m '' ";
+	std::wstring commandLine = L"/usr/sbin/useradd -m ";
 	commandLine += userName;
 	HRESULT hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
 	if ((FAILED(hr)) || (exitCode != 0)) {
