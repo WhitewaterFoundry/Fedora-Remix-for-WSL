@@ -1,45 +1,30 @@
 set -e
 
-target=$(mktemp -d --tmpdir)
+ORIGINDIR=$(pwd)
+TMPDIR=$(mktemp -d)
+BUILDDIR=$(mktemp -d)
+cd $TMPDIR
 
-set -x
+sudo yum install libvirt lorax virt-install libvirt-daemon-config-network libvirt-daemon-kvm libvirt-daemon-driver-qemu
 
-mkdir -m 755 "$target"/dev
-sudo mknod -m 600 "$target"/dev/console c 5 1
-sudo mknod -m 600 "$target"/dev/initctl p
-sudo mknod -m 666 "$target"/dev/full c 1 7
-sudo mknod -m 666 "$target"/dev/null c 1 3
-sudo mknod -m 666 "$target"/dev/ptmx c 5 2
-sudo mknod -m 666 "$target"/dev/random c 1 8
-sudo mknod -m 666 "$target"/dev/tty c 5 0
-sudo mknod -m 666 "$target"/dev/tty0 c 4 0
-sudo mknod -m 666 "$target"/dev/urandom c 1 9
-sudo mknod -m 666 "$target"/dev/zero c 1 5
+sudo systemctl restart libvirtd
 
-sudo yum --installroot="$target" --releasever=/ groupinstall "Core" --exclude=kernel*,plymouth,*-firmware,microcode_ctl
+sudo curl http://mirror.centos.org/centos/7.5.1804/os/x86_64/images/boot.iso -o /tmp/boot7.iso
 
-sudo yum --installroot="$target" --releasever=/ install git curl sudo 
+curl https://raw.githubusercontent.com/CentOS/sig-cloud-instance-build/master/docker/centos-7.ks -o centos-7.ks
 
-sudo yum --installroot="$target" -y clean all
+sudo livemedia-creator --make-tar --iso=/tmp/boot7.iso --image-name=install.tar.xz --ks=centos-7.ks
 
-cat > network <<EOF
-NETWORKING=yes
-#HOSTNAME=localhost.localdomain
-EOF
-sudo cp network "$target"/etc/sysconfig/network
+tar -xvf /var/tmp/install.tar.xz -C $BUILDDIR
 
-sudo rm -rf "$target"/var/cache/yum
-sudo mkdir -p --mode=0755 "$target"/var/cache/yum
+sudo cp $ORIGINDIR/linux_files/wsl.conf $BUILDDIR/etc/wsl.conf
+#sudo cp $ORIGINDIR/linux_files/yum.conf $BUILDDIR/etc/yum.conf
+#sudo cp $ORIGINDIR/linux_files/wslu.yum.conf $BUILDDIR/etc/yum.conf.d/wslu.yum.conf
 
-sudo rm -rf "$target"/etc/ld.so.cache "$target"/var/cache/ldconfig
-sudo mkdir -p --mode=0755 "$target"/var/cache/ldconfig
+sudo bash -c "echo 'export DISPLAY=:0' >> $BUILDDIR/etc/profile"
+sudo bash -c "echo 'export LIBGL_ALWAYS_INDIRECT=1' >> $BUILDDIR/etc/profile"
+sudo bash -c "echo 'export NO_AT_BRIDGE=1' >> $BUILDDIR/etc/profile"
 
-sudo cp ./linux_files/wsl.conf "$target"/etc/wsl.conf
-#sudo cp ./linux_files/yum.conf "$target"/etc/yum.conf
-#sudo cp ./linux_files/wslu.yum.conf "$target"/etc/yum.conf.d/wslu.yum.conf
+tar --ignore-failed-read --numeric-owner -czvf install.tar.gz $BUILDDIR/*
 
-sudo bash -c "echo 'export DISPLAY=:0' >> $target/etc/profile"
-sudo bash -c "echo 'export LIBGL_ALWAYS_INDIRECT=1' >> $target/etc/profile"
-sudo bash -c "echo 'export NO_AT_BRIDGE=1' >> $target/etc/profile"
-
-tar --ignore-failed-read --numeric-owner -czvf install.tar.gz $target/*
+sudo rm /tmp/boot7.iso
