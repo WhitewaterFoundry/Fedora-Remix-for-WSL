@@ -36,6 +36,14 @@ HRESULT InstallDistribution(bool createUser)
         return hr;
     }
 
+	// Set root user password
+	UINT8 count = 0;
+	wprintf(L"[DEBUG] Calling SetRootPassword()\n");
+	while (!DistributionInfo::SetRootPassword()) {
+		wprintf(L"[DEBUG] attempt no. %i", count);
+		count++;
+	}
+
     // Create a user account.
     if (createUser) {
         Helpers::PrintMessage(MSG_CREATE_USER_PROMPT);
