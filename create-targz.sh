@@ -26,6 +26,8 @@ KSFILE="https://raw.githubusercontent.com/CentOS/sig-cloud-instance-build/master
 
 cd $TMPDIR
 
+sudo yum update
+
 sudo yum install libvirt lorax virt-install libvirt-daemon-config-network libvirt-daemon-kvm libvirt-daemon-driver-qemu
 
 sudo systemctl restart libvirtd
