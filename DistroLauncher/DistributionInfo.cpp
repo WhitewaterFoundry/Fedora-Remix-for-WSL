@@ -10,8 +10,6 @@ bool DistributionInfo::SetRootPassword()
 	DWORD exitCode;
 	std::wstring commandLine = L"/usr/bin/passwd ";
 	commandLine += L"root";
-
-	wprintf(L"[DEBUG] Setting root user password...\n");
 	HRESULT hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
 	if (FAILED(hr) || exitCode != 0) {
 		wprintf(L"[DEBUG] Setting root user password failed.\n");

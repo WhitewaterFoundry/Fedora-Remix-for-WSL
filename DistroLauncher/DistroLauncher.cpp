@@ -36,9 +36,16 @@ HRESULT InstallDistribution(bool createUser)
         return hr;
     }
 
+    // Create /etc/shadow
+    DWORD exitCode;
+    hr = g_wslApi.WslLaunchInteractive(L"/usr/sbin/pwconv", true, &exitCode);
+    if (FAILED(hr)) {
+        return hr;
+    }
+
 	// Set root user password
 	UINT8 count = 0;
-	wprintf(L"[DEBUG] Calling SetRootPassword()\n");
+	Helpers::PrintMessage(MSG_CREATE_ROOT_PASS);
 	while (!DistributionInfo::SetRootPassword()) {
 		wprintf(L"[DEBUG] attempt no. %i", count);
 		count++;
