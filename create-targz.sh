@@ -36,7 +36,7 @@ sudo curl $BOOTISO -o /tmp/install.iso
 
 curl $KSFILE -o install.ks
 
-sudo livemedia-creator --make-tar --iso=/tmp/install.iso --image-name=install.tar.xz --ks=install.ks
+sudo livemedia-creator --make-tar --iso=/tmp/install4.iso --image-name=install.tar.xz --ks=install.ks
 
 tar -xvf /var/tmp/install.tar.xz -C $BUILDDIR
 
@@ -49,7 +49,7 @@ sudo bash -c "echo 'export LIBGL_ALWAYS_INDIRECT=1' >> $BUILDDIR/etc/profile"
 sudo bash -c "echo 'export NO_AT_BRIDGE=1' >> $BUILDDIR/etc/profile"
 
 cd $BUILDDIR
-tar --ignore-failed-read --numeric-owner -czvf $ORIGINDIR/install.tar.gz *
+tar --ignore-failed-read -czvf $ORIGINDIR/install.tar.gz *
 
 cd $ORIGINDIR
 

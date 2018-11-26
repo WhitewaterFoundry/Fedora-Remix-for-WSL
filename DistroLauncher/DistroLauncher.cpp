@@ -49,7 +49,13 @@ HRESULT InstallDistribution(bool createUser)
 	}
 
 	// Enable su
-	hr = g_wslApi.WslLaunchInteractive(L"chmod 755 /bin/su ; chmod +s /bin/su", true, &exitCode);
+	hr = g_wslApi.WslLaunchInteractive(L"chown -R root:root /bin/su ; chmod 755 /bin/su ; chmod u+s /bin/su", true, &exitCode);
+	if (FAILED(hr)) {
+		return hr;
+	}
+
+    // Configure dbus
+    hr = g_wslApi.WslLaunchInteractive(L"dbus-uuidgen --ensure", true, &exitCode);
 	if (FAILED(hr)) {
 		return hr;
 	}
