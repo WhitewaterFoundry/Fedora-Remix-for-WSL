@@ -37,7 +37,6 @@ HRESULT InstallDistribution(bool createUser)
     }
 
     // Create /etc/shadow
-    DWORD exitCode;
     hr = g_wslApi.WslLaunchInteractive(L"/usr/sbin/pwconv", true, &exitCode);
     if (FAILED(hr)) {
         return hr;
