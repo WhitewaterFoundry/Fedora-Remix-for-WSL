@@ -4,24 +4,20 @@ ORIGINDIR=$(pwd)
 TMPDIR=$(mktemp -d)
 BUILDDIR=$(mktemp -d)
 
-# CentOS
 BOOTISO="http://mirror.centos.org/centos/7.5.1804/os/x86_64/images/boot.iso"
 KSFILE="https://raw.githubusercontent.com/CentOS/sig-cloud-instance-build/master/docker/centos-7.ks"
 
-# CentOS ARM64
-# BOOTISO="http://mirror.centos.org/altarch/7/os/aarch64/images/boot.iso"
+# ARM64
+# BOOTISO="http://vault.centos.org/altarch/7.3.1611/os/aarch64/images/boot.iso"
 # KSFILE="https://raw.githubusercontent.com/CentOS/sig-cloud-instance-build/master/docker/centos-7arm64.ks"
 
-# Fedora
 # BOOTISO="http://fedora.mirror.constant.com/fedora/linux/releases/29/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-29-1.2.iso"
 # KSFILE="https://pagure.io/fedora-kickstarts/raw/master/f/fedora-docker-base.ks"
 
-# Oracle
-# Download ISO from oracle.com. Comment out line 37 and edit --iso in line 33 to point to your downloaded ISO.
+# Download ISO. Comment out line 37 and edit --iso in line 33 to point to your downloaded ISO.
 # KSFILE="https://gist.githubusercontent.com/bargenson/24e9c4883a4adbcfbfd4/raw/3c1aae56a6565c51ec674d61d041123134bab6c6/docker-oracle-linux.ks"
 
-# RHEL
-# Download ISO from redhat.com. Comment out line 37 and edit --iso in line 33 to point to your downloaded ISO.
+# Download ISO. Comment out line 37 and edit --iso in line 33 to point to your downloaded ISO.
 # KSFILE="https://raw.githubusercontent.com/CentOS/sig-cloud-instance-build/master/docker/centos-7.ks"
 
 cd $TMPDIR
@@ -36,7 +32,7 @@ sudo curl $BOOTISO -o /tmp/install.iso
 
 curl $KSFILE -o install.ks
 
-sudo livemedia-creator --make-tar --iso=/tmp/install.iso --image-name=install.tar.xz --ks=install.ks
+sudo livemedia-creator --make-tar --iso=/tmp/install.iso --image-name=install.tar.xz --ks=install.ks --releasever "7"
 
 tar -xvf /var/tmp/install.tar.xz -C $BUILDDIR
 
