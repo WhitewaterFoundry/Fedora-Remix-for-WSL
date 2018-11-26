@@ -1,10 +1,10 @@
 # WLinux Enterprise Edition
 
-Enterprise Linux-compatible WSL distro template.
+Enterprise-compatible WSL distro template.
 
 Goal:
 
-- Enterprise Linux-compatible WSL distro template.
+- Enterprise-compatible WSL distro template.
 - Includes basic WLinux config file tweaks.
 
 Current Status:
