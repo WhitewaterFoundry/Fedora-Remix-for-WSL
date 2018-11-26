@@ -6,14 +6,17 @@ TMPDIR=$(mktemp -d)
 BUILDDIR=$(mktemp -d)
 
 #enterprise boot ISO
-BOOTISO="http://mirror.centos.org/centos/7.5.1804/os/x86_64/images/boot.iso"
+BOOTISO="http://ftp1.scientificlinux.org/linux/scientific/7x/x86_64/os/images/boot.iso"
 
 #enterprise Docker kickstart file
 KSFILE="https://raw.githubusercontent.com/CentOS/sig-cloud-instance-build/master/docker/centos-7.ks"
 
-# ARM64
-# BOOTISO="http://vault.centos.org/altarch/7.3.1611/os/aarch64/images/boot.iso"
-# KSFILE="https://raw.githubusercontent.com/CentOS/sig-cloud-instance-build/master/docker/centos-7arm64.ks"
+#upstream enterprise boot ISO
+#BOOTISO="http://mirror.centos.org/centos/7.5.1804/os/x86_64/images/boot.iso"
+
+#ARM64
+#BOOTISO="http://vault.centos.org/altarch/7.3.1611/os/aarch64/images/boot.iso"
+#KSFILE="https://raw.githubusercontent.com/CentOS/sig-cloud-instance-build/master/docker/centos-7arm64.ks"
 
 #go to our temporary directory
 cd $TMPDIR
@@ -28,7 +31,7 @@ sudo yum install libvirt lorax virt-install libvirt-daemon-config-network libvir
 sudo systemctl restart libvirtd
 
 #download enterprise boot ISO
-sudo curl $BOOTISO -o /tmp/install.iso
+sudo curl $BOOTISO -o /tmp/install1000.iso
 
 #download enterprise Docker kickstart file
 curl $KSFILE -o install.ks
