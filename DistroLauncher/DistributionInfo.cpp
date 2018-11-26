@@ -30,7 +30,7 @@ bool DistributionInfo::CreateUser(std::wstring_view userName)
 	}
 
 	// Set the password for the user 
-	commandLine = L"/usr/bin/passwd ";
+	commandLine = L"/usr/bin/passwd --quiet";
 	commandLine += userName;
 	hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
 
@@ -46,7 +46,7 @@ bool DistributionInfo::CreateUser(std::wstring_view userName)
 bool DistributionInfo::SetRootPassword()
 {
 	DWORD exitCode;
-	std::wstring commandLine = L"/usr/bin/passwd ";
+	std::wstring commandLine = L"/usr/bin/passwd --quiet";
 	commandLine += L"root";
 	HRESULT hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
 	if (FAILED(hr) || exitCode != 0) {
