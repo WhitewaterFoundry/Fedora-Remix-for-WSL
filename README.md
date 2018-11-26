@@ -1,8 +1,6 @@
 # WLinux Enterprise Edition
 
-CentOS-compatible WSL distro template.
-
-*Not endorsed or affiliated with The CentOS Project or Red Hat, Inc.*
+Enterprise-compatible WSL distro template.
 
 Goal:
 
