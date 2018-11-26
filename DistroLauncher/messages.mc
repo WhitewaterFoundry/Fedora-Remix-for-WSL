@@ -49,7 +49,7 @@ Usage:
 
 MessageId=1006 SymbolicName=MSG_STATUS_INSTALLING
 Language=English
-Installing, this may take a few minutes...
+Unpacking Linux filesystem image, this may take a few minutes...
 .
 
 MessageId=1007 SymbolicName=MSG_INSTALL_SUCCESS
@@ -69,8 +69,7 @@ Enter new UNIX username: %0
 
 MessageId=1010 SymbolicName=MSG_CREATE_USER_PROMPT
 Language=English
-Please create a default UNIX user account. The username does not need to match your Windows username.
-For more information visit: https://aka.ms/wslusers
+Please create a default Linux user account. The username does not need to match your Windows username.
 .
 
 MessageId=1011 SymbolicName=MSG_PRESS_A_KEY
@@ -88,4 +87,14 @@ MessageId=1013 SymbolicName=MSG_INSTALL_ALREADY_EXISTS
 Language=English
 The distribution installation has become corrupted.
 Please select Reset from App Settings or uninstall and reinstall the app.
+.
+
+MessageId=1014 SymbolicName=MSG_CREATE_ROOT_PROMPT
+Language=English
+Please create a root account password. This is the account used to perform administrative functions on Linux.
+.
+
+MessageId=1015 SymbolicName=MSG_WELCOME_MSG_PROMPT
+Language=English
+Welcome to WLinux Enterprise Edition.
 .

@@ -36,11 +36,31 @@ HRESULT InstallDistribution(bool createUser)
         return hr;
     }
 
-	// Set root user password
+    // Create /etc/shadow and /etc/gshadow
+    hr = g_wslApi.WslLaunchInteractive(L"/usr/sbin/pwconv ; /usr/sbin/grpconv", true, &exitCode);
+    if (FAILED(hr)) {
+        return hr;
+    }
+
+	// Make /etc/shadow and /etc/gshadow writeable
+	hr = g_wslApi.WslLaunchInteractive(L"chmod 0744 /etc/shadow ; chmod 0744 /etc/gshadow", true, &exitCode);
+	if (FAILED(hr)) {
+		return hr;
+	}
+
+	// Enable su
+	hr = g_wslApi.WslLaunchInteractive(L"chmod 755 /bin/su ; chmod +s /bin/su", true, &exitCode);
+	if (FAILED(hr)) {
+		return hr;
+	}
+
+	// Display welcome
+	Helpers::PrintMessage(MSG_WELCOME_MSG_PROMPT);
+
+	// Set root password
 	UINT8 count = 0;
-	wprintf(L"[DEBUG] Calling SetRootPassword()\n");
+	Helpers::PrintMessage(MSG_CREATE_ROOT_PROMPT);
 	while (!DistributionInfo::SetRootPassword()) {
-		wprintf(L"[DEBUG] attempt no. %i", count);
 		count++;
 	}
 
