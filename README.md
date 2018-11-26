@@ -9,4 +9,5 @@ Goal:
 
 Current Status:
 
+- Beta quality.
 - See [Issues](https://github.com/WhitewaterFoundry/WLE/issues).
