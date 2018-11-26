@@ -37,10 +37,26 @@ HRESULT InstallDistribution(bool createUser)
     }
 
     // Create /etc/shadow
-    hr = g_wslApi.WslLaunchInteractive(L"/usr/sbin/pwconv", true, &exitCode);
+    hr = g_wslApi.WslLaunchInteractive(L"/usr/sbin/pwconv ; /usr/sbin/grpconv", true, &exitCode);
     if (FAILED(hr)) {
         return hr;
     }
+
+	// Enable su
+	hr = g_wslApi.WslLaunchInteractive(L"chmod 777 /bin/su", true, &exitCode);
+	if (FAILED(hr)) {
+		return hr;
+	}
+
+	// Display welcome
+	Helpers::PrintMessage(MSG_WELCOME_MSG_PROMPT);
+
+	// Set root password
+	UINT8 count = 0;
+	Helpers::PrintMessage(MSG_CREATE_ROOT_PROMPT);
+	while (!DistributionInfo::SetRootPassword()) {
+		count++;
+	}
 
     // Create a user account.
     if (createUser) {
@@ -57,13 +73,6 @@ HRESULT InstallDistribution(bool createUser)
             return hr;
         }
     }
-
-	// Set root password
-	UINT8 count = 0;
-	Helpers::PrintMessage(MSG_CREATE_ROOT_PROMPT);
-	while (!DistributionInfo::SetRootPassword()) {
-		count++;
-	}
 
     return hr;
 }
