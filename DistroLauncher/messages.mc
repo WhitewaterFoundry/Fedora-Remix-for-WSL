@@ -49,7 +49,7 @@ Usage:
 
 MessageId=1006 SymbolicName=MSG_STATUS_INSTALLING
 Language=English
-Installing, this may take a few minutes...
+Unpacking Linux file system image, this may take a few minutes...
 .
 
 MessageId=1007 SymbolicName=MSG_INSTALL_SUCCESS
@@ -88,9 +88,4 @@ MessageId=1013 SymbolicName=MSG_INSTALL_ALREADY_EXISTS
 Language=English
 The distribution installation has become corrupted.
 Please select Reset from App Settings or uninstall and reinstall the app.
-.
-
-MessageId=1014 SymbolicName=MSG_CREATE_ROOT_PASS
-Language=English
-Set root user account password.
 .
