@@ -78,7 +78,7 @@
     <PackageCertificateKeyFile>DistroLauncher-Appx_TemporaryKey.pfx</PackageCertificateKeyFile>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundle>Auto</AppxBundle>
-    <PackageCertificateThumbprint>DDF23CE851C199F203D072065FA3F54680842F00</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>0048A549B0E8F91B9BC635ED9C343D05D8C92822</PackageCertificateThumbprint>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxBundlePlatforms>x64</AppxBundlePlatforms>
     <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>

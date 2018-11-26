@@ -11,5 +11,4 @@ Goal:
 
 Current Status:
 
-- Alpha. See [Issues](https://github.com/WhitewaterFoundry/WLE/issues).
-- Adding an initial user is broken. Exit, open Command Prompt, type 'wle install -root', exit, and then re-open WLE. 
+- See [Issues](https://github.com/WhitewaterFoundry/WLE/issues).
