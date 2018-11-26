@@ -49,7 +49,7 @@ sudo bash -c "echo 'export LIBGL_ALWAYS_INDIRECT=1' >> $BUILDDIR/etc/profile"
 sudo bash -c "echo 'export NO_AT_BRIDGE=1' >> $BUILDDIR/etc/profile"
 
 cd $BUILDDIR
-tar --ignore-failed-read --numeric-owner -czvf $ORIGINDIR/install.tar.gz *
+tar --ignore-failed-read -czvf $ORIGINDIR/install.tar.gz *
 
 cd $ORIGINDIR
 
