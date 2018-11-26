@@ -36,7 +36,7 @@ sudo curl $BOOTISO -o /tmp/install.iso
 
 curl $KSFILE -o install.ks
 
-sudo livemedia-creator --make-tar --iso=/tmp/install4.iso --image-name=install.tar.xz --ks=install.ks
+sudo livemedia-creator --make-tar --iso=/tmp/install.iso --image-name=install.tar.xz --ks=install.ks
 
 tar -xvf /var/tmp/install.tar.xz -C $BUILDDIR
 
