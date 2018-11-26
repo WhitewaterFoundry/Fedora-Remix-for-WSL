@@ -17,11 +17,11 @@ KSFILE="https://raw.githubusercontent.com/CentOS/sig-cloud-instance-build/master
 # KSFILE="https://pagure.io/fedora-kickstarts/raw/master/f/fedora-docker-base.ks"
 
 # Oracle
-# Download ISO from oracle.com. Comment out line 29 and edit --iso in line 33 to point to your downloaded ISO.
+# Download ISO from oracle.com. Comment out line 37 and edit --iso in line 33 to point to your downloaded ISO.
 # KSFILE="https://gist.githubusercontent.com/bargenson/24e9c4883a4adbcfbfd4/raw/3c1aae56a6565c51ec674d61d041123134bab6c6/docker-oracle-linux.ks"
 
 # RHEL
-# Download ISO from redhat.com. Comment out line 29 and edit --iso in line 33 to point to your downloaded ISO.
+# Download ISO from redhat.com. Comment out line 37 and edit --iso in line 33 to point to your downloaded ISO.
 # KSFILE="https://raw.githubusercontent.com/CentOS/sig-cloud-instance-build/master/docker/centos-7.ks"
 
 cd $TMPDIR
