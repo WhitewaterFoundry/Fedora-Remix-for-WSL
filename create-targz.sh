@@ -31,7 +31,7 @@ sudo yum install libvirt lorax virt-install libvirt-daemon-config-network libvir
 sudo systemctl restart libvirtd
 
 #download enterprise boot ISO
-sudo curl $BOOTISO -o /tmp/install1000.iso
+sudo curl $BOOTISO -o /tmp/install.iso
 
 #download enterprise Docker kickstart file
 curl $KSFILE -o install.ks
