@@ -59,3 +59,19 @@ Components from Whitewater Foundry, Ltd. Co.:
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE
+    
+Components from Scientific Linux:
+
+    EULA
+    http://ftp.scientificlinux.org/linux/scientific/7.0/x86_64/os/EULA
+    
+    GPL3
+    https://www.gnu.org/licenses/gpl-3.0.en.html
+    
+    GPL2
+    https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+    
+    To obtain the source for any package, run:
+    $ dnf download --source [package name]
+    
+    See individual packages for other licenses.
