@@ -9,10 +9,11 @@ BUILDDIR=$(mktemp -d)
 BOOTISO="http://ftp1.scientificlinux.org/linux/scientific/7x/x86_64/os/images/boot.iso"
 
 #enterprise Docker kickstart file
-KSFILE="https://raw.githubusercontent.com/CentOS/sig-cloud-instance-build/master/docker/centos-7.ks"
+KSFILE="https://raw.githubusercontent.com/WhitewaterFoundry/sig-cloud-instance-build/master/docker/sl-7.ks"
 
 #upstream enterprise boot ISO
 #BOOTISO="http://mirror.centos.org/centos/7.5.1804/os/x86_64/images/boot.iso"
+#KSFILE="https://raw.githubusercontent.com/CentOS/sig-cloud-instance-build/master/docker/centos-7.ks"
 
 #ARM64
 #BOOTISO="http://vault.centos.org/altarch/7.3.1611/os/aarch64/images/boot.iso"
