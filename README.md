@@ -24,7 +24,7 @@ There are several approaches to deploying WLinux Enterprise on existing Windows 
 
 ### Microsoft Store Build
 
-**WLinux Enterprise is provided on the Microsoft Store on a self-support basis for advanced individual end users who simply need an enterprise compatible WSL distro. It adheres very closely to mainstream enterprise Linux defaults. *The WLinux Enterprise build provided on the Microsoft Store does NOT include dedicated end user support, wlinux-setup, or the WSL usability features that accompany WLinux.*
+**WLinux Enterprise is provided on the Microsoft Store on a self-support basis for advanced individual end users who simply need an enterprise compatible WSL distro. It adheres very closely to mainstream enterprise Linux defaults. The WLinux Enterprise build provided on the Microsoft Store does NOT include dedicated end user support, wlinux-setup, or the [usability features](https://github.com/WhitewaterFoundry/WLinux#features) that accompany WLinux.**
 
 The WLinux Enterprise build provided on the Microsoft Store is derived from [Scientific Linux](https://www.scientificlinux.org/) an enterprise Linux rebuild sponsored by the Fermi National Accelerator Laboratory. A portion of the net sales proceeds from WLinux Enterprise on the Microsoft Store go to [Fermilab Friends for Science Education](https://ed.fnal.gov/ffse/support-us/index.shtml), a 501(c)(3) organization whose sole purpose is to support K-12 education programs offered by Fermilab.
 
@@ -51,7 +51,7 @@ contact@whitewaterfoundry.com
 
 ### Legal
 
-WLinux Enterprise is not endorsed by or affiliated with Scientific Linux, Fermi National Accelerator Laboratory, the United States Department of Energy, the CentOS Project®, Microsoft®, or Red Hat, Inc.
+**WLinux Enterprise is not endorsed by or affiliated with Scientific Linux, Fermi National Accelerator Laboratory, the United States Department of Energy, the CentOS Project®, Microsoft®, or Red Hat, Inc.**
 
 See [LICENSE.md](https://github.com/WhitewaterFoundry/WLE/blob/master/LICENSE.md) for important information on trademarks, copyright, patents, and software licensing.
 
