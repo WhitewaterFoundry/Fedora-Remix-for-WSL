@@ -1,6 +1,8 @@
-GNU Kind Communications Guidelines
+**GNU Kind Communications Guidelines**
+
 by Richard Stallman
-Source: https://www.gnu.org/philosophy/kind-communication.en.html
+
+https://www.gnu.org/philosophy/kind-communication.en.html
 
 The GNU Project encourages contributions from anyone who wishes to advance the development of the GNU system, regardless of gender, race, religion, cultural background, and any other demographic characteristics, as well as personal political views.
 
