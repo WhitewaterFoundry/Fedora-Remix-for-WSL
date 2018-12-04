@@ -8,7 +8,15 @@
 
 - Microsoft®, Windows®, and Visual Studio® are registered trademarks of [Microsoft Corporation](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/en-us.aspx) and are used in compliance with the [Microsoft Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general.aspx).
 
+- CentOS® and Red Hat Enterprise Linux® are registered trademarks of Red Hat, Inc. **WLinux Enterprise is not endorsed by or affiliated with the CentOS Project or Red Hat, Inc.**
+
+- Oracle® and Oracle Linux are registered trademarks of Oracle and/or its affiliates. **WLinux Enterprise is not endorsed by or affiliated with Oracle.**
+
+- Scientific Linux is sponsored by Fermi National Accelerator Laboratory. **WLinux Enterprise is not endorsed by or affiliated with Fermi National Accelerator Laboratory.**
+
 - Linux® is the registered trademark of Linus Torvalds in the U.S. and other countries. Used in compliance with a [Linux sublicense](https://www.linuxmark.org/programs/legal/trademark/sublicense-agreement) obtained from the Linux Foundation.
+
+- Other names may be trademarks of their respective owners.
 
 # Copyright and Licenses
 
@@ -61,6 +69,10 @@ Components from Whitewater Foundry, Ltd. Co.:
     SOFTWARE
     
 Components from Scientific Linux:
+
+    Scientific Linux is sponsored by Fermi National Accelerator Laboratory.
+
+    See https://www.scientificlinux.org/ for additional information.
 
     EULA
     http://ftp.scientificlinux.org/linux/scientific/7.0/x86_64/os/EULA
