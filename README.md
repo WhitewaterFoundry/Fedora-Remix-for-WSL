@@ -51,7 +51,8 @@ contact@whitewaterfoundry.com
 
 ### Legal
 
-WLinux Enterprise is not endorsed by or affiliated with Scientific Linux, Fermi National Accelerator Laboratory, the CentOS Project®, Microsoft®, or Red Hat, Inc.
+WLinux Enterprise is not endorsed by or affiliated with Scientific Linux, Fermi National Accelerator Laboratory, the United States Department of Energy, the CentOS Project®, Microsoft®, or Red Hat, Inc.
 
 See [LICENSE.md](https://github.com/WhitewaterFoundry/WLE/blob/master/LICENSE.md) for important information on trademarks, copyright, patents, and software licensing.
+
 See [BUILDING.md](https://github.com/WhitewaterFoundry/WLE/blob/master/BUILDING.md) for steps on how to build WLinux Enterprise from source.
