@@ -4,15 +4,9 @@
 
 New and casual Linux users are strongly encouraged to obtain [WLinux](https://github.com/WhitewaterFoundry/WLinux) from the [Microsoft Store](https://afflnk.microsoft.com/c/1291904/433017/7593?u=https%3A%2F%2Fwww.microsoft.com%2Fp%2Fwlinux%2F9nv1gv1pxz6p) instead. WLinux includes end user support and [several usability modifications and tools](https://github.com/WhitewaterFoundry/WLinux#features), such as wlinux-setup, to improve the overall WSL experience for end users.
 
-### Microsoft Store Build
+### For Enterprise
 
-WLinux Enterprise is provided on the Microsoft Store on a self-support basis for advanced individual end users who simply need an enterprise compatible WSL distro. It adheres very closely to mainstream enterprise Linux defaults. *The WLinux Enterprise build provided on the Microsoft Store does NOT include end user support, wlinux-setup, or the WSL usability features that accompany WLinux.*
-
-The WLinux Enterprise build provided on the Microsoft Store is derived from [Scientific Linux](https://www.scientificlinux.org/) an enterprise Linux rebuild sponsored by the Fermi National Accelerator Laboratory. A portion of the net sales proceeds from WLinux Enterprise on the Microsoft Store go to [Fermilab Friends for Science Education](https://ed.fnal.gov/ffse/support-us/index.shtml), a 501(c)(3) organization whose sole purpose is to support K-12 education programs offered by Fermilab.
-
-### Enterprise Builds
-
-**WLinux Enterprise allows businesses, education, and large organizations to deploy a secure, reliable, and familiar Linux distribution on Windows Subsystem for Linux on Windows 10.**
+**WLinux Enterprise allows businesses, education, government, and other organizations to deploy a secure, reliable, and familiar Linux distribution on Windows Subsystem for Linux on Windows 10.**
 
 **WLinux Enterprise was designed to be highly adaptable for secure enterprise environments and is compatible with the mainstream enterprise Linux vendor distribution and other derivatives.**
 
@@ -26,6 +20,12 @@ There are several ways to deploy WLinux Enterprise on existing Windows 10 networ
 - [Microsoft Intune](https://docs.microsoft.com/en-us/intune/apps-windows-10-app-deploy)
 - [SCCM](https://docs.microsoft.com/en-us/sccm/apps/deploy-use/deploy-applications)
 - [App Installer](https://docs.microsoft.com/en-us/sccm/apps/deploy-use/deploy-applications)
+
+### Microsoft Store Build
+
+WLinux Enterprise is provided on the Microsoft Store on a self-support basis for advanced individual end users who simply need an enterprise compatible WSL distro. It adheres very closely to mainstream enterprise Linux defaults. *The WLinux Enterprise build provided on the Microsoft Store does NOT include end user support, wlinux-setup, or the WSL usability features that accompany WLinux.*
+
+The WLinux Enterprise build provided on the Microsoft Store is derived from [Scientific Linux](https://www.scientificlinux.org/) an enterprise Linux rebuild sponsored by the Fermi National Accelerator Laboratory. A portion of the net sales proceeds from WLinux Enterprise on the Microsoft Store go to [Fermilab Friends for Science Education](https://ed.fnal.gov/ffse/support-us/index.shtml), a 501(c)(3) organization whose sole purpose is to support K-12 education programs offered by Fermilab.
 
 ### Documentation
 
@@ -43,6 +43,7 @@ Businesses and other organizations who would like to recieve ongoing support sho
 ### Contact
 
 [whitewaterfoundry.com](https://www.whitewaterfoundry.com/wlinux-enterprise-edition/)
+
 contact@whitewaterfoundry.com
 
 
