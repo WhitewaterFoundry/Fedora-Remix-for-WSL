@@ -1,66 +1,58 @@
+#!/bin/bash
+
 set -e
-
-#declare variables
-ORIGINDIR=$(pwd)
+BUILDDIR=$(pwd)
 TMPDIR=$(mktemp -d)
-BUILDDIR=$(mktemp -d)
-
-#enterprise boot ISO
-BOOTISO="http://ftp1.scientificlinux.org/linux/scientific/7x/x86_64/os/images/boot.iso"
-
-#enterprise Docker kickstart file
-KSFILE="https://raw.githubusercontent.com/WhitewaterFoundry/sig-cloud-instance-build/master/docker/sl-7.ks"
-
-#upstream enterprise boot ISO
-#BOOTISO="http://mirror.centos.org/centos/7.5.1804/os/x86_64/images/boot.iso"
-#KSFILE="https://raw.githubusercontent.com/CentOS/sig-cloud-instance-build/master/docker/centos-7.ks"
-
-#ARM64
-#BOOTISO="http://vault.centos.org/altarch/7.3.1611/os/aarch64/images/boot.iso"
-#KSFILE="https://raw.githubusercontent.com/CentOS/sig-cloud-instance-build/master/docker/centos-7arm64.ks"
-
-#go to our temporary directory
+ARCH="amd64"
 cd $TMPDIR
 
-#make sure we are up to date
-sudo yum update
+set -x
 
-#get livemedia-creator dependencies
-sudo yum install libvirt lorax virt-install libvirt-daemon-config-network libvirt-daemon-kvm libvirt-daemon-driver-qemu
+mkdir -m 755 $TMPDIR/dev/
+mknod -m 600 $TMPDIR/dev/console c 5 1
+mknod -m 600 $TMPDIR/dev/initctl p
+mknod -m 666 $TMPDIR/dev/full c 1 7
+mknod -m 666 $TMPDIR/dev/null c 1 3
+mknod -m 666 $TMPDIR/dev/ptmx c 5 2
+mknod -m 666 $TMPDIR/dev/random c 1 8
+mknod -m 666 $TMPDIR/dev/tty c 5 0
+mknod -m 666 $TMPDIR/dev/tty0 c 4 0
+mknod -m 666 $TMPDIR/dev/urandom c 1 0
+mknod -m 666 $TMPDIR/dev/zero c 1 5
 
-#restart libvirtd for good measure
-sudo systemctl restart libvirtd
+# Set variables
+if [ -d /etc/dnf/vars ] ; then
+    mkdir -p -m 755 $TMPDIR/etc/dnf
+    cp -ar /etc/dnf/vars $TMPDIR/etc/dnf/vars
+fi
 
-#download enterprise boot ISO
-sudo curl $BOOTISO -o /tmp/install.iso
+dnf -c /etc/dnf/dnf.conf --installroot=$TMPDIR --releasever=/ --setopt=tsflags=nodocs --setopt=group_package_types=mandatory -y groupinstall "Core"
+dnf -c /etc/dnf/dnf.conf --installroot=$TMPDIR -y clean all
 
-#download enterprise Docker kickstart file
-curl $KSFILE -o install.ks
+cat > $TMPDIR/etc/sysconfig/network <<EOF
+NETWORKING=yes
+HOSTNAME=localhost.localdomain
+EOF
 
-#build intermediary rootfs tar
-sudo livemedia-creator --make-tar --iso=/tmp/install.iso --image-name=install.tar.xz --ks=install.ks --releasever "7"
+# Remove extra locales
+rm -rf $TMPDIR/usr/{{lib,share}/locale,{lib,lib64}/gconv,bin/localedef,sbin/build-locale-archive}
+# Remove extra docs / man pages
+rm -rf $TMPDIR/usr/share/{man,doc,info,gnome/help}
+# Remove cracklib
+rm -rf $TMPDIR/usr/share/cracklib
+# Remove i18n
+rm -rf $TMPDIR/usr/share/i18n
+# Remove yum / dnf cache
+if [ -d $TMPDIR/var/cache/yum ] ; then
+    rm -rf $TMPDIR/var/cache/yum
+    mkdir -p --mode=0755 $TMPDIR/var/cache/yum
+fi
+rm -rf $TMPDIR/var/cache/dnf
+mkdir -p --mode=0755 $TMPDIR/var/cache/dnf
+# Remove sln
+rm -rf $TMPDIR/sbin/sln
+# Remove ldconfig
+rm -rf $TMPDIR/etc/ld.so.cache $TMPDIR/var/cache/ldconfig
+mkdir -p --mode=0755 $TMPDIR/var/cache/ldconfig
 
-#open up the tar into our build directory
-tar -xvf /var/tmp/install.tar.xz -C $BUILDDIR
-
-#copy some custom files into our build directory 
-sudo cp $ORIGINDIR/linux_files/wsl.conf $BUILDDIR/etc/wsl.conf
-sudo cp $ORIGINDIR/linux_files/local.conf $BUILDDIR/etc/local.conf
-
-#set some environmental variables in our build directory
-sudo bash -c "echo 'export DISPLAY=:0' >> $BUILDDIR/etc/profile"
-sudo bash -c "echo 'export LIBGL_ALWAYS_INDIRECT=1' >> $BUILDDIR/etc/profile"
-sudo bash -c "echo 'export NO_AT_BRIDGE=1' >> $BUILDDIR/etc/profile"
-
-#re-build our tar image
-cd $BUILDDIR
-tar --ignore-failed-read -czvf $ORIGINDIR/install.tar.gz *
-
-#go home
-cd $ORIGINDIR
-
-#clean up
-sudo rm -r $BUILDDIR
-sudo rm -r $TMPDIR
-sudo rm /tmp/install.iso
-sudo rm /var/tmp/install.tar.xz
+tar --numeric-owner -czvf $BUILDDIR/install.tar.gz *
