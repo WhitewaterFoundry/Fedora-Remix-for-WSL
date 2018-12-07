@@ -55,4 +55,9 @@ rm -rf $TMPDIR/sbin/sln
 rm -rf $TMPDIR/etc/ld.so.cache $TMPDIR/var/cache/ldconfig
 mkdir -p --mode=0755 $TMPDIR/var/cache/ldconfig
 
+# Copy our own files
+cp $BUILDDIR/linux_files/wsl.conf $TMPDIR/etc/wsl.conf
+mkdir $TMPDIR/etc/fonts
+cp $BUILDDIR/linux_files/local.conf $TMPDIR/etc/fonts/local.conf
+
 tar --numeric-owner -czvf $BUILDDIR/install.tar.gz *
