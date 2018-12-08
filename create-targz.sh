@@ -16,6 +16,8 @@ mkdir -m 0755 $TMPDIR/dist/dev
 mock --init --dnf --rootdir=$TMPDIR/dist
 mount --bind /dev $TMPDIR/dist/dev
 dnf --installroot=$TMPDIR/dist --releasever=/ -y groupinstall core --exclude=grub\*
+dnf --installroot=$TMPDIR/dist --releasever=/ -y autoremove
+dnf --installroot=$TMPDIR/dist --releasever=/ -y clean all
 umount $TMPDIR/dist/dev
 #mock --dnf --install coreutils
 #mkdir -m 755 $CHROOTDIR/dev/
