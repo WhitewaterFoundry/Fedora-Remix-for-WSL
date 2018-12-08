@@ -22,12 +22,13 @@ mock --init --dnf --rootdir=$TMPDIR/dist
 mount --bind /dev $TMPDIR/dist/dev
 
 # Install required packages
-dnf --installroot=$TMPDIR/dist --releasever=$VER -y groupinstall core --exclude=grub\*
+dnf --installroot=$TMPDIR/dist --releasever=$VER -y groupinstall core --exclude=grub\*,sssd-kcm,sssd-common,sssd-client
 
 # Run dnf update from chroot to ensure filesystem build working
 chroot $TMPDIR/dist dnf -y update
 
 # Autoremove unnecessary packages then clean (reduce FS size)
+#chroot $TMPDIR/dist dnf -y remove sssd-client sssd-common
 chroot $TMPDIR/dist dnf -y autoremove
 chroot $TMPDIR/dist dnf -y clean all
 #dnf --installroot=$TMPDIR/dist --releasever=/ -y autoremove
