@@ -1,4 +1,4 @@
-PLEASE NOTE: THIS IS A WORK IN PROGRESS and this readme needs updating. Also, create-targz.sh was written and run under a full Fedora system. Cannot confirm this runs/doesn't break things in other situations yet (though maybe not given the /dev bind-mount situation) e.g. within Fedora WSL install.
+PLEASE NOTE: THIS IS A WORK IN PROGRESS and this readme needs updating. Also, create-targz.sh was written and run under a full Fedora system. Cannot confirm this runs/doesn't break things in other situations yet (especially given the /dev bind-mount situation) e.g. within Fedora WSL install.
 
 # WLinux Enterprise Edition
 
