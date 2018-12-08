@@ -1,3 +1,5 @@
+PLEASE NOTE: create-targz.sh was written and run under a full Fedora system. Cannot confirm this runs under other situations yet (though maybe not given the /dev bind-mount situation) e.g. within Fedora WSL install.
+
 # WLinux Enterprise Edition
 
 **WLinux Enterprise is a Linux distribution for Windows Subsystem for Linux (WSL) that is compatible with the mainstream enterprise Linux vendor distribution.**
