@@ -29,6 +29,7 @@ chroot $TMPDIR/dist dnf -y update
 
 # Autoremove unnecessary packages then clean (reduce FS size)
 #chroot $TMPDIR/dist dnf -y remove sssd-client sssd-common
+chroot $TMPDIR/dist dnf -y remove linux-firmware
 chroot $TMPDIR/dist dnf -y autoremove
 chroot $TMPDIR/dist dnf -y clean all
 #dnf --installroot=$TMPDIR/dist --releasever=/ -y autoremove
