@@ -2,13 +2,13 @@
 
 Fedora Remix for WSL is a remix of upstream Fedora for Windows Subsystem for Linux.
 
-Fedora Remix is powered by [WLinux Enterprise](https://www.whitewaterfoundry.com/wlinux-enterprise-edition/).
+Fedora Remix for WSL is powered by [WLinux Enterprise](https://www.whitewaterfoundry.com/wlinux-enterprise-edition/) from [Whitewater Foundry](https://www.whitewaterfoundry.com/).
 
-Fedora Remix contains modifications to the official Fedora package selections.
+Fedora Remix for WSL is not endorsed by the Fedora Project or Red Hat, Inc. but is provided under the [Fedora Remix](https://fedoraproject.org/wiki/Remix) program.
 
-The original Fedora distribution can be obtained [here](https://getfedora.org/).
+Fedora Remix for WSL contains modifications to the official Fedora distribution. The unmodified Fedora distribution can be obtained [here](https://getfedora.org/).
 
-Fedora Remix does not contain wlinux-setup or other features of [WLinux](https://github.com/WhitewaterFoundry/WLinux).
+Fedora Remix for WSL does not contain wlinux-setup or other features of [WLinux](https://github.com/WhitewaterFoundry/WLinux).
 
 ### Support
 

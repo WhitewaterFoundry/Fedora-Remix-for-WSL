@@ -9,6 +9,9 @@ ARCHDIR=""
 VER=29
 
 function build {
+# Install dependencies
+sudo dnf install mock
+
 # Move to our temporary directory
 cd $TMPDIR
 mkdir $TMPDIR/dist
@@ -60,7 +63,7 @@ echo "Possible architectures: arm64, x86_64"
 
 # Accept argument input for architecture type
 ARCH=$@
-if [ "$ARCH" = "x64" ] ; then
+if [ "$ARCH" = "x86_64" ] ; then
 	ARCH="x86_64"
 	ARCHDIR="x64"
 	build
