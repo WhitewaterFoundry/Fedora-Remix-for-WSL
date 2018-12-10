@@ -26,7 +26,7 @@ Users who require dedicated end-user support should consider [WLinux](https://gi
 
 ### About
 
-Whitewater Foundry, Ltd. Co. is an open-source startup that created WLinux, the first Linux distribution designed for Windows Subsystem for Linux on Windows 10. WLinux has since become a top developer tool on the Microsoft Store and Whitewater Foundry, Ltd. Co. has grown to a worldwide team.
+Whitewater Foundry, Ltd. Co. is an open-source startup that created WLinux, the first Linux distribution designed for Windows Subsystem for Linux on Windows 10. WLinux has since become a top developer tool on the Microsoft Store and Whitewater Foundry has grown to a worldwide team. Whitewater Foundry recently debuted WLinux Enterprise and joined the Red Hat Business Partners program to offer a customizable, secure, and reliable WSL solution for large organizations powered by Red Hat Enterprise Linux.
 
 [whitewaterfoundry.com](https://www.whitewaterfoundry.com/wlinux-enterprise-edition/)<br>
 contact@whitewaterfoundry.com
