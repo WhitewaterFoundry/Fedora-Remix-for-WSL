@@ -4,9 +4,11 @@
 set -e
 ORIGINDIR=$(pwd)
 TMPDIR=$(mktemp -d)
-ARCH="x64"
+ARCH=""
+ARCHDIR=""
 VER=29
 
+function build {
 # Move to our temporary directory
 cd $TMPDIR
 mkdir $TMPDIR/dist
@@ -15,14 +17,14 @@ mkdir $TMPDIR/dist
 mkdir -m 0755 $TMPDIR/dist/dev
 
 # Use mock to initialise chroot filesystem
-mock --init --dnf --rootdir=$TMPDIR/dist
+mock --init --dnf --forcearch=$ARCH --rootdir=$TMPDIR/dist
 
 # Bind mount current /dev to new chroot/dev
 # (fixes '/dev/null: Permission denied' errors)
 mount --bind /dev $TMPDIR/dist/dev
 
 # Install required packages
-dnf --installroot=$TMPDIR/dist --releasever=$VER -y groupinstall core --exclude=grub\*,sssd-kcm,sssd-common,sssd-client
+dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y groupinstall core --exclude=grub\*,sssd-kcm,sssd-common,sssd-client
 
 # Run dnf update from chroot to ensure filesystem build working
 chroot $TMPDIR/dist dnf -y update
@@ -45,7 +47,27 @@ rm $TMPDIR/dist/etc/resolv.conf
 
 # Create filesystem tar
 cd $TMPDIR/dist
-tar --numeric-owner -czvf $ORIGINDIR/$ARCH/install.tar.gz *
+tar --numeric-owner -czvf $ORIGINDIR/$ARCHDIR/install.tar.gz *
 
 # Cleanup
 rm -rf $TMPDIR
+}
+
+function usage {
+echo "./create-targz.sh <BUILD_ARCHITECTURE>"
+echo "Possible architectures: arm64, x86_64"
+}
+
+# Accept argument input for architecture type
+ARCH=$@
+if [ "$ARCH" = "x64" ] ; then
+	ARCH="x86_64"
+	ARCHDIR="x64"
+	build
+elif [ "$ARCH" = "arm64" ] ; then
+	ARCH="aarch64"
+	ARCHDIR="ARM64"
+	build
+else
+	usage
+fi
