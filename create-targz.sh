@@ -31,7 +31,6 @@ chroot $TMPDIR/dist dnf -y update
 
 # Install extra, remove  unnecessary then clean (reduce FS size)
 chroot $TMPDIR/dist dnf -y install cracklib-dicts
-chroot $TMPDIR/dist dnf -y install sudo
 chroot $TMPDIR/dist dnf -y remove linux-firmware dracut plymouth parted
 chroot $TMPDIR/dist dnf -y autoremove
 chroot $TMPDIR/dist dnf -y clean all
