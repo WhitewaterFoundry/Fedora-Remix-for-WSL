@@ -31,7 +31,7 @@ The WLinux Enterprise build provided on the Microsoft Store is derived from [Sci
 ### Documentation
 
 - [Official mainstream enterprise Linux vendor documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/)
-- [Man page for yum](http://man7.org/linux/man-pages/man8/yum.8.html) - Guide for the yum package manager.
+- [Man page for dnf](https://dnf.readthedocs.io/en/latest/command_ref.html) - Guide for the dnf package manager.
 - [Troubleshooting Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/troubleshooting) - Solving common problems when installing WSL distros on Windows 10 from Microsoft.
 - [CentOS System Administration Essentials](https://www.microsoft.com/store/productid/FGQPF3H0Q8BB) - Microsoft Store eBook, $14.
 - [Awesome WSL](https://github.com/sirredbeard/Awesome-WSL) - An Awesome collection of Windows Subsystem for Linux (WSL) information, distributions, and tools.
