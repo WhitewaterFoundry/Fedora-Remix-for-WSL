@@ -1,6 +1,6 @@
 # Fedora Remix for WSL
 
-Fedora Remix for WSL is a remix of upstream Fedora for Windows Subsystem for Linux on Windows 10 and Windows 10 Server.
+Fedora Remix for WSL is a remix of upstream [Fedora](https://getfedora.org/) software for [Windows Subsystem for Linux](https://github.com/sirredbeard/Awesome-WSL) on Windows 10 and Windows 10 Server.
 
 Fedora Remix for WSL is powered by [WLinux Enterprise](https://github.com/WhitewaterFoundry/WLE) from [Whitewater Foundry](https://www.whitewaterfoundry.com/). Fedora Remix for WSL is not endorsed by the Fedora Project or Red Hat, Inc. but is provided under the [Fedora Remix](https://fedoraproject.org/wiki/Remix) program.
 
@@ -8,10 +8,11 @@ Fedora Remix for WSL contains modifications to the official Fedora distribution.
 
 ### Support
 
-Fedora Remix for WSL is provided on the Microsoft Store for individual users on a self-support and community-support basis. There is no support available for Fedora Remix for WSL directly from the Fedora community other than that which is offered to all users.
+Fedora Remix for WSL is provided on the Microsoft Store for individual users on a self-support community-support basis. There is no support available for Fedora Remix for WSL specifically from the Fedora community other than that which is offered to all users.
 
 Documentation:
 
+- [Install Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 - [Fedora User Documentation](https://docs.fedoraproject.org/en-US/fedora/f29/)
 - [Fedora Project Wiki](https://fedoraproject.org/wiki/Fedora_Project_Wiki)
 - [DNF](https://fedoraproject.org/wiki/DNF)
@@ -26,7 +27,7 @@ Users who require dedicated end-user support should consider [WLinux](https://gi
 
 ### About
 
-Whitewater Foundry, Ltd. Co. is an open-source startup that created WLinux, the first Linux distribution designed for Windows Subsystem for Linux on Windows 10. WLinux has since become a top developer tool on the Microsoft Store and Whitewater Foundry has grown to a worldwide team. Whitewater Foundry recently debuted WLinux Enterprise and joined the Red Hat Business Partners program to offer a customizable, secure, and reliable WSL solution for large organizations powered by Red Hat Enterprise Linux.
+Whitewater Foundry, Ltd. Co. is an open-source startup that created WLinux, the first Linux distribution designed for Windows Subsystem for Linux on Windows 10. WLinux has since become a top developer tool on the Microsoft Store and Whitewater Foundry has grown to a worldwide team of independent developers. Whitewater Foundry recently debuted WLinux Enterprise and joined the Red Hat Business Partners program to offer a customizable, secure, and reliable WSL solution for large organizations powered by Red Hat Enterprise Linux.
 
 [whitewaterfoundry.com](https://www.whitewaterfoundry.com/wlinux-enterprise-edition/)<br>
 contact@whitewaterfoundry.com
