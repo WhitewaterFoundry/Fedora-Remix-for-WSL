@@ -16,7 +16,7 @@ bool DistributionInfo::CreateUser(std::wstring_view userName)
 		return false;
 	}
 
-	// Add the user account to any relevant groups.
+	// Add the user account to relevant groups.
 	commandLine = L"/usr/sbin/usermod -aG adm,cdrom,wheel ";
 	commandLine += userName;
 	hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);

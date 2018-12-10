@@ -6,7 +6,7 @@
 
 - WLinux and Whitewater Foundry are trademarks of Whitewater Foundry, Ltd. Co. You may use the WLinux and Whitewater Foundry trademark in any lawful manner in compliance with your local trademark laws.
 
-- Fedora is a trademark of The Fedora Project. Fedora Remix is used in compliance with the [Fedora Project Trademark Guidelines](https://fedoraproject.org/wiki/Legal:Trademark_guidelines) and [Remix Guidance](https://fedoraproject.org/wiki/Legal:Trademark_guidelines#Secondary_Mark).
+- Fedora® and the Fedora Project® are trademarks of Red Hat, Inc. Fedora Remix is used in compliance with the [Fedora Project Trademark Guidelines](https://fedoraproject.org/wiki/Legal:Trademark_guidelines) and [Remix Guidance](https://fedoraproject.org/wiki/Legal:Trademark_guidelines#Secondary_Mark).
 
 - Microsoft®, Windows®, Microsoft Store, and Microsoft InTune®, are registered trademarks and/or trademarks of [Microsoft Corporation](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/en-us.aspx). See [Microsoft Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general.aspx).
 
@@ -68,15 +68,7 @@ Components from Whitewater Foundry, Ltd. Co.:
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE
     
-Components from Scientific Linux:
-**WLinux Enterprise is not endorsed by or affiliated with Fermi National Accelerator Laboratory or the United States Department of Energy.**
-
-Scientific Linux is sponsored by Fermi National Accelerator Laboratory.
-    
-See https://www.scientificlinux.org/ for additional information.
-
-Scientific Linux EULA
-http://ftp.scientificlinux.org/linux/scientific/7.0/x86_64/os/EULA
+Components from the Fedora Project:
 
 Most packages are licensed under one or more of the following licenses:
 
@@ -93,5 +85,5 @@ Many of these licenses require that the source code be made available:
 To obtain the source code for any package, run:
 
 ```
-$ dnf download --source [package name]
+$ yum download --source [package name]
 ```

@@ -64,11 +64,11 @@ HRESULT InstallDistribution(bool createUser)
 	Helpers::PrintMessage(MSG_WELCOME_MSG_PROMPT);
 
 	// Set root password
-	UINT8 count = 0;
-	Helpers::PrintMessage(MSG_CREATE_ROOT_PROMPT);
-	while (!DistributionInfo::SetRootPassword()) {
-		count++;
-	}
+	// UINT8 count = 0;
+	// Helpers::PrintMessage(MSG_CREATE_ROOT_PROMPT);
+	// while (!DistributionInfo::SetRootPassword()) {
+	//	count++;
+	// }
 
     // Create a user account.
     if (createUser) {
