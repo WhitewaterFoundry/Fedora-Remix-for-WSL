@@ -1,16 +1,14 @@
 ﻿# Artwork
 
-- Icon is by Paomedia and is used with permission under a [Creative Commons license](https://www.iconfinder.com/icons/285695/terminal_icon).
+- Artwork is provided by the Fedora Project and used in compliance with the [Fedora Project Trademark Guidelines](https://fedoraproject.org/wiki/Legal:Trademark_guidelines).
 
 # Trademarks
 
 - WLinux and Whitewater Foundry are trademarks of Whitewater Foundry, Ltd. Co. You may use the WLinux and Whitewater Foundry trademark in any lawful manner in compliance with your local trademark laws.
 
+- Fedora is a trademark of The Fedora Project. Fedora Remix is used in compliance with the [Fedora Project Trademark Guidelines](https://fedoraproject.org/wiki/Legal:Trademark_guidelines) and [Remix Guidance](https://fedoraproject.org/wiki/Legal:Trademark_guidelines#Secondary_Mark).
+
 - Microsoft®, Windows®, Microsoft Store, and Microsoft InTune®, are registered trademarks and/or trademarks of [Microsoft Corporation](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/en-us.aspx). See [Microsoft Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general.aspx).
-
-- CentOS® and Red Hat Enterprise Linux® are registered trademarks of Red Hat, Inc. See [Trademark Guidelines of the CentOS Project](https://www.centos.org/legal/trademarks/) and [Red Hat Trademark Guidelines](https://www.redhat.com/en/about/trademark-guidelines-and-policies). **WLinux Enterprise is not endorsed by or affiliated with the CentOS Project or Red Hat, Inc.**
-
-- Scientific Linux is sponsored by Fermi National Accelerator Laboratory. **WLinux Enterprise is not endorsed by or affiliated with Fermi National Accelerator Laboratory or the United States Department of Energy.**
 
 - Linux® is the registered trademark of Linus Torvalds in the U.S. and other countries. Used in compliance with a [Linux sublicense](https://www.linuxmark.org/programs/legal/trademark/sublicense-agreement) obtained from the Linux Foundation.
 

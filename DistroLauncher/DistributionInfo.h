@@ -13,10 +13,10 @@ namespace DistributionInfo
     //
     // WARNING: This value must not change between versions of your app,
     // otherwise users upgrading from older versions will see launch failures.
-    const std::wstring Name = L"WLE";
+    const std::wstring Name = L"fedoraremix";
 
     // The title bar for the console window while the distribution is installing.
-    const std::wstring WindowTitle = L"WLinux Enterprise";
+    const std::wstring WindowTitle = L"Fedora Remix";
 
 	// Set root user password
 	bool SetRootPassword();
