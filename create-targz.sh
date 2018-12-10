@@ -29,23 +29,19 @@ chroot $TMPDIR/dist dnf -y update
 
 # Install extra, remove  unnecessary then clean (reduce FS size)
 chroot $TMPDIR/dist dnf -y install cracklib-dicts
-chroot $TMPDIR/dist dnf -y remove linux-firmware dracut plymouth
+chroot $TMPDIR/dist dnf -y remove linux-firmware dracut plymouth parted
 chroot $TMPDIR/dist dnf -y autoremove
 chroot $TMPDIR/dist dnf -y clean all
-#dnf --installroot=$TMPDIR/dist --releasever=/ -y autoremove
-#dnf --installroot=$TMPDIR/dist --releasever=/ -y clean all
 
 # Unmount /dev
 umount $TMPDIR/dist/dev
 
-#cat > $CHROOTDIR/etc/sysconfig/network <<EOF
-#NETWORKING=yes
-#HOSTNAME=localhost.localdomain
-#EOF
-
 # Copy our own files
 cp $ORIGINDIR/linux_files/wsl.conf $TMPDIR/dist/etc/wsl.conf
 cp $ORIGINDIR/linux_files/local.conf $TMPDIR/dist/etc/local.conf
+
+# Delete resolv.conf to let Windows generate it's own on first run
+rm $TMPDIR/dist/etc/resolv.conf
 
 # Create filesystem tar
 cd $TMPDIR/dist
