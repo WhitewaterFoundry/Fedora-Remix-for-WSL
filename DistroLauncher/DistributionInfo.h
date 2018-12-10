@@ -16,7 +16,7 @@ namespace DistributionInfo
     const std::wstring Name = L"fedoraremix";
 
     // The title bar for the console window while the distribution is installing.
-    const std::wstring WindowTitle = L"Fedora Remix";
+    const std::wstring WindowTitle = L"Fedora Remix for WSL";
 
 	// Set root user password
 	bool SetRootPassword();

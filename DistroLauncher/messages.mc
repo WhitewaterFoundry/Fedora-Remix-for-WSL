@@ -96,5 +96,5 @@ Please create a root account password. This is the account used to perform admin
 
 MessageId=1015 SymbolicName=MSG_WELCOME_MSG_PROMPT
 Language=English
-Welcome to Fedora Remix. Powered by WLinux Enterprise.
+Welcome to Fedora Remix for WSL. Powered by WLinux Enterprise from Whitewater Foundry.
 .
