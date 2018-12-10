@@ -1,5 +1,3 @@
-PLEASE NOTE: THIS IS A WORK IN PROGRESS and this readme needs updating. Also, create-targz.sh was written and run under a full Fedora system. Cannot confirm this runs/doesn't break things in other situations yet (especially given the /dev bind-mount situation) e.g. within Fedora WSL install.
-
 # WLinux Enterprise Edition
 
 **WLinux Enterprise is a Linux distribution for Windows Subsystem for Linux (WSL) that is compatible with the mainstream enterprise Linux vendor distribution.**
@@ -12,7 +10,7 @@ New and casual Linux users are strongly encouraged to obtain [WLinux](https://gi
 
 **WLinux Enterprise was designed to be highly adaptable for secure enterprise environments and is compatible with the mainstream enterprise Linux vendor distribution and other derivatives.**
 
-**Custom builds of WLinux Enterprise can be configured using standard Kickstart files to use internal package repositories and leverage other mainstream enterprise Linux vendor distribution security features.**
+**Custom builds of WLinux Enterprise can be configured using chroot-style setup tools, or standard Kickstart files to use internal package repositories and leverage other mainstream enterprise Linux vendor distribution security features.**
 
 Businesses and other organizations who wish to license WLinux Enterprise, develop a custom build for their specific needs, and recieve ongoing support for WLinux Enterprise should [e-mail us](mailto:enterprise@whitewaterfoundry.com) or visit [our website](https://www.whitewaterfoundry.com/wlinux-enterprise-edition/) for advice, details, and a quote.
 
@@ -55,6 +53,6 @@ contact@whitewaterfoundry.com
 
 **WLinux Enterprise is not endorsed by or affiliated with Scientific Linux, Fermi National Accelerator Laboratory, the United States Department of Energy, the CentOS Project®, Microsoft®, or Red Hat, Inc.**
 
-See [LICENSE.md](https://github.com/WhitewaterFoundry/WLE/blob/master/LICENSE.md) for important information on trademarks, copyright, patents, and software licensing.
+See [LICENSE.md](LICENSE.md) for important information on trademarks, copyright, patents, and software licensing.
 
-See [BUILDING.md](https://github.com/WhitewaterFoundry/WLE/blob/master/BUILDING.md) for steps on how to build WLinux Enterprise from source.
+See [BUILDING.md](BUILDING.md) for steps on how to build WLinux Enterprise from source.
