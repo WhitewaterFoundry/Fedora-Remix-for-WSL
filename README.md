@@ -18,6 +18,8 @@ Fedora Remix for WSL is provided on the Microsoft Store for individual users on 
 
 You may also [open an issue](https://github.com/WhitewaterFoundry/WSLFedoraRemix/issues) on our GitHub for community support.
 
+There is no support available for Fedora Remix for WSL from the Fedora community other than that which is offered to all users.
+
 Businesses and other organizations who would like to recieve professional ongoing support should [e-mail us](mailto:enterprise@whitewaterfoundry.com) or visit [our website](https://www.whitewaterfoundry.com/wlinux-enterprise-edition/) to learn more about WLinux Enterprise.
 
 ### About
