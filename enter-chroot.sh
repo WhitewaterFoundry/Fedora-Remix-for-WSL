@@ -11,7 +11,7 @@ cp install.tar.gz dist/install.tar.gz
 cd dist
 
 # Unpack filesystem
-tar -xvf install.tar.gz
+tar -xf install.tar.gz
 rm install.tar.gz
 
 # Bind mount /dev
