@@ -1,66 +1,73 @@
-set -e
+#!/bin/bash
 
-#declare variables
+# Set environment
+set -e
 ORIGINDIR=$(pwd)
 TMPDIR=$(mktemp -d)
-BUILDDIR=$(mktemp -d)
+ARCH=""
+ARCHDIR=""
+VER=29
 
-#enterprise boot ISO
-BOOTISO="http://ftp1.scientificlinux.org/linux/scientific/7x/x86_64/os/images/boot.iso"
-
-#enterprise Docker kickstart file
-KSFILE="https://raw.githubusercontent.com/WhitewaterFoundry/sig-cloud-instance-build/master/docker/sl-7.ks"
-
-#upstream enterprise boot ISO
-#BOOTISO="http://mirror.centos.org/centos/7.5.1804/os/x86_64/images/boot.iso"
-#KSFILE="https://raw.githubusercontent.com/CentOS/sig-cloud-instance-build/master/docker/centos-7.ks"
-
-#ARM64
-#BOOTISO="http://vault.centos.org/altarch/7.3.1611/os/aarch64/images/boot.iso"
-#KSFILE="https://raw.githubusercontent.com/CentOS/sig-cloud-instance-build/master/docker/centos-7arm64.ks"
-
-#go to our temporary directory
+function build {
+# Move to our temporary directory
 cd $TMPDIR
+mkdir $TMPDIR/dist
 
-#make sure we are up to date
-sudo yum update
+# Make sure /dev is created before later mount
+mkdir -m 0755 $TMPDIR/dist/dev
 
-#get livemedia-creator dependencies
-sudo yum install libvirt lorax virt-install libvirt-daemon-config-network libvirt-daemon-kvm libvirt-daemon-driver-qemu
+# Use mock to initialise chroot filesystem
+mock --init --dnf --forcearch=$ARCH --rootdir=$TMPDIR/dist
 
-#restart libvirtd for good measure
-sudo systemctl restart libvirtd
+# Bind mount current /dev to new chroot/dev
+# (fixes '/dev/null: Permission denied' errors)
+mount --bind /dev $TMPDIR/dist/dev
 
-#download enterprise boot ISO
-sudo curl $BOOTISO -o /tmp/install.iso
+# Install required packages
+dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y groupinstall core --exclude=grub\*,sssd-kcm,sssd-common,sssd-client
 
-#download enterprise Docker kickstart file
-curl $KSFILE -o install.ks
+# Run dnf update from chroot to ensure filesystem build working
+chroot $TMPDIR/dist dnf -y update
 
-#build intermediary rootfs tar
-sudo livemedia-creator --make-tar --iso=/tmp/install.iso --image-name=install.tar.xz --ks=install.ks --releasever "7"
+# Install extra, remove  unnecessary then clean (reduce FS size)
+chroot $TMPDIR/dist dnf -y install cracklib-dicts
+chroot $TMPDIR/dist dnf -y remove linux-firmware dracut plymouth parted
+chroot $TMPDIR/dist dnf -y autoremove
+chroot $TMPDIR/dist dnf -y clean all
 
-#open up the tar into our build directory
-tar -xvf /var/tmp/install.tar.xz -C $BUILDDIR
+# Unmount /dev
+umount $TMPDIR/dist/dev
 
-#copy some custom files into our build directory 
-sudo cp $ORIGINDIR/linux_files/wsl.conf $BUILDDIR/etc/wsl.conf
-sudo cp $ORIGINDIR/linux_files/local.conf $BUILDDIR/etc/local.conf
+# Copy our own files
+cp $ORIGINDIR/linux_files/wsl.conf $TMPDIR/dist/etc/wsl.conf
+cp $ORIGINDIR/linux_files/local.conf $TMPDIR/dist/etc/local.conf
 
-#set some environmental variables in our build directory
-sudo bash -c "echo 'export DISPLAY=:0' >> $BUILDDIR/etc/profile"
-sudo bash -c "echo 'export LIBGL_ALWAYS_INDIRECT=1' >> $BUILDDIR/etc/profile"
-sudo bash -c "echo 'export NO_AT_BRIDGE=1' >> $BUILDDIR/etc/profile"
+# Delete resolv.conf to let Windows generate it's own on first run
+rm $TMPDIR/dist/etc/resolv.conf
 
-#re-build our tar image
-cd $BUILDDIR
-tar --ignore-failed-read -czvf $ORIGINDIR/install.tar.gz *
+# Create filesystem tar
+cd $TMPDIR/dist
+tar --numeric-owner -czvf $ORIGINDIR/$ARCHDIR/install.tar.gz *
 
-#go home
-cd $ORIGINDIR
+# Cleanup
+rm -rf $TMPDIR
+}
 
-#clean up
-sudo rm -r $BUILDDIR
-sudo rm -r $TMPDIR
-sudo rm /tmp/install.iso
-sudo rm /var/tmp/install.tar.xz
+function usage {
+echo "./create-targz.sh <BUILD_ARCHITECTURE>"
+echo "Possible architectures: arm64, x86_64"
+}
+
+# Accept argument input for architecture type
+ARCH=$@
+if [ "$ARCH" = "x64" ] ; then
+	ARCH="x86_64"
+	ARCHDIR="x64"
+	build
+elif [ "$ARCH" = "arm64" ] ; then
+	ARCH="aarch64"
+	ARCHDIR="ARM64"
+	build
+else
+	usage
+fi
