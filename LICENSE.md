@@ -6,9 +6,9 @@
 
 - WLinux and Whitewater Foundry are trademarks of Whitewater Foundry, Ltd. Co. You may use the WLinux and Whitewater Foundry trademark in any lawful manner in compliance with your local trademark laws.
 
-- Fedora® and the Fedora Project® are trademarks of Red Hat, Inc. Fedora Remix is used in compliance with the [Fedora Project Trademark Guidelines](https://fedoraproject.org/wiki/Legal:Trademark_guidelines) and [Remix Guidance](https://fedoraproject.org/wiki/Legal:Trademark_guidelines#Secondary_Mark).
+- Fedora®, Red Hat®, and the Fedora Project® are trademarks of Red Hat, Inc. Fedora Remix is used in compliance with the [Fedora Project Trademark Guidelines](https://fedoraproject.org/wiki/Legal:Trademark_guidelines) and [Remix Guidance](https://fedoraproject.org/wiki/Legal:Trademark_guidelines#Secondary_Mark).
 
-- Microsoft®, Windows®, Microsoft Store, and Microsoft InTune®, are registered trademarks and/or trademarks of [Microsoft Corporation](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/en-us.aspx). See [Microsoft Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general.aspx).
+- Microsoft®, Windows®, Windows 10®, Windows 10 Server®, Microsoft Store, and Microsoft InTune®, are registered trademarks and/or trademarks of [Microsoft Corporation](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/en-us.aspx). See [Microsoft Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general.aspx).
 
 - Linux® is the registered trademark of Linus Torvalds in the U.S. and other countries. Used in compliance with a [Linux sublicense](https://www.linuxmark.org/programs/legal/trademark/sublicense-agreement) obtained from the Linux Foundation.
 
@@ -85,5 +85,5 @@ Many of these licenses require that the source code be made available:
 To obtain the source code for any package, run:
 
 ```
-$ yum download --source [package name]
+$ dnf download --source [package name]
 ```
