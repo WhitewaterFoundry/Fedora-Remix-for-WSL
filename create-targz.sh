@@ -27,8 +27,8 @@ dnf --installroot=$TMPDIR/dist --releasever=$VER -y groupinstall core --exclude=
 # Run dnf update from chroot to ensure filesystem build working
 chroot $TMPDIR/dist dnf -y update
 
-# Autoremove unnecessary packages then clean (reduce FS size)
-#chroot $TMPDIR/dist dnf -y remove sssd-client sssd-common
+# Install extra, remove  unnecessary then clean (reduce FS size)
+chroot $TMPDIR/dist dnf -y install cracklib-dicts
 chroot $TMPDIR/dist dnf -y remove linux-firmware dracut plymouth
 chroot $TMPDIR/dist dnf -y autoremove
 chroot $TMPDIR/dist dnf -y clean all
