@@ -56,3 +56,5 @@ contact@whitewaterfoundry.com
 See [LICENSE.md](LICENSE.md) for important information on trademarks, copyright, patents, and software licensing.
 
 See [BUILDING.md](BUILDING.md) for steps on how to build WLinux Enterprise from source.
+
+See [TODO.md](TODO.md) for current todos and issues related to this build.
