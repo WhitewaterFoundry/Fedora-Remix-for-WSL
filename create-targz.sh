@@ -26,34 +26,28 @@ mock --init --dnf --forcearch=$ARCH --rootdir=$TMPDIR/dist
 # (fixes '/dev/null: Permission denied' errors)
 mount --bind /dev $TMPDIR/dist/dev
 
-# Install required packages
-dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y groupinstall core --exclude=grub\*,sssd-kcm,sssd-common,sssd-client
+# Install required packages, exclude unnecessary packages to reduce image size
+dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y groupinstall core --exclude=grub\*,sssd-kcm,sssd-common,sssd-client,linux-firmware,dracut*,plymouth,parted,e2fsprogs,iprutils,ppc64-utils,selinux-policy*,policycoreutils,sendmail,man-*,kernel*,firewalld,fedora-release,fedora-logos,fedora-release-notes
 
-# Install extra packages and comply with Fedora Remix terms
-dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y install cracklib-dicts generic-release generic-logos generic-release-notes --allowerasing
+# Comply with Fedora Remix terms
+dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y install generic-release --allowerasing
 
-# Remove unnecessary packages
-dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y remove linux-firmware dracut plymouth parted man-db
+# Remove left over packages
 dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y autoremove
 
 # Clean up
 dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y clean all
-chroot $TMPDIR/dist rm -r /var/cache/dnf/*
-chroot $TMPDIR/dist rm -r /boot/*
 
 # Unmount /dev
 umount $TMPDIR/dist/dev
 
-# Copy our own files
+# Copy our own custom configuration files
 cp $ORIGINDIR/linux_files/wsl.conf $TMPDIR/dist/etc/wsl.conf
 cp $ORIGINDIR/linux_files/local.conf $TMPDIR/dist/etc/local.conf
 
-# Delete resolv.conf to let Windows generate it's own on first run
-rm $TMPDIR/dist/etc/resolv.conf
-
-# Create filesystem tar
+# Create filesystem tar, excluding unnecessary files
 cd $TMPDIR/dist
-tar --numeric-owner -czvf $ORIGINDIR/$ARCHDIR/install.tar.gz *
+tar --exclude='boot/*' --exclude='var/cache/dnf/*' --exclude='dist/etc/resolv.conf' --numeric-owner -czvf $ORIGINDIR/$ARCHDIR/install.tar.gz *
 
 # Cleanup
 rm -rf $TMPDIR
