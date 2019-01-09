@@ -12,8 +12,8 @@ Fedora Remix for WSL is provided on the Microsoft Store on a self-support commun
 
 #### Differences from upstream Fedora:
 
-- The following core Fedora packages have been removed from the default install of Fedora Remix for WSL: grub, sssd, kernel,linux-firmware, dracut, plymouth, parted, e2fsprogs, iprutils, ppc64-utils, selinux-policy-targeted, policycoreutils, sendmail, man-db, firewalld, fedora-release, fedora-logos, and fedora-release-notes.
-- The following non-default packages have been added to the default install: generic-release, generic-logos, and generic-release-notes.
+- The following core Fedora packages have been removed from the default install of Fedora Remix for WSL: grub, plymouth, kernel, sssd, linux-firmware, dracut, parted, e2fsprogs, iprutils, ppc64-utils, selinux-policy, policycoreutils, sendmail, man-db, firewalld, fedora-release, fedora-logos, and fedora-release-notes.
+- The following non-default package has been added to the default install: generic-release.
 - The following configuration files have custom settings applied for the WSL environment: /dist/etc/wsl.conf and /dist/etc/local.conf.
 - The following files have been removed and will be automatically re-generated if/as needed: /dist/etc/resolv.conf, /boot/*, and /var/cache/dnf/*.
 
