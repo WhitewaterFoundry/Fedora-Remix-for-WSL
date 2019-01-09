@@ -29,14 +29,19 @@ mount --bind /dev $TMPDIR/dist/dev
 # Install required packages
 dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y groupinstall core --exclude=grub\*,sssd-kcm,sssd-common,sssd-client
 
-# Run dnf update from chroot to ensure filesystem build working
-chroot $TMPDIR/dist dnf -y update
+# Install extra packages and comply with Fedora Remix terms
+dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y install cracklib-dicts generic-release generic-logos generic-release-notes --allowerasing
 
-# Install extra, remove  unnecessary then clean (reduce FS size)
-chroot $TMPDIR/dist dnf -y install cracklib-dicts
-chroot $TMPDIR/dist dnf -y remove linux-firmware dracut plymouth parted
-chroot $TMPDIR/dist dnf -y autoremove
-chroot $TMPDIR/dist dnf -y clean all
+# Remove unnecessary packages
+dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y remove linux-firmware dracut plymouth parted
+dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y autoremove
+
+# Clean up
+dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y clean all
+rm -r $TMPDIR/dist/var/cache/dnf/*
+
+# Run dnf update from chroot to ensure filesystem build working
+chroot $TMPDIR/dist dnf -y upgrade
 
 # Unmount /dev
 umount $TMPDIR/dist/dev

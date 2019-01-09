@@ -10,6 +10,13 @@ Fedora Remix for WSL contains modifications to the official Fedora distribution.
 
 Fedora Remix for WSL is provided on the Microsoft Store for individual users on a self-support community-support basis. There is no support available for Fedora Remix for WSL specifically from the Fedora community other than that which is offered to all users.
 
+Differences from upstream Fedora:
+
+- The following packages have been removed from the default install: grub, sssd-kcm, sssd-common, sssd-client, linux-firmware, dracut, plymouth, parted, fedora-release, fedora-logos, and fedora-release-notes.
+- The following non-default packages have been added to the default install: cracklib-dicts, generic-release, generic-logos, and generic-release-notes.
+- The following configuration files have custom settings: /dist/etc/wsl.conf and /dist/etc/local.conf.
+- The following files have been removed and will be automatically re-generated as needed: /dist/etc/resolv.conf and /var/cache/dnf/*.
+
 Documentation:
 
 - [Install Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
