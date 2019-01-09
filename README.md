@@ -4,9 +4,9 @@ Fedora Remix for WSL is a remix of upstream [Fedora](https://getfedora.org/) sof
 
 Fedora Remix for WSL is powered by [WLinux Enterprise](https://github.com/WhitewaterFoundry/WLE) from [Whitewater Foundry](https://www.whitewaterfoundry.com/). Fedora Remix for WSL is not endorsed by the Fedora Project or Red Hat, Inc. but is provided under the [Fedora Remix](https://fedoraproject.org/wiki/Remix) program.
 
-Fedora Remix for WSL contains modifications to the official Fedora distribution. The unmodified Fedora distribution can be obtained [here](https://getfedora.org/). Fedora Remix for WSL does not contain wlinux-setup or other features of [WLinux](https://github.com/WhitewaterFoundry/WLinux).
+Fedora Remix for WSL contains modifications to the official Fedora distribution. The unmodified Fedora distribution can be obtained [here](https://getfedora.org/). Fedora Remix for WSL does not contain wlinux-setup or other [features](https://github.com/WhitewaterFoundry/WLinux#features) of [WLinux](https://github.com/WhitewaterFoundry/WLinux).
 
-### Support
+### Documentation
 
 Fedora Remix for WSL is provided on the Microsoft Store on a self-support community-support basis. There is no support available for Fedora Remix for WSL from the Fedora community other than that which is offered to all users.
 
@@ -18,18 +18,19 @@ Fedora Remix for WSL is provided on the Microsoft Store on a self-support commun
 - The following configuration files have custom settings applied for the WSL environment: /dist/etc/wsl.conf and /dist/etc/local.conf.
 - The following files have been removed and will be automatically re-generated if/as needed: /dist/etc/resolv.conf, /boot/*, and /var/cache/dnf/*.
 
-#### WSL and Fedora documentation:
+#### General WSL and Fedora documentation:
 
 - [Install Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 - [Fedora User Documentation](https://docs.fedoraproject.org/en-US/fedora/f29/)
 - [Fedora Project Wiki](https://fedoraproject.org/wiki/Fedora_Project_Wiki)
 - [DNF](https://fedoraproject.org/wiki/DNF)
+- [Awesome WSL](https://github.com/sirredbeard/Awesome-WSL)
 
-#### Support steps:
+#### Troubleshooting steps and how to get help:
 
 1. [Basic troubleshooting](https://docs.microsoft.com/en-us/windows/wsl/troubleshooting) will solve many problems encountered with WSL.
 1. You can search for your issue in the main [WSL issues](https://github.com/Microsoft/WSL/issues) page.
-1. You may also [open an issue](https://github.com/WhitewaterFoundry/WSLFedoraRemix/issues/new/choose) here on our GitHub for community support.
+1. You may also [open an issue](https://github.com/WhitewaterFoundry/WSLFedoraRemix/issues/new/choose) here on our GitHub page for community support.
 
 Users who require dedicated end-user support should consider [WLinux](https://github.com/WhitewaterFoundry/WLinux) instead. Businesses and other organizations who would like to recieve professional ongoing support should [e-mail us](mailto:enterprise@whitewaterfoundry.com) or visit [our website](https://www.whitewaterfoundry.com/wlinux-enterprise-edition/) to learn more about WLinux Enterprise.
 
