@@ -33,15 +33,13 @@ dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y groupinsta
 dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y install cracklib-dicts generic-release generic-logos generic-release-notes --allowerasing
 
 # Remove unnecessary packages
-dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y remove linux-firmware dracut plymouth parted
+dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y remove linux-firmware dracut plymouth parted man-db
 dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y autoremove
 
 # Clean up
 dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y clean all
-rm -r $TMPDIR/dist/var/cache/dnf/*
-
-# Run dnf update from chroot to ensure filesystem build working
-chroot $TMPDIR/dist dnf -y upgrade
+chroot $TMPDIR/dist rm -r /var/cache/dnf/*
+chroot $TMPDIR/dist rm -r /boot/*
 
 # Unmount /dev
 umount $TMPDIR/dist/dev
