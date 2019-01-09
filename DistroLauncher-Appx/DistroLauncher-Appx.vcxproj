@@ -12,7 +12,6 @@
     <ApplicationTypeRevision>10.0</ApplicationTypeRevision>
     <TargetName>fedoraremix</TargetName>
     <ProjectName>DistroLauncher-Appx</ProjectName>
-    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <ItemGroup Label="ProjectConfigurations">
@@ -75,15 +74,15 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <PackageCertificateKeyFile>DistroLauncher-Appx_StoreKey.pfx</PackageCertificateKeyFile>
-    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <PackageCertificateKeyFile>WF.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <AppxBundle>Auto</AppxBundle>
-    <PackageCertificateThumbprint>03423C6BAF70AEF78568B24B0F51D2D32E066D22</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>0104667402DD214EB2C94D57D806961D4D4DD3CE</PackageCertificateThumbprint>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxBundlePlatforms>x64</AppxBundlePlatforms>
     <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
     <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
-    <AppxPackageDir>C:\Users\Hayden\OneDrive\Desktop\</AppxPackageDir>
+    <AppxPackageDir>C:\Users\Hayden\OneDrive\Desktop\Store\</AppxPackageDir>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <Link>
@@ -97,6 +96,7 @@
     </AppxManifest>
     <None Include="DistroLauncher-Appx_StoreKey.pfx" />
     <None Include="DistroLauncher-Appx_TemporaryKey.pfx" />
+    <None Include="WF.pfx" />
   </ItemGroup>
   <ItemGroup Condition="'$(Platform)'=='x64'">
     <None Include="..\x64\install.tar.gz">
