@@ -38,6 +38,8 @@ chroot $TMPDIR/dist dnf -y remove linux-firmware dracut plymouth parted
 chroot $TMPDIR/dist dnf -y install generic-release generic-logos generic-release-notes --allowerasing
 chroot $TMPDIR/dist dnf -y autoremove
 chroot $TMPDIR/dist dnf -y clean all
+rm -r $TMPDIR/var/cache/dnf/*
+rm -r $TMPDIR/var/cache/yum/*
 
 # Unmount /dev
 umount $TMPDIR/dist/dev
