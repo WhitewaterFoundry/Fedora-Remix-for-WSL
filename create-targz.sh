@@ -32,9 +32,10 @@ dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y groupinsta
 # Run dnf update from chroot to ensure filesystem build working
 chroot $TMPDIR/dist dnf -y update
 
-# Install extra, remove  unnecessary then clean (reduce FS size)
+# Install extra, remove  unnecessary, comply with Remix terms, then clean
 chroot $TMPDIR/dist dnf -y install cracklib-dicts
 chroot $TMPDIR/dist dnf -y remove linux-firmware dracut plymouth parted
+chroot $TMPDIR/dist dnf -y install generic-release generic-logos generic-release-notes --allowerasing
 chroot $TMPDIR/dist dnf -y autoremove
 chroot $TMPDIR/dist dnf -y clean all
 
