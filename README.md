@@ -1,4 +1,4 @@
-<img src="https://fedoraproject.org/w/uploads/thumb/f/f1/Fedora_remix_blue.png/320px-Fedora_remix_blue.png">
+<img src="https://fedoraproject.org/w/uploads/thumb/f/f1/Fedora_remix_blue.png/320px-Fedora_remix_blue.png" height=25% width=25%>
 
 # Fedora Remix for Windows Subsystem for Linux (WSL)
 
@@ -8,19 +8,13 @@ Fedora Remix for WSL is powered by [WLinux Enterprise](https://github.com/Whitew
 
 Fedora Remix for WSL contains modifications to the official Fedora distribution. The unmodified Fedora distribution can be obtained [here](https://getfedora.org/). Fedora Remix for WSL does not contain wlinux-setup or other [features](https://github.com/WhitewaterFoundry/WLinux#features) of [WLinux](https://github.com/WhitewaterFoundry/WLinux).
 
-### Documentation
+Fedora Remix for WSL is provided on a community-support basis. There is no support available for Fedora Remix for WSL from the Fedora community other than that which is offered to all users.
 
-Fedora Remix for WSL is provided on the Microsoft Store on a community-support basis. There is no support available for Fedora Remix for WSL from the Fedora community other than that which is offered to all users.
+<a href='//www.microsoft.com/store/apps/9N6GDM4K2HNC?ocid=badge'><img src='https://assets.windowsphone.com/85864462-9c82-451e-9355-a3d5f874397a/English_get-it-from-MS_InvariantCulture_Default.png' alt='English badge' height=50/></a>
 
-#### Differences from upstream Fedora:
+## Documentation
 
-- Fedora Remix for WSL is based on the [@core package group](https://fedoraproject.org/wiki/SIGs/Minimal_Core) from Fedora.
-- The following packages have been removed from the default install of Fedora Remix for WSL: grub, plymouth, kernel, sssd, linux-firmware, dracut, parted, e2fsprogs, iprutils, ppc64-utils, selinux-policy, policycoreutils, sendmail, man-db, firewalld, fedora-release, fedora-logos, and fedora-release-notes.
-- The following non-default package has been added to the default install to comply with the terms of the Fedora Remix program: generic-release.
-- The following configuration files have custom settings applied for the WSL environment: /dist/etc/wsl.conf and /dist/etc/local.conf.
-- The following files have been removed and will be automatically re-generated if/as needed: /dist/etc/resolv.conf, /boot, and /var/cache/dnf/*.
-
-#### General WSL and Fedora documentation:
+### General WSL and Fedora documentation:
 
 - [Install Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 - [Fedora 29 User Documentation](https://docs.fedoraproject.org/en-US/fedora/f29/)
@@ -31,7 +25,15 @@ Fedora Remix for WSL is provided on the Microsoft Store on a community-support b
 - [DNF](https://fedoraproject.org/wiki/DNF) (Fedora package manager)
 - [Awesome WSL](https://github.com/sirredbeard/Awesome-WSL)
 
-#### Troubleshooting steps and how to get help:
+### Differences from upstream Fedora:
+
+- Fedora Remix for WSL is based on the [@core package group](https://fedoraproject.org/wiki/SIGs/Minimal_Core) from Fedora.
+- The following packages have been removed from the default install of Fedora Remix for WSL: grub, plymouth, kernel, sssd, linux-firmware, dracut, parted, e2fsprogs, iprutils, ppc64-utils, selinux-policy, policycoreutils, sendmail, man-db, firewalld, fedora-release, fedora-logos, and fedora-release-notes.
+- The following non-default package has been added to the default install to comply with the terms of the Fedora Remix program: generic-release.
+- The following configuration files have custom settings applied for the WSL environment: /dist/etc/wsl.conf and /dist/etc/local.conf.
+- The following files have been removed and will be automatically re-generated if/as needed: /dist/etc/resolv.conf, /boot, and /var/cache/dnf/*.
+
+### Troubleshooting and support options:
 
 1. [Basic troubleshooting](https://docs.microsoft.com/en-us/windows/wsl/troubleshooting) will solve many problems encountered with WSL.
 1. You can search for your issue in the main [WSL issues](https://github.com/Microsoft/WSL/issues) page.
@@ -39,9 +41,9 @@ Fedora Remix for WSL is provided on the Microsoft Store on a community-support b
 
 Whitewater Foundry devs monitor the Fedora Remix for WSL GitHub issues page however users who require dedicated end-user support for WSL should consider [WLinux](https://github.com/WhitewaterFoundry/WLinux) instead. Businesses and other organizations who would like to recieve professional ongoing support should [e-mail us](mailto:enterprise@whitewaterfoundry.com) or visit [our website](https://www.whitewaterfoundry.com/wlinux-enterprise-edition/) to learn more about WLinux Enterprise.
 
-### About
+## About
 
-#### Fedora Project
+### Fedora Project
 
 - [Get Fedora](https://getfedora.org/)
 - [Fedora’s Mission and Foundations](https://docs.fedoraproject.org/en-US/project/)
@@ -50,7 +52,7 @@ Whitewater Foundry devs monitor the Fedora Remix for WSL GitHub issues page howe
 - [Planet Fedora](http://fedoraplanet.org/)
 - [Fedora (Wikipedia)](https://en.wikipedia.org/wiki/Fedora_(operating_system))
 
-#### Whitewater Foundry, Ltd. Co.
+### Whitewater Foundry, Ltd. Co.
 
 [Whitewater Foundry, Ltd. Co.](https://www.whitewaterfoundry.com/) is an open-source startup that created WLinux, the first Linux distribution designed for Windows Subsystem for Linux on Windows 10. WLinux has since become a top developer tool on the Microsoft Store and Whitewater Foundry has grown to a worldwide team of independent developers. Whitewater Foundry recently debuted WLinux Enterprise and joined the Red Hat Business Partners program to offer a customizable, secure, and reliable WSL solution for large organizations powered by Red Hat Enterprise Linux.
 
@@ -60,11 +62,13 @@ Whitewater Foundry devs monitor the Fedora Remix for WSL GitHub issues page howe
 - Microsoft Store: [WLinux Enterprise (Demo)](https://www.microsoft.com/en-us/p/wlinux-enterprise/9n8lp0x93vcp)
 - Microsoft Store: [Fedora Remix for WSL](https://www.microsoft.com/en-us/p/fedora-remix-for-wsl/9n6gdm4k2hnc)
 
-#### Isn't Fedora free?
+### Isn't Fedora free?
 
 Yes, Fedora is free. You should [go get it](https://getfedora.org/) and use it on your Linux workstation. We at Whitewater Foundry love it and use Fedora. Fedora Remix for WSL is not Fedora though, it is a [remix](https://fedoraproject.org/wiki/Remix). The remix program allows individuals, groups, and companies to make derivatives of Fedora for special purposes that may contain modified/non-Fedora software. For example, there is the [Russian Fedora Remix](https://ru.fedoracommunity.org/stories/rfremix/), [FedBerry](http://fedberry.org/), and [Qubes OS](https://www.qubes-os.org/). We at Whitewater Foundry saw the demand for a Fedora distro for WSL. With [no offical Fedora for WSL coming](https://twitter.com/mattdm/status/1058417653918896131), we invested the time and resources into making the Fedora Remix for WSL available as an alternative, building on our WLinux Enterprise code base. We charge for the official download through the Microsoft Store in order to continue optimizing, building, and packaging Fedora Remix for WSL, pay open-source developers, and build a sustainable open-source venture. Unlike WLinux and WLinux Enterprise though we also make signed downloads of Fedora Remix for WSL [available via GitHub](https://github.com/WhitewaterFoundry/WSLFedoraRemix/releases) that can be side-loaded for free.
 
-### Legal
+<a href='//www.microsoft.com/store/apps/9N6GDM4K2HNC?ocid=badge'><img src='https://assets.windowsphone.com/85864462-9c82-451e-9355-a3d5f874397a/English_get-it-from-MS_InvariantCulture_Default.png' alt='English badge' height=50/></a>
+
+## Legal
 
 See [LICENSE.md](LICENSE.md) for important information on trademarks, copyright, patents, and software licensing.
 
