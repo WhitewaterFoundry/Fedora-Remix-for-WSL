@@ -32,6 +32,9 @@ dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y groupinsta
 # Add additional necessary packages and comply with Fedora Remix terms
 dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y install cracklib-dicts generic-release --allowerasing
 
+# Reinstall crypto-policies
+dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y reinstall crypto-policies
+
 # Remove left over packages
 dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y autoremove
 
