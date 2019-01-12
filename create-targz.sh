@@ -30,7 +30,7 @@ mount --bind /dev $TMPDIR/dist/dev
 dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y groupinstall core --exclude=grub\*,sssd-kcm,sssd-common,sssd-client,linux-firmware,dracut*,plymouth,parted,e2fsprogs,iprutils,ppc64-utils,selinux-policy*,policycoreutils,sendmail,man-*,kernel*,firewalld,fedora-release,fedora-logos,fedora-release-notes
 
 # Add additional necessary packages and comply with Fedora Remix terms
-dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y install cracklib-dicts generic-release --allowerasing
+dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y install cracklib-dicts crypto-policies generic-release --allowerasing
 
 # Remove left over packages
 dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y autoremove
