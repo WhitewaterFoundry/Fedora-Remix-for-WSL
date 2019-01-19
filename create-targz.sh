@@ -10,7 +10,7 @@ VER=29
 
 function build {
 # Install dependencies
-sudo dnf install mock
+sudo dnf install mock qemu-user-static
 
 # Move to our temporary directory
 cd $TMPDIR
