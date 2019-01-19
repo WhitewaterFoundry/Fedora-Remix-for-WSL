@@ -10,7 +10,7 @@ VER=29
 
 function build {
 # Install dependencies
-sudo dnf install mock
+sudo dnf install mock qemu-user-static
 
 # Move to our temporary directory
 cd $TMPDIR
@@ -27,7 +27,7 @@ mock --init --dnf --forcearch=$ARCH --rootdir=$TMPDIR/dist
 mount --bind /dev $TMPDIR/dist/dev
 
 # Install required packages, exclude unnecessary packages to reduce image size
-dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y groupinstall core --exclude=grub\*,sssd-kcm,sssd-common,sssd-client,linux-firmware,dracut*,plymouth,parted,e2fsprogs,iprutils,ppc64-utils,selinux-policy*,policycoreutils,sendmail,man-*,kernel*,firewalld,fedora-release,fedora-logos,fedora-release-notes
+dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y groupinstall core --exclude=grub\*,sssd-kcm,sssd-common,sssd-client,linux-firmware,dracut*,plymouth,parted,e2fsprogs,iprutils,ppc64-utils,selinux-policy*,policycoreutils,sendmail,man-*,kernel*,firewalld,fedora-release,fedora-logos,fedora-release-notes --allowerasing
 
 # Add additional necessary packages and comply with Fedora Remix terms
 dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y install cracklib-dicts generic-release --allowerasing
@@ -47,6 +47,11 @@ umount $TMPDIR/dist/dev
 # Copy our own custom configuration files
 cp $ORIGINDIR/linux_files/wsl.conf $TMPDIR/dist/etc/wsl.conf
 cp $ORIGINDIR/linux_files/local.conf $TMPDIR/dist/etc/local.conf
+
+# Write some custom configuration
+echo 'export DISPLAY=:0' >> $TMPDIR/dist/etc/profile
+echo 'export LIBGL_ALWAYS_INDIRECT=1' >> $TMPDIR/dist/etc/profile
+echo 'export NO_AT_BRIDGE=1' >> $TMPDIR/dist/etc/profile
 
 # Create filesystem tar, excluding unnecessary files
 cd $TMPDIR/dist
