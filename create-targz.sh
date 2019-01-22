@@ -47,6 +47,7 @@ umount $TMPDIR/dist/dev
 # Copy our own custom configuration files
 cp $ORIGINDIR/linux_files/wsl.conf $TMPDIR/dist/etc/wsl.conf
 cp $ORIGINDIR/linux_files/local.conf $TMPDIR/dist/etc/local.conf
+cp $ORIGINDIR/linux_files/dnf.conf $TMPDIR/dist/etc/dnf/dnf.conf
 
 # Write some custom configuration
 echo 'export DISPLAY=:0' >> $TMPDIR/dist/etc/profile
