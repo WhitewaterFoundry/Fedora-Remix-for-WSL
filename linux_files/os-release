@@ -1,0 +1,16 @@
+NAME=Fedora
+VERSION="29 (Workstation Edition)"
+ID=fedora
+VERSION_ID=29
+PLATFORM_ID="platform:f29"
+PRETTY_NAME="Fedora 29 (Workstation Edition)"
+ANSI_COLOR="0;34"
+CPE_NAME="cpe:/o:fedoraproject:fedora:29"
+HOME_URL="http://www.fedoraproject.org/"
+SUPPORT_URL="https://github.com/WhitewaterFoundry/WSLFedoraRemix"
+BUG_REPORT_URL="https://github.com/WhitewaterFoundry/WSLFedoraRemix/issues"
+REDHAT_BUGZILLA_PRODUCT="Fedora"
+REDHAT_BUGZILLA_PRODUCT_VERSION=%{bug_version}
+REDHAT_SUPPORT_PRODUCT="Fedora"
+REDHAT_SUPPORT_PRODUCT_VERSION=%{bug_version}
+PRIVACY_POLICY_URL="https://github.com/WhitewaterFoundry/WSLFedoraRemix/blob/master/PRIVACY.md"
