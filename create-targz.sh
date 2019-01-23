@@ -57,7 +57,7 @@ echo 'export NO_AT_BRIDGE=1' >> $TMPDIR/dist/etc/profile
 
 # Create filesystem tar, excluding unnecessary files
 cd $TMPDIR/dist
-tar --exclude='boot/*' --exclude='var/cache/dnf/*' --exclude='dist/etc/resolv.conf' --numeric-owner -czvf $ORIGINDIR/$ARCHDIR/install.tar.gz *
+tar --exclude='boot/*' --exclude='var/cache/dnf/*' --numeric-owner -czvf $ORIGINDIR/$ARCHDIR/install.tar.gz *
 
 # Cleanup
 rm -rf $TMPDIR
