@@ -1,0 +1,13 @@
+NAME=WSLFedoraRemix
+VERSION="29 (WSL Edition)"
+ID=wslfedoraremix
+ID_LIKE=fedora
+VERSION_ID=29
+PLATFORM_ID="platform:f29"
+PRETTY_NAME="WSLFedoraRemix 29"
+ANSI_COLOR="0;34"
+CPE_NAME="cpe:/o:fedoraproject:fedora:29"
+HOME_URL="http://www.github.com/WhitewaterFoundry/WSLFedoraRemix"
+SUPPORT_URL="https://github.com/WhitewaterFoundry/WSLFedoraRemix"
+BUG_REPORT_URL="https://github.com/WhitewaterFoundry/WSLFedoraRemix/issues"
+PRIVACY_POLICY_URL="https://github.com/WhitewaterFoundry/WSLFedoraRemix/blob/master/PRIVACY.md"
