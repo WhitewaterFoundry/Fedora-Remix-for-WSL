@@ -49,9 +49,10 @@ cp $ORIGINDIR/linux_files/wsl.conf $TMPDIR/dist/etc/wsl.conf
 cp $ORIGINDIR/linux_files/local.conf $TMPDIR/dist/etc/local.conf
 
 # Write some custom configuration
-echo 'export DISPLAY=:0' >> $TMPDIR/dist/etc/profile
-echo 'export LIBGL_ALWAYS_INDIRECT=1' >> $TMPDIR/dist/etc/profile
-echo 'export NO_AT_BRIDGE=1' >> $TMPDIR/dist/etc/profile
+echo '#!/bin/bash' >> $TMPDIR/dist/etc/profile.d/remix.sh
+echo 'export DISPLAY=:0' >> $TMPDIR/dist/etc/profile.d/remix.sh
+echo 'export LIBGL_ALWAYS_INDIRECT=1' >> $TMPDIR/dist/etc/profile.d/remix.sh
+echo 'export NO_AT_BRIDGE=1' >> $TMPDIR/dist/etc/profile.d/remix.sh
 
 # Create filesystem tar, excluding unnecessary files
 cd $TMPDIR/dist
