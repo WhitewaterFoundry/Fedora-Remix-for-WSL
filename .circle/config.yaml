@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: fedora
+    steps:
+      - checkout
+      - run:
+          name: Build x86_64
+          command: ./create-targz.sh x86_64
+      - store_artifacts:
+          path: ./x64/*.tar.gz
+          prefix: x64
