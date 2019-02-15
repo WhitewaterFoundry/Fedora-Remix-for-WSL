@@ -24,6 +24,7 @@ jobs:
           prefix: ARM64
 
 workflows:
+  version: 2
   build:
     jobs:
       - build_x86
