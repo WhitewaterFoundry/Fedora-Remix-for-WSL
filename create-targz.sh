@@ -44,6 +44,7 @@ fi
 
 # Install wslu
 chroot $TMPDIR/dist curl -s https://packagecloud.io/install/repositories/whitewaterfoundry/wslu/script.rpm.sh | sudo bash
+chroot $TMPDIR/dist dnf -y install wslu
 
 # Copy over some of our custom files
 cp $ORIGINDIR/linux_files/dnf.conf $TMPDIR/dist/etc/dnf/dnf.conf
