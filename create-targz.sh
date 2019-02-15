@@ -29,34 +29,28 @@ mount --bind /dev $TMPDIR/dist/dev
 # Install required packages, exclude unnecessary packages to reduce image size
 dnf --installroot=$TMPDIR/dist --forcearch=$ARCH -y groupinstall core --exclude=grub\*,sssd-kcm,sssd-common,sssd-client,linux-firmware,dracut*,plymouth,parted,e2fsprogs,iprutils,ppc64-utils,selinux-policy*,policycoreutils,sendmail,man-*,kernel*,firewalld,fedora-release,fedora-logos,fedora-release-notes --allowerasing
 
-# Add additional necessary packages and comply with Fedora Remix terms
-chroot $TMPDIR/dist dnf -y install cracklib-dicts generic-release --allowerasing
+# Add additional necessary packages, comply with Fedora Remix terms, reinstall crypto-policies, remove left over packages, and then clean up
+if [ $ARCH = "x86_64" ]; then
+	chroot $TMPDIR/dist dnf -y install cracklib-dicts generic-release --allowerasing
+	chroot $TMPDIR/dist dnf -y reinstall crypto-policies
+	chroot $TMPDIR/dist dnf -y autoremove
+	chroot $TMPDIR/dist dnf -y clean all
+else
+	dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y install cracklib-dicts generic-release --allowerasing
+	dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y reinstall crypto-policies
+	dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y autoremove
+	dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y clean all
+fi
 
-# Copy over some of our required files now that generic-release is installed
+# Copy over some of our custom files
 cp $ORIGINDIR/linux_files/dnf.conf $TMPDIR/dist/etc/dnf/dnf.conf
 cp $ORIGINDIR/linux_files/os-release $TMPDIR/dist/etc/os-release
-
-# Reinstall crypto-policies
-chroot $TMPDIR/dist dnf -y reinstall crypto-policies
-
-# Remove left over packages
-chroot $TMPDIR/dist dnf -y autoremove
-
-# Clean up
-chroot $TMPDIR/dist dnf -y clean all
+cp $ORIGINDIR/linux_files/wsl.conf $TMPDIR/dist/etc/wsl.conf
+cp $ORIGINDIR/linux_files/local.conf $TMPDIR/dist/etc/local.conf
+cp $ORIGINDIR/linux_files/remix.sh $TMPDIR/dist/etc/profile.d/remix.sh
 
 # Unmount /dev
 umount $TMPDIR/dist/dev
-
-# Final copy of our own custom configuration files
-cp $ORIGINDIR/linux_files/wsl.conf $TMPDIR/dist/etc/wsl.conf
-cp $ORIGINDIR/linux_files/local.conf $TMPDIR/dist/etc/local.conf
-
-# Write some custom configuration
-echo '#!/bin/bash' >> $TMPDIR/dist/etc/profile.d/remix.sh
-echo 'export DISPLAY=:0' >> $TMPDIR/dist/etc/profile.d/remix.sh
-echo 'export LIBGL_ALWAYS_INDIRECT=1' >> $TMPDIR/dist/etc/profile.d/remix.sh
-echo 'export NO_AT_BRIDGE=1' >> $TMPDIR/dist/etc/profile.d/remix.sh
 
 # Create filesystem tar, excluding unnecessary files
 cd $TMPDIR/dist
