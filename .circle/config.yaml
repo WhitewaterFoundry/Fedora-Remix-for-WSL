@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  build_x86:
     docker:
       - image: fedora
     steps:
@@ -11,3 +11,14 @@ jobs:
       - store_artifacts:
           path: ./x64/*.tar.gz
           prefix: x64
+  build_arm64:
+    docker:
+      - image: fedora
+    steps:
+      - checkout
+      - run:
+          name: Build arm64
+          command: ./create-targz.sh arm64
+      - store_artifacts:
+          path: ./ARM64/*.tar.gz
+          prefix: ARM64
