@@ -4,6 +4,9 @@ jobs:
     docker:
       - image: fedora
     steps:
+      - run:
+          name: Install git
+          command: dnf -y upgrade ; dnf -y install git
       - checkout
       - run:
           name: Build x86_64
