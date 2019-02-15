@@ -5,8 +5,11 @@ jobs:
       - image: fedora
     steps:
       - run:
+          name: Upgrade fedora
+          command: dnf -y upgrade
+      - run:
           name: Install git
-          command: dnf -y upgrade ; dnf -y install git
+          command: dnf -y install git
       - checkout
       - run:
           name: Build x86_64
@@ -18,6 +21,12 @@ jobs:
     docker:
       - image: fedora
     steps:
+      - run:
+          name: Upgrade fedora
+          command: dnf -y upgrade
+      - run:
+          name: Install git
+          command: dnf -y install git    
       - checkout
       - run:
           name: Build arm64
