@@ -42,6 +42,12 @@ else
 	dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y clean all
 fi
 
+# Install wslu
+cp $ORIGINDIR/linux_files/whitewaterfoundry_wslu.repo $TMPDIR/dist/etc/yum.repos.d/whitewaterfoundry_wslu.repo
+chroot $TMPDIR/dist dnf config-manager --set-enabled whitewaterfoundry_wslu
+chroot $TMPDIR/dist dnf update
+chroot $TMPDIR/dist dnf -y install wslu
+
 # Copy over some of our custom files
 cp $ORIGINDIR/linux_files/dnf.conf $TMPDIR/dist/etc/dnf/dnf.conf
 cp $ORIGINDIR/linux_files/os-release $TMPDIR/dist/etc/os-release
