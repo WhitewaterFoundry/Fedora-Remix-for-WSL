@@ -10,7 +10,7 @@ VER=29
 
 function build {
 # Install dependencies
-sudo dnf install mock qemu-user-static
+dnf install mock qemu-user-static
 
 # Move to our temporary directory
 cd $TMPDIR
@@ -43,10 +43,7 @@ else
 fi
 
 # Install wslu
-cp $ORIGINDIR/linux_files/whitewaterfoundry_wslu.repo $TMPDIR/dist/etc/yum.repos.d/whitewaterfoundry_wslu.repo
-chroot $TMPDIR/dist dnf config-manager --set-enabled whitewaterfoundry_wslu
-chroot $TMPDIR/dist dnf update
-chroot $TMPDIR/dist dnf -y install wslu
+chroot $TMPDIR/dist curl -s https://packagecloud.io/install/repositories/whitewaterfoundry/wslu/script.rpm.sh | sudo bash
 
 # Copy over some of our custom files
 cp $ORIGINDIR/linux_files/dnf.conf $TMPDIR/dist/etc/dnf/dnf.conf
