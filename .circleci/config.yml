@@ -22,3 +22,9 @@ jobs:
       - store_artifacts:
           path: ./ARM64/*.tar.gz
           prefix: ARM64
+
+workflows:
+  build:
+    jobs:
+      - build_x86
+      - build_arm64
