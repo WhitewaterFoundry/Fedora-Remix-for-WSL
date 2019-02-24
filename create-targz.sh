@@ -10,7 +10,7 @@ VER=29
 
 function build {
 # Install dependencies
-sudo dnf install mock qemu-user-static
+dnf install mock qemu-user-static
 
 # Move to our temporary directory
 cd $TMPDIR
@@ -41,6 +41,10 @@ else
 	dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y autoremove
 	dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y clean all
 fi
+
+# Install wslu
+chroot $TMPDIR/dist curl -s https://packagecloud.io/install/repositories/whitewaterfoundry/wslu/script.rpm.sh | sudo bash
+chroot $TMPDIR/dist dnf -y install wslu
 
 # Copy over some of our custom files
 cp $ORIGINDIR/linux_files/dnf.conf $TMPDIR/dist/etc/dnf/dnf.conf
