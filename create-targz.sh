@@ -54,7 +54,8 @@ cp $ORIGINDIR/linux_files/wslutilities.repo $TMPDIR/dist/etc/yum.repos.d/wslutil
 chroot $TMPDIR/dist dnf update
 chroot $TMPDIR/dist dnf -y install wslu
 
-# Unmount /dev
+# Stop gpg and unmount /dev
+killall gpg-agent
 umount $TMPDIR/dist/dev
 
 # Create filesystem tar, excluding unnecessary files
