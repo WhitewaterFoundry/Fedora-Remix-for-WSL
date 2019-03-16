@@ -11,6 +11,7 @@ VER=29
 function build {
 # Install dependencies
 dnf install mock qemu-user-static
+systemctl restart systemd-binfmt.service
 
 # Move to our temporary directory
 cd $TMPDIR
@@ -30,17 +31,14 @@ mount --bind /dev $TMPDIR/dist/dev
 dnf --installroot=$TMPDIR/dist --forcearch=$ARCH -y groupinstall core --exclude=grub\*,sssd-kcm,sssd-common,sssd-client,linux-firmware,dracut*,plymouth,parted,e2fsprogs,iprutils,ppc64-utils,selinux-policy*,policycoreutils,sendmail,man-*,kernel*,firewalld,fedora-release,fedora-logos,fedora-release-notes --allowerasing
 
 # Add additional necessary packages, comply with Fedora Remix terms, reinstall crypto-policies, remove left over packages, and then clean up
-if [ $ARCH = "x86_64" ]; then
-	chroot $TMPDIR/dist dnf -y install cracklib-dicts generic-release --allowerasing
-	chroot $TMPDIR/dist dnf -y reinstall crypto-policies
-	chroot $TMPDIR/dist dnf -y autoremove
-	chroot $TMPDIR/dist dnf -y clean all
-else
-	dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y install cracklib-dicts generic-release --allowerasing
-	dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y reinstall crypto-policies
-	dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y autoremove
-	dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y clean all
+if [ $ARCH = "aarch64" ]; then
+	dnf --installroot=$TMPDIR/dist --forcearch=$ARCH -y install libgcc --allowerasing
 fi
+
+chroot $TMPDIR/dist dnf -y install cracklib-dicts generic-release --allowerasing
+chroot $TMPDIR/dist dnf -y reinstall crypto-policies
+chroot $TMPDIR/dist dnf -y autoremove
+chroot $TMPDIR/dist dnf -y clean all
 
 # Copy over some of our custom files
 cp $ORIGINDIR/linux_files/dnf.conf $TMPDIR/dist/etc/dnf/dnf.conf
@@ -50,15 +48,10 @@ cp $ORIGINDIR/linux_files/local.conf $TMPDIR/dist/etc/local.conf
 cp $ORIGINDIR/linux_files/remix.sh $TMPDIR/dist/etc/profile.d/remix.sh
 cp $ORIGINDIR/linux_files/wslutilities.repo $TMPDIR/dist/etc/yum.repos.d/wslutilties.repo
 
-if [ $ARCH = "x86_64" ]; then
-	chroot $TMPDIR/dist dnf update
-	chroot $TMPDIR/dist dnf -y install wslu
-else
-	cp $ORIGINDIR/linux_files/armfirstrun.sh $TMPDIR/dist/etc/profile.d/armfirstrun.sh
-fi
+chroot $TMPDIR/dist dnf -y update
+chroot $TMPDIR/dist dnf -y install wslu
 
 # Stop gpg and unmount /dev
-killall gpg-agent
 umount $TMPDIR/dist/dev
 
 # Create filesystem tar, excluding unnecessary files
