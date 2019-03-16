@@ -48,7 +48,7 @@ cp $ORIGINDIR/linux_files/os-release $TMPDIR/dist/etc/os-release
 cp $ORIGINDIR/linux_files/wsl.conf $TMPDIR/dist/etc/wsl.conf
 cp $ORIGINDIR/linux_files/local.conf $TMPDIR/dist/etc/local.conf
 cp $ORIGINDIR/linux_files/remix.sh $TMPDIR/dist/etc/profile.d/remix.sh
-cp $ORIGINDIR/linux_files/wslutilties.repo $TMPDIR/dist/etc/yum.repos.d/wslutilties.repo
+cp $ORIGINDIR/linux_files/wslutilities.repo $TMPDIR/dist/etc/yum.repos.d/wslutilties.repo
 
 # Install wslutilities
 chroot $TMPDIR/dist dnf update
