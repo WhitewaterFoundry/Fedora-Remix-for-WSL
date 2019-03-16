@@ -48,8 +48,8 @@ cp $ORIGINDIR/linux_files/wslutilities.repo $TMPDIR/dist/etc/yum.repos.d/wslutil
 dnf --installroot=$TMPDIR/dist --forcearch=$ARCH -y update
 dnf --installroot=$TMPDIR/dist --forcearch=$ARCH -y install wslu
 
-# Stop gpg and unmount /dev
-killall gpg-agent || true
+# Stop gpg-agent, if running, and unmount /dev
+sudo killall gpg-agent || true
 umount $TMPDIR/dist/dev
 
 # Create filesystem tar, excluding unnecessary files
