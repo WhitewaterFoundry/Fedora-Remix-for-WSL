@@ -49,6 +49,7 @@ chroot $TMPDIR/dist dnf -y update
 chroot $TMPDIR/dist dnf -y install wslu
 
 # Stop gpg and unmount /dev
+killall gpg-agent || true
 umount $TMPDIR/dist/dev
 
 # Create filesystem tar, excluding unnecessary files
