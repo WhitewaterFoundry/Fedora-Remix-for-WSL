@@ -42,18 +42,23 @@ else
 	dnf --installroot=$TMPDIR/dist --forcearch=$ARCH --releasever=$VER -y clean all
 fi
 
-# Install wslu
-chroot $TMPDIR/dist curl -s https://packagecloud.io/install/repositories/whitewaterfoundry/wslu/script.rpm.sh | sudo bash
-chroot $TMPDIR/dist dnf -y install wslu
-
 # Copy over some of our custom files
 cp $ORIGINDIR/linux_files/dnf.conf $TMPDIR/dist/etc/dnf/dnf.conf
 cp $ORIGINDIR/linux_files/os-release $TMPDIR/dist/etc/os-release
 cp $ORIGINDIR/linux_files/wsl.conf $TMPDIR/dist/etc/wsl.conf
 cp $ORIGINDIR/linux_files/local.conf $TMPDIR/dist/etc/local.conf
 cp $ORIGINDIR/linux_files/remix.sh $TMPDIR/dist/etc/profile.d/remix.sh
+cp $ORIGINDIR/linux_files/wslutilities.repo $TMPDIR/dist/etc/yum.repos.d/wslutilties.repo
 
-# Unmount /dev
+if [ $ARCH = "x86_64" ]; then
+	chroot $TMPDIR/dist dnf update
+	chroot $TMPDIR/dist dnf -y install wslu
+else
+	cp $ORIGINDIR/linux_files/armfirstrun.sh $TMPDIR/dist/etc/profile.d/armfirstrun.sh
+fi
+
+# Stop gpg and unmount /dev
+killall gpg-agent
 umount $TMPDIR/dist/dev
 
 # Create filesystem tar, excluding unnecessary files
