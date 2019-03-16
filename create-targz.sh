@@ -48,6 +48,9 @@ cp $ORIGINDIR/linux_files/local.conf $TMPDIR/dist/etc/local.conf
 cp $ORIGINDIR/linux_files/remix.sh $TMPDIR/dist/etc/profile.d/remix.sh
 cp $ORIGINDIR/linux_files/wslutilities.repo $TMPDIR/dist/etc/yum.repos.d/wslutilties.repo
 
+chroot $TMPDIR/dist dnf -y update
+chroot $TMPDIR/dist dnf -y install wslu
+
 # Stop gpg and unmount /dev
 umount $TMPDIR/dist/dev
 
