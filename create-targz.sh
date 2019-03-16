@@ -28,7 +28,7 @@ mock --init --dnf --forcearch=$ARCH --rootdir=$TMPDIR/dist
 mount --bind /dev $TMPDIR/dist/dev
 
 # Install required packages, exclude unnecessary packages to reduce image size
-dnf --installroot=$TMPDIR/dist --forcearch=$ARCH -y groupinstall core --exclude=grub\*,sssd-kcm,sssd-common,sssd-client,linux-firmware,dracut*,plymouth,parted,e2fsprogs,iprutils,ppc64-utils,selinux-policy*,policycoreutils,sendmail,man-*,kernel*,firewalld,fedora-release,fedora-logos,fedora-release-notes --allowerasing
+dnf --installroot=$TMPDIR/dist --forcearch=$ARCH -y install @core libgcc --exclude=grub\*,sssd-kcm,sssd-common,sssd-client,linux-firmware,dracut*,plymouth,parted,e2fsprogs,iprutils,ppc64-utils,selinux-policy*,policycoreutils,sendmail,man-*,kernel*,firewalld,fedora-release,fedora-logos,fedora-release-notes --allowerasing
 
 # Add additional necessary packages, comply with Fedora Remix terms, reinstall crypto-policies, remove left over packages, and then clean up
 if [ $ARCH = "aarch64" ]; then
