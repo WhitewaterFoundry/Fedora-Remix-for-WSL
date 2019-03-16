@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" IgnorableNamespaces="uap mp uap2 uap3 rescap desktop">
-  <Identity Name="WhitewaterFoundryLtd.Co.FedoraRemixforWSL" Version="1.0.19.0" Publisher="CN=&quot;Whitewater Foundry, Ltd. Co.&quot;, O=&quot;Whitewater Foundry, Ltd. Co.&quot;, STREET=233 12th Street, STREET=Suite 745E, L=Columbus, S=GA, PostalCode=31901, C=US" ProcessorArchitecture="x64" />
-  <mp:PhoneIdentity PhoneProductId="6367a5bc-ea08-4c03-9bde-43de13e3b7cd" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="WhitewaterFoundryLtd.Co.FedoraRemixforWSL" Version="1.0.28.0" Publisher="CN=&quot;Whitewater Foundry, Ltd. Co.&quot;, O=&quot;Whitewater Foundry, Ltd. Co.&quot;, STREET=233 12th Street, STREET=Suite 745E, L=Columbus, S=GA, PostalCode=31901, C=US" ProcessorArchitecture="x64" />
+  <mp:PhoneIdentity PhoneProductId="cf6ed0bb-b06e-43d9-a37b-f3b43566285b" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Fedora Remix for WSL</DisplayName>
     <PublisherDisplayName>Whitewater Foundry, Ltd. Co.</PublisherDisplayName>
@@ -18,7 +18,7 @@
   </Resources>
   <Applications>
     <Application Id="WLE" Executable="fedoraremix.exe" EntryPoint="Windows.FullTrustApplication">
-      <uap:VisualElements DisplayName="Fedora Remix for WSL" Description="Fedora Remix for WSL. Powered by WLinux Enterprise." Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" BackgroundColor="black">
+      <uap:VisualElements DisplayName="Fedora Remix for WSL" Description="Fedora Remix for WSL. Powered by Pengwin Enterprise." Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" BackgroundColor="black">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png" ShortName="Fedora Remix">
           <uap:ShowNameOnTiles>
             <uap:ShowOn Tile="wide310x150Logo" />
