@@ -31,10 +31,10 @@ mount --bind /dev $TMPDIR/dist/dev
 dnf --installroot=$TMPDIR/dist --forcearch=$ARCH -y install @core libgcc --exclude=grub\*,sssd-kcm,sssd-common,sssd-client,linux-firmware,dracut*,plymouth,parted,e2fsprogs,iprutils,ppc64-utils,selinux-policy*,policycoreutils,sendmail,man-*,kernel*,firewalld,fedora-release,fedora-logos,fedora-release-notes --allowerasing
 
 # Add additional necessary packages, comply with Fedora Remix terms, reinstall crypto-policies, remove left over packages, and then clean up
-chroot $TMPDIR/dist dnf -y install cracklib-dicts generic-release --allowerasing
-chroot $TMPDIR/dist dnf -y reinstall crypto-policies
-chroot $TMPDIR/dist dnf -y autoremove
-chroot $TMPDIR/dist dnf -y clean all
+dnf --installroot=$TMPDIR/dist --forcearch=$ARCH -y install cracklib-dicts generic-release --allowerasing
+dnf --installroot=$TMPDIR/dist --forcearch=$ARCH -y reinstall crypto-policies
+dnf --installroot=$TMPDIR/dist --forcearch=$ARCH -y autoremove
+dnf --installroot=$TMPDIR/dist --forcearch=$ARCH -y clean all
 
 # Copy over some of our custom files
 cp $ORIGINDIR/linux_files/dnf.conf $TMPDIR/dist/etc/dnf/dnf.conf
@@ -45,8 +45,8 @@ cp $ORIGINDIR/linux_files/remix.sh $TMPDIR/dist/etc/profile.d/remix.sh
 cp $ORIGINDIR/linux_files/wslutilities.repo $TMPDIR/dist/etc/yum.repos.d/wslutilties.repo
 
 # Install wslutilities now that repo has been copied into place
-chroot $TMPDIR/dist dnf -y update
-chroot $TMPDIR/dist dnf -y install wslu
+dnf --installroot=$TMPDIR/dist --forcearch=$ARCH -y update
+dnf --installroot=$TMPDIR/dist --forcearch=$ARCH -y install wslu
 
 # Stop gpg and unmount /dev
 killall gpg-agent || true
