@@ -50,9 +50,12 @@ cp $ORIGINDIR/linux_files/local.conf $TMPDIR/dist/etc/local.conf
 cp $ORIGINDIR/linux_files/remix.sh $TMPDIR/dist/etc/profile.d/remix.sh
 cp $ORIGINDIR/linux_files/wslutilities.repo $TMPDIR/dist/etc/yum.repos.d/wslutilties.repo
 
-# Install wslutilities
-chroot $TMPDIR/dist dnf update
-chroot $TMPDIR/dist dnf -y install wslu
+if [ $ARCH = "x86_64" ]; then
+	chroot $TMPDIR/dist dnf update
+	chroot $TMPDIR/dist dnf -y install wslu
+else
+	cp $ORIGINDIR/linux_files/armfirstrun.sh $TMPDIR/dist/etc/profile.d/armfirstrun.sh
+fi
 
 # Stop gpg and unmount /dev
 killall gpg-agent
