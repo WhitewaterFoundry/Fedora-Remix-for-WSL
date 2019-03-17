@@ -28,33 +28,42 @@ mock --init --dnf --forcearch=$ARCH --rootdir=$TMPDIR/dist
 mount --bind /dev $TMPDIR/dist/dev
 
 # Install required packages, exclude unnecessary packages to reduce image size
-dnf --installroot=$TMPDIR/dist --forcearch=$ARCH -y install @core libgcc --exclude=grub\*,sssd-kcm,sssd-common,sssd-client,linux-firmware,dracut*,plymouth,parted,e2fsprogs,iprutils,ppc64-utils,selinux-policy*,policycoreutils,sendmail,man-*,kernel*,firewalld,fedora-release,fedora-logos,fedora-release-notes --allowerasing
+dnf --installroot=$TMPDIR/dist --forcearch=$ARCH -y install @core libgcc --exclude=grub\*,sssd-kcm,sssd-common,sssd-client,linux-firmware,dracut*,plymouth,parted,e2fsprogs,iprutils,iptables,ppc64-utils,selinux-policy*,policycoreutils,sendmail,man-*,kernel*,firewalld,fedora-release,fedora-logos,fedora-release-notes --allowerasing
 
-# Add additional necessary packages, comply with Fedora Remix terms, reinstall crypto-policies, remove left over packages, and then clean up
-chroot $TMPDIR/dist dnf -y install cracklib-dicts generic-release --allowerasing
-chroot $TMPDIR/dist dnf -y reinstall crypto-policies
-chroot $TMPDIR/dist dnf -y autoremove
-chroot $TMPDIR/dist dnf -y clean all
+# Unmount /dev
+umount $TMPDIR/dist/dev
 
 # Copy over some of our custom files
 cp $ORIGINDIR/linux_files/dnf.conf $TMPDIR/dist/etc/dnf/dnf.conf
-cp $ORIGINDIR/linux_files/os-release $TMPDIR/dist/etc/os-release
 cp $ORIGINDIR/linux_files/wsl.conf $TMPDIR/dist/etc/wsl.conf
 cp $ORIGINDIR/linux_files/local.conf $TMPDIR/dist/etc/local.conf
 cp $ORIGINDIR/linux_files/remix.sh $TMPDIR/dist/etc/profile.d/remix.sh
 cp $ORIGINDIR/linux_files/wslutilities.repo $TMPDIR/dist/etc/yum.repos.d/wslutilties.repo
 
-# Install wslutilities now that repo has been copied into place
-chroot $TMPDIR/dist dnf -y update
-chroot $TMPDIR/dist dnf -y install wslu
+# Comply with Fedora Remix terms
+systemd-nspawn -q -D $TMPDIR/dist /bin/bash << EOF
+dnf -y update
+dnf -y install generic-release --allowerasing
+EOF
 
-# Stop gpg and unmount /dev
-killall gpg-agent || true
-umount $TMPDIR/dist/dev
+# Overwrite os-release provided by generic-release
+cp $ORIGINDIR/linux_files/os-release $TMPDIR/dist/etc/os-release
+
+# Install cracklibs-dicts and wslutilities
+systemd-nspawn -q -D $TMPDIR/dist /bin/bash << EOF
+dnf -y install cracklib-dicts wslu
+EOF
+
+# Reinstall crypto-policies and clean up
+systemd-nspawn -q -D $TMPDIR/dist /bin/bash << EOF
+dnf -y reinstall crypto-policies --exclude=grub\*,dracut*,grubby,kpartx,kmod,os-prober,libkcapi*
+dnf -y autoremove
+dnf -y clean all
+EOF
 
 # Create filesystem tar, excluding unnecessary files
 cd $TMPDIR/dist
-tar --exclude='boot/*' --exclude='var/cache/dnf/*' --numeric-owner -czvf $ORIGINDIR/$ARCHDIR/install.tar.gz *
+tar --exclude='boot/*' --exclude='var/cache/dnf/*' --numeric-owner -czf $ORIGINDIR/$ARCHDIR/install.tar.gz *
 
 # Cleanup
 rm -rf $TMPDIR
