@@ -6,7 +6,7 @@ ORIGINDIR=$(pwd)
 TMPDIR=$(mktemp -d)
 ARCH=""
 ARCHDIR=""
-VER=29
+VER=30
 
 function build {
 # Install dependencies
