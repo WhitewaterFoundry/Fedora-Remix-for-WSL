@@ -54,11 +54,11 @@ HRESULT InstallDistribution(bool createUser)
 		return hr;
 	}
 
-    // Configure dbus
-    hr = g_wslApi.WslLaunchInteractive(L"dbus-uuidgen --ensure", true, &exitCode);
-	if (FAILED(hr)) {
-		return hr;
-	}
+    // Configure dbus (no longer required as of Fedora 30)
+    // hr = g_wslApi.WslLaunchInteractive(L"dbus-uuidgen --ensure", true, &exitCode);
+	// if (FAILED(hr)) {
+	//	return hr;
+	// }
 
 	// Display welcome
 	Helpers::PrintMessage(MSG_WELCOME_MSG_PROMPT);
