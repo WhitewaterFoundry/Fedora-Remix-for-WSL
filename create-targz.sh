@@ -10,7 +10,7 @@ VER=30
 
 function build {
 # Install dependencies
-dnf install mock qemu-user-static
+dnf -y install mock qemu-user-static
 systemctl restart systemd-binfmt.service
 
 # Move to our temporary directory
