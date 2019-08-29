@@ -2,6 +2,7 @@
 
 # Set environment
 set -e
+echo 'Setting ORIGINDIR as '$(pwd)
 ORIGINDIR=$(pwd)
 TMPDIR=$(mktemp -d)
 ARCH=""
@@ -15,7 +16,6 @@ dnf -y install mock qemu-user-static
 systemctl restart systemd-binfmt.service
 
 # Move to our temporary directory
-cd $TMPDIR
 mkdir $TMPDIR/dist
 
 # Make sure /dev is created before later mount
@@ -34,15 +34,12 @@ dnf --installroot=$TMPDIR/dist --forcearch=$ARCH -y install @core libgcc glibc-l
 # Unmount /dev
 umount $TMPDIR/dist/dev
 
-# Go to our origin directory to prepare to copy files
-cd $ORIGINDIR
-
 # Copy over some of our custom files
-cp ./linux_files/dnf.conf $TMPDIR/dist/etc/dnf/dnf.conf
-cp ./linux_files/wsl.conf $TMPDIR/dist/etc/wsl.conf
-cp ./linux_files/local.conf $TMPDIR/dist/etc/local.conf
-cp ./linux_files/remix.sh $TMPDIR/dist/etc/profile.d/remix.sh
-cp ./linux_files/wslutilities.repo $TMPDIR/dist/etc/yum.repos.d/wslutilties.repo
+cp $ORIGINDIR/linux_files/dnf.conf $TMPDIR/dist/etc/dnf/dnf.conf
+cp $ORIGINDIR/linux_files/wsl.conf $TMPDIR/dist/etc/wsl.conf
+cp $ORIGINDIR/linux_files/local.conf $TMPDIR/dist/etc/local.conf
+cp $ORIGINDIR/linux_files/remix.sh $TMPDIR/dist/etc/profile.d/remix.sh
+cp $ORIGINDIR/linux_files/wslutilities.repo $TMPDIR/dist/etc/yum.repos.d/wslutilties.repo
 
 # Comply with Fedora Remix terms
 systemd-nspawn -q -D $TMPDIR/dist /bin/bash << EOF
