@@ -34,12 +34,15 @@ dnf --installroot=$TMPDIR/dist --forcearch=$ARCH -y install @core libgcc glibc-l
 # Unmount /dev
 umount $TMPDIR/dist/dev
 
+# Go to our origin directory to prepare to copy files
+cd $ORIGINDIR
+
 # Copy over some of our custom files
-cp $ORIGINDIR/linux_files/dnf.conf $TMPDIR/dist/etc/dnf/dnf.conf
-cp $ORIGINDIR/linux_files/wsl.conf $TMPDIR/dist/etc/wsl.conf
-cp $ORIGINDIR/linux_files/local.conf $TMPDIR/dist/etc/local.conf
-cp $ORIGINDIR/linux_files/remix.sh $TMPDIR/dist/etc/profile.d/remix.sh
-cp $ORIGINDIR/linux_files/wslutilities.repo $TMPDIR/dist/etc/yum.repos.d/wslutilties.repo
+cp ./linux_files/dnf.conf $TMPDIR/dist/etc/dnf/dnf.conf
+cp ./linux_files/wsl.conf $TMPDIR/dist/etc/wsl.conf
+cp ./linux_files/local.conf $TMPDIR/dist/etc/local.conf
+cp ./linux_files/remix.sh $TMPDIR/dist/etc/profile.d/remix.sh
+cp ./linux_files/wslutilities.repo $TMPDIR/dist/etc/yum.repos.d/wslutilties.repo
 
 # Comply with Fedora Remix terms
 systemd-nspawn -q -D $TMPDIR/dist /bin/bash << EOF
@@ -48,7 +51,7 @@ dnf -y install generic-release --allowerasing
 EOF
 
 # Overwrite os-release provided by generic-release
-cp $ORIGINDIR/linux_files/os-release $TMPDIR/dist/etc/os-release
+cp ./linux_files/os-release $TMPDIR/dist/etc/os-release
 
 # Install cracklibs-dicts and wslutilities
 systemd-nspawn -q -D $TMPDIR/dist /bin/bash << EOF
@@ -65,6 +68,9 @@ EOF
 # Create filesystem tar, excluding unnecessary files
 cd $TMPDIR/dist
 tar --exclude='boot/*' --exclude='var/cache/dnf/*' --numeric-owner -czf $ORIGINDIR/$ARCHDIR/install.tar.gz *
+
+# Return to origin directory
+cd $ORIGINDIR
 
 # Cleanup
 rm -rf $TMPDIR
