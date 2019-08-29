@@ -29,7 +29,7 @@ mock --init --dnf --forcearch=$ARCH --rootdir=$TMPDIR/dist
 mount --bind /dev $TMPDIR/dist/dev
 
 # Install required packages, exclude unnecessary packages to reduce image size
-dnf --installroot=$TMPDIR/dist --forcearch=$ARCH -y install @core libgcc glibc-langpack-en --exclude=grub\*,sssd-common,sssd-client,linux-firmware,dracut*,e2fsprogs,iprutils,iptables,ppc64-utils,selinux-policy*,policycoreutils,sendmail,man-*,kernel*,fedora-release,fedora-logos,fedora-release-notes --allowerasing
+dnf --installroot=$TMPDIR/dist --forcearch=$ARCH -y install @core libgcc glibc-langpack-en --exclude=grub\*,sssd-kcm,sssd-common,sssd-client,linux-firmware,dracut*,plymouth,parted,e2fsprogs,iprutils,iptables,ppc64-utils,selinux-policy*,policycoreutils,sendmail,man-*,kernel*,firewalld,fedora-release,fedora-logos,fedora-release-notes --allowerasing
 
 # Unmount /dev
 umount $TMPDIR/dist/dev
