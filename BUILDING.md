@@ -1,4 +1,4 @@
-For building steps, generally follow the WLinux building guide [here](https://github.com/WhitewaterFoundry/WLinux/blob/master/BUILDING.md).
+For building steps, generally follow the Pengwin building guide [here](https://github.com/WhitewaterFoundry/Pengwin/blob/master/BUILDING.md).
 
 .diff:
 

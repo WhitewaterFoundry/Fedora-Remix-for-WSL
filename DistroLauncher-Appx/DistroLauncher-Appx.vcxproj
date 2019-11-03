@@ -81,7 +81,7 @@
     <AppxBundlePlatforms>x64|arm64</AppxBundlePlatforms>
     <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
     <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
-    <AppxPackageDir>C:\Users\Hayden\OneDrive\Desktop\</AppxPackageDir>
+    <AppxPackageDir>..\AppPackages\DistroLauncher-Appx</AppxPackageDir>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <Link>

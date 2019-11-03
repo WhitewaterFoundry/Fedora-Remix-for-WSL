@@ -17,7 +17,7 @@ Fedora Remix for WSL is provided on a community-support basis. There is no suppo
 ### General WSL and Fedora documentation:
 
 - [Install Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
-- [Fedora 29 User Documentation](https://docs.fedoraproject.org/en-US/fedora/f29/)
+- [Fedora 30 User Documentation](https://docs.fedoraproject.org/en-US/fedora/f30/)
 - [Fedora Project Wiki](https://fedoraproject.org/wiki/Fedora_Project_Wiki)
 - [Fedora Project IRC](https://fedoraproject.org/wiki/IRC)
 - [Fedora Project: How to file a bug report](https://fedoraproject.org/wiki/How_to_file_a_bug_report)
