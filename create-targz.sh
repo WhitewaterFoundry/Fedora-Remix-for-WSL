@@ -3,10 +3,10 @@
 # Set environment
 set -e
 ORIGINDIR=$(pwd)
-TMPDIR=$(mktemp -d)
+TMPDIR=$(mktemp -d -p $ORIGINDIR)
 ARCH=""
 ARCHDIR=""
-VER=30
+VER=31
 
 function build {
 # Install dependencies
@@ -28,7 +28,7 @@ mock --init --dnf --forcearch=$ARCH --rootdir=$TMPDIR/dist
 mount --bind /dev $TMPDIR/dist/dev
 
 # Install required packages, exclude unnecessary packages to reduce image size
-dnf --installroot=$TMPDIR/dist --forcearch=$ARCH -y install @core libgcc glibc-langpack-en --exclude=grub\*,sssd-kcm,sssd-common,sssd-client,linux-firmware,dracut*,plymouth,parted,e2fsprogs,iprutils,iptables,ppc64-utils,selinux-policy*,policycoreutils,sendmail,man-*,kernel*,firewalld,fedora-release,fedora-logos,fedora-release-notes --allowerasing
+dnf --installroot=$TMPDIR/dist --forcearch=$ARCH -y install @core libgcc glibc-langpack-en --exclude=grub\*,sssd-kcm,sssd-common,sssd-client,linux-firmware,dracut*,plymouth,parted,e2fsprogs,iprutils,iptables,ppc64-utils,selinux-policy*,policycoreutils,sendmail,kernel*,firewalld,fedora-release,fedora-logos,fedora-release-notes --allowerasing
 
 # Unmount /dev
 umount $TMPDIR/dist/dev
@@ -41,7 +41,7 @@ cp $ORIGINDIR/linux_files/remix.sh $TMPDIR/dist/etc/profile.d/remix.sh
 cp $ORIGINDIR/linux_files/wslutilities.repo $TMPDIR/dist/etc/yum.repos.d/wslutilties.repo
 
 # Comply with Fedora Remix terms
-systemd-nspawn -q -D $TMPDIR/dist /bin/bash << EOF
+systemd-nspawn -q -D $TMPDIR/dist --pipe /bin/bash << EOF
 dnf -y update
 dnf -y install generic-release --allowerasing
 EOF
@@ -50,12 +50,28 @@ EOF
 cp $ORIGINDIR/linux_files/os-release $TMPDIR/dist/etc/os-release
 
 # Install cracklibs-dicts and wslutilities
-systemd-nspawn -q -D $TMPDIR/dist /bin/bash << EOF
-dnf -y install cracklib-dicts wslu
+systemd-nspawn -q -D $TMPDIR/dist --pipe /bin/bash << EOF
+dnf -y install --allowerasing --skip-broken cracklib-dicts wslu
+EOF
+
+# Install bash-completion, vim, wget
+systemd-nspawn -q -D $TMPDIR/dist --pipe /bin/bash << EOF
+dnf -y install bash-completion vim wget
+
+echo "set background=dark" >> /etc/skel/.vimrc
+echo "set visualbell" >> /etc/skel/.vimrc
+echo "set noerrorbells" >> /etc/skel/.vimrc
+echo "syntax on" >> /etc/skel/.vimrc
+
+EOF
+
+# Fix ping
+systemd-nspawn -q -D $TMPDIR/dist --pipe /bin/bash << EOF
+chmod u+s "$(which ping)"
 EOF
 
 # Reinstall crypto-policies and clean up
-systemd-nspawn -q -D $TMPDIR/dist /bin/bash << EOF
+systemd-nspawn -q -D $TMPDIR/dist --pipe /bin/bash << EOF
 dnf -y reinstall crypto-policies --exclude=grub\*,dracut*,grubby,kpartx,kmod,os-prober,libkcapi*
 dnf -y autoremove
 dnf -y clean all
