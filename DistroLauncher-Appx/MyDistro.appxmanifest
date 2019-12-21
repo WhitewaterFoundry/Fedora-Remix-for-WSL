@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" IgnorableNamespaces="uap mp uap2 uap3 rescap desktop">
-  <Identity Name="WhitewaterFoundryLtd.Co.FedoraRemixforWSL" Version="1.0.28.0" Publisher="CN=&quot;Whitewater Foundry, Ltd. Co.&quot;, O=&quot;Whitewater Foundry, Ltd. Co.&quot;, STREET=233 12th Street, STREET=Suite 745E, L=Columbus, S=GA, PostalCode=31901, C=US" ProcessorArchitecture="x64" />
-  <mp:PhoneIdentity PhoneProductId="cf6ed0bb-b06e-43d9-a37b-f3b43566285b" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="WhitewaterFoundryLtd.Co.FedoraRemixforWSL" Version="1.31.6.0" Publisher="CN=&quot;Whitewater Foundry, Ltd. Co.&quot;, O=&quot;Whitewater Foundry, Ltd. Co.&quot;, STREET=233 12th Street, STREET=Suite 745E, L=Columbus, S=GA, PostalCode=31901, C=US" ProcessorArchitecture="x64" />
   <Properties>
     <DisplayName>Fedora Remix for WSL</DisplayName>
     <PublisherDisplayName>Whitewater Foundry, Ltd. Co.</PublisherDisplayName>
