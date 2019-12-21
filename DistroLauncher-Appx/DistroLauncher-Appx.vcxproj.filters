@@ -176,5 +176,6 @@
     <CustomBuild Include="$(targetname)" />
     <CustomBuild Include="$(targetname)" />
     <CustomBuild Include="$(targetname)" />
+    <CustomBuild Include="$(targetname)" />
   </ItemGroup>
 </Project>
