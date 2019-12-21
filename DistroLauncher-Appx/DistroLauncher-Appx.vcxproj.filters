@@ -155,8 +155,18 @@
     <None Include="WF.pfx" />
     <None Include="..\ARM64\install.tar.gz" />
     <None Include="Package.StoreAssociation.xml" />
+    <None Include="..\x64\install.tar.gz" />
   </ItemGroup>
   <ItemGroup>
+    <CustomBuild Include="$(targetname)" />
+    <CustomBuild Include="$(targetname)" />
+    <CustomBuild Include="$(targetname)" />
+    <CustomBuild Include="$(targetname)" />
+    <CustomBuild Include="$(targetname)" />
+    <CustomBuild Include="$(targetname)" />
+    <CustomBuild Include="$(targetname)" />
+    <CustomBuild Include="$(targetname)" />
+    <CustomBuild Include="$(targetname)" />
     <CustomBuild Include="$(targetname)" />
     <CustomBuild Include="$(targetname)" />
     <CustomBuild Include="$(targetname)" />

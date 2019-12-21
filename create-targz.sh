@@ -37,7 +37,7 @@ umount $TMPDIR/dist/dev
 cp $ORIGINDIR/linux_files/dnf.conf $TMPDIR/dist/etc/dnf/dnf.conf
 cp $ORIGINDIR/linux_files/wsl.conf $TMPDIR/dist/etc/wsl.conf
 cp $ORIGINDIR/linux_files/local.conf $TMPDIR/dist/etc/local.conf
-cp $ORIGINDIR/linux_files/remix.sh $TMPDIR/dist/etc/profile.d/remix.sh
+cp $ORIGINDIR/linux_files/00-remix.sh $TMPDIR/dist/etc/profile.d/00-remix.sh
 cp $ORIGINDIR/linux_files/wslutilities.repo $TMPDIR/dist/etc/yum.repos.d/wslutilties.repo
 
 # Comply with Fedora Remix terms
