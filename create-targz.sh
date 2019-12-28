@@ -58,15 +58,15 @@ EOF
 systemd-nspawn -q -D $TMPDIR/dist --pipe /bin/bash << EOF
 dnf -y install bash-completion vim wget
 
-echo "source /etc/vimrc" > /etc/skel/.vimrc
-echo "set background=dark" >> /etc/skel/.vimrc
-echo "set visualbell" >> /etc/skel/.vimrc
-echo "set noerrorbells" >> /etc/skel/.vimrc
+echo 'source /etc/vimrc' > /etc/skel/.vimrc
+echo 'set background=dark' >> /etc/skel/.vimrc
+echo 'set visualbell' >> /etc/skel/.vimrc
+echo 'set noerrorbells' >> /etc/skel/.vimrc
 
-echo "\$include /etc/inputrc" > /etc/skel/.inputrc
-echo "set bell-style none" >> /etc/skel/.inputrc
-echo "set show-all-if-ambiguous on" >> /etc/skel/.inputrc
-echo "set show-all-if-unmodified on" >> /etc/skel/.inputrc
+echo '\$include /etc/inputrc' > /etc/skel/.inputrc
+echo 'set bell-style none' >> /etc/skel/.inputrc
+echo 'set show-all-if-ambiguous on' >> /etc/skel/.inputrc
+echo 'set show-all-if-unmodified on' >> /etc/skel/.inputrc
 EOF
 
 # Fix ping
