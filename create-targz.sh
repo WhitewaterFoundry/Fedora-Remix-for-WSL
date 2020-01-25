@@ -10,8 +10,11 @@ VER=31
 
 function build {
 # Install dependencies
-dnf -y install mock qemu-user-static
-systemctl restart systemd-binfmt.service
+dnf -y install mock
+if [ "$(uname -i)" != "$ARCH" ] ; then
+	dnf -y install qemu-user-static
+	systemctl restart systemd-binfmt.service
+fi
 
 # Move to our temporary directory
 cd $TMPDIR
