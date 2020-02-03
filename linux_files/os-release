@@ -1,4 +1,4 @@
-NAME=Fedora Remix for WSL
+NAME="Fedora Remix for WSL"
 VERSION="31"
 ID=fedoraremixforwsl
 ID_LIKE=fedora
