@@ -46,7 +46,10 @@ alias ll='ls -al'
 if ( which cmd.exe >/dev/null ); then
 
   # Create a symbolic link to the windows home
-  wHomeWinPath=$(cmd.exe /c 'echo %HOMEDRIVE%%HOMEPATH%' 2>/dev/null | tr -d '\r')
+
+  # Here have a issue: %HOMEDRIVE% might be using a custom set location
+  # moving cmd to where Windows is installed might help: %SYSTEMDRIVE%
+  wHomeWinPath=$(cmd.exe /c 'cd %SYSTEMDRIVE%\ && echo %HOMEDRIVE%%HOMEPATH%' 2>/dev/null | tr -d '\r')
   export WIN_HOME=$(wslpath -u "${wHomeWinPath}")
 
   win_home_lnk=${HOME}/winhome
