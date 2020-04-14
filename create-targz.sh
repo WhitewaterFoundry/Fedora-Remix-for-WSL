@@ -3,7 +3,7 @@
 # Set environment
 set -e
 ORIGINDIR=$(pwd)
-TMPDIR=$(mktemp -d -p $ORIGINDIR)
+TMPDIR=$(mktemp -d -p "$ORIGINDIR")
 ARCH=""
 ARCHDIR=""
 
@@ -101,7 +101,7 @@ function usage() {
 }
 
 # Accept argument input for architecture type
-ARCH=$@
+ARCH="$1"
 if [ "$ARCH" = "x86_64" ]; then
   ARCH="x86_64"
   ARCHDIR="x64"
