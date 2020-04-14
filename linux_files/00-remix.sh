@@ -59,10 +59,13 @@ alias clear='clear -x'
 alias ll='ls -al'
 
 # Check if we have Windows Path
-if (command -v cmd.exe >/dev/null); then
+if (command -v cmd.exe >/dev/null 2>&1); then
 
   # Create a symbolic link to the windows home
-  wHomeWinPath=$(cmd.exe /c 'echo %HOMEDRIVE%%HOMEPATH%' 2>/dev/null | tr -d '\r')
+
+  # Here have a issue: %HOMEDRIVE% might be using a custom set location
+  # moving cmd to where Windows is installed might help: %SYSTEMDRIVE%
+  wHomeWinPath=$(cmd.exe /c 'cd %SYSTEMDRIVE%\ && echo %HOMEDRIVE%%HOMEPATH%' 2>/dev/null | tr -d '\r')
 
   # shellcheck disable=SC2155
   export WIN_HOME=$(wslpath -u "${wHomeWinPath}")
