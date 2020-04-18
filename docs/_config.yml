@@ -1,4 +1,6 @@
 theme: jekyll-theme-minimal
+site.name: "Fedora Remix for WSL How To's"
+
 defaults:
   -
     scope:
