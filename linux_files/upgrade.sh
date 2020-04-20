@@ -4,11 +4,12 @@ sha256sum /usr/local/bin/upgrade.sh >/tmp/sum.txt
 sudo curl -f https://raw.githubusercontent.com/WhitewaterFoundry/Fedora-Remix-for-WSL/master/linux_files/upgrade.sh -o /usr/local/bin/upgrade.sh
 sha256sum -c /tmp/sum.txt
 
-RESULT=$?
+CHANGED=$?
 rm -r /tmp/sum.txt
 
 # the script has changed? run the newer one
-if [[ ! ${RESULT} ]]; then
+if [ ${CHANGED} -eq 1 ]; then
+  echo Running the updated script
   bash /usr/local/bin/upgrade.sh
   exit 0
 fi
