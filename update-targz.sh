@@ -59,6 +59,9 @@ sudo chroot rootfs/ dnf -y clean all
 echo 'Copy files'
 sudo cp /vagrant/linux_files/00-remix.sh rootfs/etc/profile.d/
 sudo cp /vagrant/linux_files/os-release rootfs/etc/
+sudo cp /vagrant/linux_files/upgrade.sh rootfs/usr/local/bin/
+
+sudo chmod +x rootfs/usr/local/bin/upgrade.sh
 
 echo 'Deleting QEMU from chroot'
 sudo rm rootfs/usr/bin/qemu-"${PREBOOTSTRAP_QEMU_ARCH}"-static
