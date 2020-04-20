@@ -19,7 +19,7 @@ sudo curl -f https://raw.githubusercontent.com/WhitewaterFoundry/Fedora-Remix-fo
 
 sudo rm -f /etc/yum.repos.d/wslutilties.repo
 (
-  sudo rm /var/lib/rpm/.rpm.lock
+  sudo rm -f /var/lib/rpm/.rpm.lock
   source /etc/os-release && sudo dnf -y copr enable wslutilities/wslu "${ID_LIKE}"-"${VERSION_ID}"-"$(uname -m)"
 )
 sudo rm -f /var/lib/rpm/.rpm.lock
