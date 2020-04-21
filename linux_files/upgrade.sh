@@ -21,7 +21,7 @@ sudo dnf -y update
 sudo rm -f /var/lib/rpm/.rpm.lock
 
 # WSLU 3 is not installed
-if [ "$(wslsys -v | grep -c "3\.")" -eq 0 ]; then
+if [ "$(wslsys -v | grep -c "v3\.")" -eq 0 ]; then
   (
     source /etc/os-release && sudo dnf -y copr enable wslutilities/wslu "${ID_LIKE}"-"${VERSION_ID}"-"$(uname -m)"
   )
