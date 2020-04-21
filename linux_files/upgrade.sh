@@ -2,6 +2,7 @@
 
 sha256sum /usr/local/bin/upgrade.sh >/tmp/sum.txt
 sudo curl -f https://raw.githubusercontent.com/WhitewaterFoundry/Fedora-Remix-for-WSL/master/linux_files/upgrade.sh -o /usr/local/bin/upgrade.sh
+sudo chmod +x /usr/local/bin/upgrade.sh
 sha256sum -c /tmp/sum.txt
 
 CHANGED=$?
