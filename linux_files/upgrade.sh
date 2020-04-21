@@ -14,10 +14,6 @@ if [ ${CHANGED} -eq 1 ]; then
   exit 0
 fi
 
-# Update the release and main startup script files
-sudo curl -f https://raw.githubusercontent.com/WhitewaterFoundry/Fedora-Remix-for-WSL/master/linux_files/00-remix.sh -o /etc/profile.d/00-remix.sh
-sudo curl -f https://raw.githubusercontent.com/WhitewaterFoundry/Fedora-Remix-for-WSL/master/linux_files/os-release -o /etc/os-release
-
 sudo rm -f /etc/yum.repos.d/wslutilties.repo
 (
   sudo rm -f /var/lib/rpm/.rpm.lock
@@ -26,9 +22,11 @@ sudo rm -f /etc/yum.repos.d/wslutilties.repo
 sudo rm -f /var/lib/rpm/.rpm.lock
 sudo dnf -y update wslu
 
-sudo rm -f /var/lib/rpm/.rpm.lock
-sudo dnf -y update
+# Update the release and main startup script files
+sudo curl -f https://raw.githubusercontent.com/WhitewaterFoundry/Fedora-Remix-for-WSL/master/linux_files/00-remix.sh -o /etc/profile.d/00-remix.sh
+sudo curl -f https://raw.githubusercontent.com/WhitewaterFoundry/Fedora-Remix-for-WSL/master/linux_files/os-release -o /etc/os-release
 
 sudo rm -f /var/lib/rpm/.rpm.lock
 sudo dnf -y update
+sudo rm -f /var/lib/rpm/.rpm.lock
 
