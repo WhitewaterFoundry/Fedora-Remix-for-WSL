@@ -21,7 +21,7 @@ if [ -n "${WSL_INTEROP}" ]; then
   if [ -n "${wsl2_d_tmp}" ]; then
 
     wsl2_d_tmp="$(eval "$ipconfig_exec" | sed "$((wsl2_d_tmp - 4))"','"$((wsl2_d_tmp + 0))"'!d' | grep IPv4 | cut -d : -f 2 | sed -e "s|\s||g" -e "s|\r||g")"
-    export DISPLAY=${wsl2_d_tmp}:0.0
+    export DISPLAY=${wsl2_d_tmp}:0
   else
     wsl2_d_tmp="$(grep </etc/resolv.conf nameserver | awk '{print $2}')"
     export DISPLAY=${wsl2_d_tmp}:0
@@ -31,7 +31,7 @@ if [ -n "${WSL_INTEROP}" ]; then
   unset ipconfig_exec
 else
   # enable external x display for WSL 1
-  export DISPLAY=:0
+  export DISPLAY=localhost:0
 
   # Export an environment variable for helping other processes
   unset WSL2
