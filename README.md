@@ -1,4 +1,4 @@
-<img src="https://fedoraproject.org/w/uploads/thumb/f/f1/Fedora_remix_blue.png/320px-Fedora_remix_blue.png" height=25% width=25%>
+<img src="https://fedoraproject.org/w/uploads/f/f9/Fedora_remix_purple.png" height=25% width=25%>
 
 # Fedora Remix for Windows Subsystem for Linux (WSL)
 
