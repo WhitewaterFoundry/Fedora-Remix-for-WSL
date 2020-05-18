@@ -33,3 +33,6 @@ fi
 # Update the release and main startup script files
 sudo curl -f https://raw.githubusercontent.com/WhitewaterFoundry/Fedora-Remix-for-WSL/master/linux_files/00-remix.sh -o /etc/profile.d/00-remix.sh
 sudo curl -f https://raw.githubusercontent.com/WhitewaterFoundry/Fedora-Remix-for-WSL/master/linux_files/os-release -o /etc/os-release
+
+# Add local.conf to fonts
+sudo curl -f https://raw.githubusercontent.com/WhitewaterFoundry/Fedora-Remix-for-WSL/master/linux_files/local.conf -o /etc/fonts/local.conf
