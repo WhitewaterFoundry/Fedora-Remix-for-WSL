@@ -60,6 +60,7 @@ echo 'Copy files'
 sudo cp /vagrant/linux_files/00-remix.sh rootfs/etc/profile.d/
 sudo cp /vagrant/linux_files/os-release rootfs/etc/
 sudo cp /vagrant/linux_files/upgrade.sh rootfs/usr/local/bin/
+sudo cp /vagrant/linux_files/local.conf rootfs/etc/fonts/
 
 sudo chmod +x rootfs/usr/local/bin/upgrade.sh
 

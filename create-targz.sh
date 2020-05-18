@@ -39,7 +39,7 @@ function build() {
   # Copy over some of our custom files
   cp "$ORIGINDIR"/linux_files/dnf.conf "$TMPDIR"/dist/etc/dnf/dnf.conf
   cp "$ORIGINDIR"/linux_files/wsl.conf "$TMPDIR"/dist/etc/wsl.conf
-  cp "$ORIGINDIR"/linux_files/local.conf "$TMPDIR"/dist/etc/local.conf
+  cp "$ORIGINDIR"/linux_files/local.conf "$TMPDIR"/dist/etc/fonts/local.conf
   cp "$ORIGINDIR"/linux_files/00-remix.sh "$TMPDIR"/dist/etc/profile.d/00-remix.sh
   cp "$ORIGINDIR"/linux_files/wslutilities.repo "$TMPDIR"/dist/etc/yum.repos.d/wslutilties.repo
 
