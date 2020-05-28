@@ -44,8 +44,8 @@ else
   export LIBGL_ALWAYS_INDIRECT=1
 fi
 
-# if dbus-daemon is installed then load it
-if (command -v dbus-daemon >/dev/null 2>&1); then
+# if dbus-launch is installed then load it
+if (command -v dbus-launch >/dev/null 2>&1); then
   eval "$(timeout 2s dbus-launch --auto-syntax)"
 fi
 
