@@ -61,6 +61,7 @@ Whitewater Foundry devs monitor the Fedora Remix for WSL GitHub issues page howe
 - Microsoft Store: [Pengwin](https://www.microsoft.com/en-us/p/wlinux/9nv1gv1pxz6p)
 - Microsoft Store: [Pengwin Enterprise (Demo)](https://www.microsoft.com/en-us/p/wlinux-enterprise/9n8lp0x93vcp)
 - Microsoft Store: [Fedora Remix for WSL](https://www.microsoft.com/en-us/p/fedora-remix-for-wsl/9n6gdm4k2hnc)
+- Microsoft Store: [Raft WSL](https://www.microsoft.com/store/apps/9ND3HNW6PNDK)
 
 ### Isn't Fedora free?
 
