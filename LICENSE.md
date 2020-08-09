@@ -4,7 +4,7 @@
 
 # Trademarks
 
-- WLinux and Whitewater Foundry are trademarks of Whitewater Foundry, Ltd. Co. You may use the WLinux and Whitewater Foundry trademark in any lawful manner in compliance with your local trademark laws.
+- WLinux, Pengwin, Pengwin Enterprise and Whitewater Foundry are trademarks of Whitewater Foundry, Ltd. Co. You may use the WLinux and Whitewater Foundry trademark in any lawful manner in compliance with your local trademark laws.
 
 - Fedora®, Red Hat®, and the Fedora Project® are trademarks of Red Hat, Inc. Fedora Remix is used in compliance with the [Fedora Project Trademark Guidelines](https://fedoraproject.org/wiki/Legal:Trademark_guidelines) and [Remix Guidance](https://fedoraproject.org/wiki/Legal:Trademark_guidelines#Secondary_Mark).
 
