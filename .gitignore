@@ -295,3 +295,7 @@ DistroLauncher/messages.h
 *.dll
 *.exe
 *.tar.gz
+/rootfs/
+/x64/install.tar.gz.bak
+/ARM64/install.tar.gz.bak
+/.vagrant/rgloader/
