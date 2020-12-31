@@ -7,7 +7,6 @@ TMPDIR=$(mktemp -d -p "${HOME}")
 ARCH=""
 ARCHDIR=""
 
-set -x
 function build() {
   # Install dependencies
   dnf -y update
@@ -38,7 +37,7 @@ function build() {
   umount "$TMPDIR"/dist/dev
 
   mkdir -p "$TMPDIR"/dist/etc/fonts/
-  mkdir -p "$TMPDIR"/usr/local/bin/
+  mkdir -p "$TMPDIR"/dist/usr/local/bin/
   
   # Fix dnf.conf
   # shellcheck disable=SC2155
@@ -54,7 +53,10 @@ function build() {
   cp "$ORIGINDIR"/linux_files/wsl.conf "$TMPDIR"/dist/etc/
   cp "$ORIGINDIR"/linux_files/local.conf "$TMPDIR"/dist/etc/fonts/
   cp "$ORIGINDIR"/linux_files/00-remix.sh "$TMPDIR"/dist/etc/profile.d/
-  cp "$ORIGINDIR"/linux_files/upgrade.sh "$TMPDIR"/usr/local/bin/
+  chmod -x "$TMPDIR"/dist/etc/profile.d/00-remix.sh
+  
+  cp "$ORIGINDIR"/linux_files/upgrade.sh "$TMPDIR"/dist/usr/local/bin/
+  chmod +x "$TMPDIR"/dist/usr/local/bin/upgrade.sh
 
   # Comply with Fedora Remix terms
   systemd-nspawn -q -D "$TMPDIR"/dist --pipe /bin/bash <<EOF
@@ -99,7 +101,9 @@ EOF
 
   # 'Setup WSLU
   systemd-nspawn -q -D "$TMPDIR"/dist --pipe /bin/bash <<EOF
-dnf -y copr enable wslutilities/wslu "${ID_LIKE}-${VERSION_ID}-${ARCH}"
+(
+  source /etc/os-release && dnf -y copr enable wslutilities/wslu "\${ID_LIKE}-\${VERSION_ID}-${ARCH}"
+)
 dnf -y install wslu
 EOF
 
