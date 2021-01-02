@@ -63,7 +63,9 @@ function build() {
   # Comply with Fedora Remix terms
   systemd-nspawn -q -D "${TMPDIR}"/dist --pipe /bin/bash <<EOF
 dnf -y update
-dnf -y install generic-release --allowerasing
+dnf -y remove fedora-release-identity-basic
+dnf -y install generic-release --allowerasing  --releasever="${VERSION_ID}"
+dnf -y install audit setup fedora-repos-modular shadow-utils
 EOF
 
   # Overwrite os-release provided by generic-release
@@ -109,6 +111,9 @@ EOF
 dnf -y install wslu
 EOF
 
+  # Copy dnf.conf
+  cp "${ORIGINDIR}"/linux_files/dnf.conf "${TMPDIR}"/dist/etc/dnf/dnf.conf
+    
   # Create filesystem tar, excluding unnecessary files
   cd "${TMPDIR}"/dist
   tar --exclude='boot/*' --exclude=proc --exclude=dev --exclude=sys --exclude='var/cache/dnf/*' --numeric-owner -czf "${ORIGINDIR}"/"${ARCHDIR}"/install.tar.gz ./*
