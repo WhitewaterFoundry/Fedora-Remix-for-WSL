@@ -64,6 +64,7 @@ function build() {
   systemd-nspawn -q -D "${TMPDIR}"/dist --pipe /bin/bash <<EOF
 dnf -y update
 dnf -y install generic-release --allowerasing
+dnf -y reinstall fedora-repos
 EOF
 
   # Overwrite os-release provided by generic-release
@@ -109,6 +110,9 @@ EOF
 dnf -y install wslu
 EOF
 
+  # Copy dnf.conf
+  cp "${ORIGINDIR}"/linux_files/dnf.conf "${TMPDIR}"/dist/etc/dnf/dnf.conf
+    
   # Create filesystem tar, excluding unnecessary files
   cd "${TMPDIR}"/dist
   tar --exclude='boot/*' --exclude=proc --exclude=dev --exclude=sys --exclude='var/cache/dnf/*' --numeric-owner -czf "${ORIGINDIR}"/"${ARCHDIR}"/install.tar.gz ./*
