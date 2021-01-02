@@ -167,16 +167,16 @@
     </Content>
   </ItemGroup>
   <ItemGroup Condition="'$(Platform)'=='x64'">
-	  <Content Include="..\x64\$(Configuration)\fedoraremix.exe">
-		  <CopyToOutputDirectory>true</CopyToOutputDirectory>
-		  <Link>fedoraremix.exe</Link>
-	  </Content>
+    <Content Include="..\x64\$(Configuration)\fedoraremix.exe">
+      <CopyToOutputDirectory>true</CopyToOutputDirectory>
+      <Link>fedoraremix.exe</Link>
+    </Content>
   </ItemGroup>
   <ItemGroup Condition="'$(Platform)'=='ARM64'">
-	  <Content Include="..\ARM64\$(Configuration)\fedoraremix.exe">
-		  <CopyToOutputDirectory>true</CopyToOutputDirectory>
-		  <Link>fedoraremix.exe</Link>
-	  </Content>
+    <Content Include="..\ARM64\$(Configuration)\fedoraremix.exe">
+      <CopyToOutputDirectory>true</CopyToOutputDirectory>
+      <Link>fedoraremix.exe</Link>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DistroLauncher\DistroLauncher.vcxproj" />
