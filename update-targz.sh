@@ -5,13 +5,15 @@ export PREBOOTSTRAP_QEMU_ARCH="${2:-x86_64}"
 export PREBOOTSTRAP_RELEASE="${3:-testing}"
 export BUILD_FOLDER="${4:-x64}"
 
+source /etc/os-release
+
 #Go Home
 # shellcheck disable=SC2164
 cd
 
 echo 'Installing build dependencies'
-sudo apt-get update -y -q
-sudo apt-get install -y -q curl gnupg debootstrap qemu-user-static
+sudo dnf -y update
+sudo dnf -y install mock qemu-user-static
 
 echo 'Creating rootfs folder'
 mkdir rootfs
@@ -58,7 +60,7 @@ sudo chroot rootfs/ dnf -y clean all
 
 echo 'Copy files'
 sudo cp /vagrant/linux_files/00-remix.sh rootfs/etc/profile.d/
-sudo cp /vagrant/linux_files/os-release rootfs/etc/
+sudo cp /vagrant/linux_files/os-release-"${VERSION_ID}" rootfs/etc/
 sudo cp /vagrant/linux_files/upgrade.sh rootfs/usr/local/bin/
 sudo cp /vagrant/linux_files/local.conf rootfs/etc/fonts/
 

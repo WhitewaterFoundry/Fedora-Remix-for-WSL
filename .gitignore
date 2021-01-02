@@ -298,4 +298,4 @@ DistroLauncher/messages.h
 /rootfs/
 /x64/install.tar.gz.bak
 /ARM64/install.tar.gz.bak
-/.vagrant/rgloader/
+/.vagrant
