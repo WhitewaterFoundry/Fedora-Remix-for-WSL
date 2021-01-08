@@ -38,6 +38,7 @@ function build() {
   # Unmount /dev
   umount "${TMPDIR}"/dist/dev
 
+  mkdir -p "${TMPDIR}"/dist/etc/fish/conf.d/
   mkdir -p "${TMPDIR}"/dist/etc/fonts/
   mkdir -p "${TMPDIR}"/dist/usr/local/bin/
 
@@ -55,7 +56,9 @@ function build() {
   cp "${ORIGINDIR}"/linux_files/wsl.conf "${TMPDIR}"/dist/etc/
   cp "${ORIGINDIR}"/linux_files/local.conf "${TMPDIR}"/dist/etc/fonts/
   cp "${ORIGINDIR}"/linux_files/00-remix.sh "${TMPDIR}"/dist/etc/profile.d/
+  cp "${ORIGINDIR}"/linux_files/00-remix.fish "${TMPDIR}"/dist/etc/fish/conf.d/
   chmod -x "${TMPDIR}"/dist/etc/profile.d/00-remix.sh
+  chmod -x "${TMPDIR}"/dist/etc/fish/conf.d/00-remix.fish
 
   cp "${ORIGINDIR}"/linux_files/upgrade.sh "${TMPDIR}"/dist/usr/local/bin/
   chmod +x "${TMPDIR}"/dist/usr/local/bin/upgrade.sh

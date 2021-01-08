@@ -32,6 +32,8 @@ fi
 
 # Update the release and main startup script files
 sudo curl -f https://raw.githubusercontent.com/WhitewaterFoundry/Fedora-Remix-for-WSL/master/linux_files/00-remix.sh -o /etc/profile.d/00-remix.sh
+sudo mkdir -p /etc/fish/conf.d/
+sudo curl -f https://raw.githubusercontent.com/WhitewaterFoundry/Fedora-Remix-for-WSL/master/linux_files/00-remix.fish -o /etc/fish/conf.d/00-remix.fish
 
 (
   source /etc/os-release
