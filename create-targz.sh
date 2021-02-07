@@ -113,7 +113,7 @@ EOF
 
   # Copy dnf.conf
   cp "${ORIGINDIR}"/linux_files/dnf.conf "${TMPDIR}"/dist/etc/dnf/dnf.conf
-    
+
   # Create filesystem tar, excluding unnecessary files
   cd "${TMPDIR}"/dist
   tar --exclude='boot/*' --exclude=proc --exclude=dev --exclude=sys --exclude='var/cache/dnf/*' --numeric-owner -czf "${ORIGINDIR}"/"${ARCHDIR}"/install.tar.gz ./*

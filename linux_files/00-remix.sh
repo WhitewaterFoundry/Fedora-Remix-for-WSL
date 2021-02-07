@@ -67,6 +67,10 @@ if (command -v cmd.exe >/dev/null 2>&1); then
   # moving cmd to where Windows is installed might help: %SYSTEMDRIVE%
   wHomeWinPath=$(cmd.exe /c 'cd %SYSTEMDRIVE%\ && echo %HOMEDRIVE%%HOMEPATH%' 2>/dev/null | tr -d '\r')
 
+  if [ ${#wHomeWinPath} -le 3 ]; then #wHomeWinPath contains something like H:\
+    wHomeWinPath=$(cmd.exe /c 'cd %SYSTEMDRIVE%\ && echo %USERPROFILE%' 2>/dev/null | tr -d '\r')
+  fi
+
   # shellcheck disable=SC2155
   export WIN_HOME=$(wslpath -u "${wHomeWinPath}")
 
