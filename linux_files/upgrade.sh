@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
+BASE_URL="https://raw.githubusercontent.com/WhitewaterFoundry/fedora-remix-rootfs-build/master/"
 sha256sum /usr/local/bin/upgrade.sh >/tmp/sum.txt
-sudo curl -f https://raw.githubusercontent.com/WhitewaterFoundry/Fedora-Remix-for-WSL/master/linux_files/upgrade.sh -o /usr/local/bin/upgrade.sh
+sudo curl -f "${BASE_URL}/linux_files/upgrade.sh" -o /usr/local/bin/upgrade.sh
 sudo chmod +x /usr/local/bin/upgrade.sh
 sha256sum -c /tmp/sum.txt
 
@@ -31,12 +32,17 @@ if [ "$(wslsys -v | grep -c "v3\.")" -eq 0 ]; then
 fi
 
 # Update the release and main startup script files
-sudo curl -f https://raw.githubusercontent.com/WhitewaterFoundry/Fedora-Remix-for-WSL/master/linux_files/00-remix.sh -o /etc/profile.d/00-remix.sh
+sudo curl -f "${BASE_URL}/linux_files/00-remix.sh" -o /etc/profile.d/00-remix.sh
 
 (
   source /etc/os-release
-  sudo curl -f "https://raw.githubusercontent.com/WhitewaterFoundry/Fedora-Remix-for-WSL/master/linux_files/os-release-${VERSION_ID}" -o /etc/os-release
+  sudo curl -f "${BASE_URL}/linux_files/os-release-${VERSION_ID}" -o /etc/os-release
 )
 
 # Add local.conf to fonts
-sudo curl -f https://raw.githubusercontent.com/WhitewaterFoundry/Fedora-Remix-for-WSL/master/linux_files/local.conf -o /etc/fonts/local.conf
+sudo curl -f "${BASE_URL}/linux_files/local.conf" -o /etc/fonts/local.conf
+
+# Fix a problem with the current WSL2 kernel
+if [[ $( dnf info --installed iproute | grep -c '5.8' ) == 0 ]]; then
+  sudo dnf install -y iproute-5.8.0
+fi
