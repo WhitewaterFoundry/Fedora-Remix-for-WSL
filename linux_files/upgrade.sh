@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BASE_URL="https://raw.githubusercontent.com/WhitewaterFoundry/fedora-remix-rootfs-build/master/"
+BASE_URL="https://raw.githubusercontent.com/WhitewaterFoundry/fedora-remix-rootfs-build/master"
 sha256sum /usr/local/bin/upgrade.sh >/tmp/sum.txt
 sudo curl -L -f "${BASE_URL}/linux_files/upgrade.sh" -o /usr/local/bin/upgrade.sh
 sudo chmod +x /usr/local/bin/upgrade.sh
