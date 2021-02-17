@@ -15,7 +15,6 @@ variables:
   buildPlatform: 'x64|ARM64'
   buildConfiguration: 'Release'
   appxPackageDir: '$(build.artifactStagingDirectory)\AppxPackages\\'
-  group: 'Secrets'
 
 steps:
 - task: DownloadBuildArtifacts@0
