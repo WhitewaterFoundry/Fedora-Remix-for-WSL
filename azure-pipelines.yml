@@ -30,8 +30,8 @@ steps:
 - task: CmdLine@2
   inputs:
     script: |
-      copy $(System.ArtifactsDirectory)\drop\install_amd64_rootfs.tar.gz x64\install.tar.gz
-      copy $(System.ArtifactsDirectory)\drop\install_arm64_rootfs.tar.gz ARM64\install.tar.gz
+      copy $(System.ArtifactsDirectory)\drop\install_x64_rootfs.tar.gz x64\install.tar.gz
+      copy $(System.ArtifactsDirectory)\drop\install_ARM64_rootfs.tar.gz ARM64\install.tar.gz
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
