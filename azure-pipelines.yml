@@ -15,6 +15,7 @@ variables:
   buildPlatform: 'x64|ARM64'
   buildConfiguration: 'Release'
   appxPackageDir: '$(build.artifactStagingDirectory)\AppxPackages\\'
+  group: 'Secrets'
 
 steps:
 - task: DownloadBuildArtifacts@0
@@ -44,24 +45,6 @@ steps:
   name: signingCert
   inputs:
     secureFile: 'store.pfx'
-#- task: PowerShell@2
-#  inputs:
-#    targetType: 'inline'
-#    script: |
-#      Invoke-WebRequest -Uri 'https://sonarcloud.io/static/cpp/build-wrapper-win-x86.zip' -OutFile 'build-wrapper.zip'
-#      Expand-Archive -Path 'build-wrapper.zip' -DestinationPath '.'
-#- task: SonarCloudPrepare@1
-#  inputs:
-#    SonarCloud: 'SonarCloud'
-#    organization: 'whitewaterfoundry'
-#    scannerMode: 'MSBuild'
-#    projectKey: 'Pengwin'
-#    projectName: 'Pengwin'
-#    projectVersion: '20.8.1'
-#    sonar.cfamily.build-wrapper-output: '.'
-#- task: CmdLine@2
-#  inputs:
-#    script: 'build-wrapper-win-x86\build-wrapper-win-x86-64.exe --out-dir .'
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
@@ -70,8 +53,19 @@ steps:
     configuration: '$(buildConfiguration)'
     maximumCpuCount: true
     msbuildArchitecture: 'x64'
-    
-#- task: SonarCloudAnalyze@1
+
+- task: DownloadSecureFile@1
+  name: signingCert2
+  inputs:
+    secureFile: 'store2.pfx'
+- task: VSBuild@1
+  inputs:
+    solution: '$(solution)'
+    msbuildArgs: '/t:Launcher;Fedora-Remix-for-WSL-SL /m /p:AppxBundlePlatforms="$(buildPlatform)" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=StoreUpload /p:PackageCertificateThumbprint=""  /p:PackageCertificateKeyFile="$(signingCert2.secureFilePath)" /p:PackageCertificatePassword="$(appsign)"'
+    platform: 'x64'
+    configuration: '$(buildConfiguration)'
+    maximumCpuCount: true
+    msbuildArchitecture: 'x64'
 
 - task: CopyFiles@2
   inputs:
@@ -83,6 +77,3 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
-#- task: SonarCloudPublish@1
-#  inputs:
-#    pollingTimeoutSec: '300'
