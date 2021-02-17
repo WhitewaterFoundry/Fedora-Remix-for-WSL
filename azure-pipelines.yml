@@ -30,7 +30,10 @@ steps:
 - task: CmdLine@2
   inputs:
     script: |
+      mkdir x64
       copy $(System.ArtifactsDirectory)\drop\install_x64_rootfs.tar.gz x64\install.tar.gz
+
+      mkdir ARM64
       copy $(System.ArtifactsDirectory)\drop\install_ARM64_rootfs.tar.gz ARM64\install.tar.gz
 - task: NuGetToolInstaller@1
 
