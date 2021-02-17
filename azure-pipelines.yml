@@ -57,7 +57,7 @@ steps:
 - task: DownloadSecureFile@1
   name: signingCert2
   inputs:
-    secureFile: 'store2.pfx'
+    secureFile: 'appsign.pfx'
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
