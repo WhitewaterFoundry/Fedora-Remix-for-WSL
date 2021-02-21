@@ -1,0 +1,8 @@
+Fedora Remix for WSL includes wslu, a set of useful open-source utilities for interacting between WSL and Windows 10.
+An update script, accessible via $ upgrade.sh allows keeping your distro updated and the customizations.
+Support for many Linux graphical applications with no need to configure display or libGL. Requires a Windows-based X client, such as X410 or VcXsrv.
+Install 28,728 open source packages via the dnf package management system from the vast Fedora repositories and any third-party repositories from outside projects.
+A handful of unnecessary packages have been removed from the base image to reduce image size and increase stability.
+New features are actively developed based on community input.
+We give priority to WSL compatibility issues and adjust the package version to improve this.
+

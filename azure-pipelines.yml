@@ -14,7 +14,7 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'x64|ARM64'
   buildConfiguration: 'Release'
-  appxPackageDir: '$(build.artifactStagingDirectory)\AppxPackages\\'
+  appxPackageDir: '$(System.DefaultWorkingDirectory)\AppxPackages'
 
 steps:
 - task: DownloadBuildArtifacts@0
@@ -31,10 +31,10 @@ steps:
   inputs:
     script: |
       mkdir x64
-      copy $(System.ArtifactsDirectory)\drop\install_x64_rootfs.tar.gz x64\install.tar.gz
+      move $(System.ArtifactsDirectory)\drop\install_x64_rootfs.tar.gz x64\install.tar.gz
 
       mkdir ARM64
-      copy $(System.ArtifactsDirectory)\drop\install_ARM64_rootfs.tar.gz ARM64\install.tar.gz
+      move $(System.ArtifactsDirectory)\drop\install_ARM64_rootfs.tar.gz ARM64\install.tar.gz
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
@@ -68,11 +68,41 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(System.DefaultWorkingDirectory)'
-    Contents: '**\bin\$(BuildConfiguration)\**'
+    SourceFolder: '$(appxPackageDir)'
+    Contents: '**\*bundle.appxupload'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(appxPackageDir)'
+    Contents: '**\*.appxbundle'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+- task: store-publish@0
+  continueOnError: true
+  timeoutInMinutes: 10
+  inputs:
+    serviceEndpoint: 'Whitewater Foundry'
+    appId: '9N6GDM4K2HNC'
+    metadataUpdateMethod: 'TextMetadata'
+    metadataPath: '$(System.DefaultWorkingDirectory)\appMetadata'
+    updateImages: false
+    packagePath: '$(Build.ArtifactStagingDirectory)\**\*bundle.appxupload'
+    force: true
+    skipPolling: false
+    deletePackages: true
+    numberOfPackagesToKeep: '0'
+- task: store-flight@0
+  continueOnError: true
+  inputs:
+    serviceEndpoint: 'Whitewater Foundry'
+    appId: '9N6GDM4K2HNC'
+    flightName: 'Azure Pipelines'
+    packagePath: '$(Build.ArtifactStagingDirectory)\**\*bundle.appxupload'
+    force: true
+    skipPolling: false
+    deletePackages: true
+    numberOfPackagesToKeep: '0'
