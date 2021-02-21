@@ -97,6 +97,7 @@ steps:
     numberOfPackagesToKeep: '0'
 - task: store-flight@0
   continueOnError: true
+  timeoutInMinutes: 10
   inputs:
     serviceEndpoint: 'Whitewater Foundry'
     appId: '9N6GDM4K2HNC'
