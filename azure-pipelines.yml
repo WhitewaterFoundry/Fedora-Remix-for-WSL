@@ -60,7 +60,7 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
-    msbuildArgs: '/t:Launcher;Fedora-Remix-for-WSL-SL /m /p:AppxBundlePlatforms="x64" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=SideloadOnly /p:PackageCertificateThumbprint=""  /p:PackageCertificateKeyFile="$(signingCert2.secureFilePath)" /p:PackageCertificatePassword="$(appsign)"'
+    msbuildArgs: '/t:Launcher;Fedora-Remix-for-WSL-SL /m /p:AppxBundlePlatforms="$(buildPlatform)" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=SideloadOnly /p:PackageCertificateThumbprint=""  /p:PackageCertificateKeyFile="$(signingCert2.secureFilePath)" /p:PackageCertificatePassword="$(appsign)"'
     platform: 'x64'
     configuration: '$(buildConfiguration)'
     maximumCpuCount: true
