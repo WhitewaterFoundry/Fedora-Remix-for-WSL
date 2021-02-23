@@ -4,14 +4,14 @@
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" 
-  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10" 
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
   IgnorableNamespaces="uap rescap">
 
   <Identity
     Name="WhitewaterFoundryLtd.Co.FedoraRemixforWSLSL"
     Publisher="CN=&quot;Whitewater Foundry, Ltd. Co.&quot;, O=&quot;Whitewater Foundry, Ltd. Co.&quot;, STREET=233 12th Street, L=Columbus, S=Georgia, PostalCode=31901, C=US"
-    Version="33.2.0.0" />
+    Version="33.2.1.0" />
 
   <Properties>
     <DisplayName>Fedora Remix for WSL</DisplayName>
@@ -38,7 +38,7 @@
         BackgroundColor="black"
         Square150x150Logo="Images\Square150x150Logo.png"
         Square44x44Logo="Images\Square44x44Logo.png">
-        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" 
+        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png"
                          Square310x310Logo="Images\LargeTile.png" Square71x71Logo="Images\SmallTile.png"
                          ShortName="Fedora Remix">
         </uap:DefaultTile>

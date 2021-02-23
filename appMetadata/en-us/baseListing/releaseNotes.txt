@@ -5,7 +5,7 @@ Existing users can update immediately by running $ upgrade.sh
 
 33.1.0
 * Upgraded to Fedora Remix 33
-* With this version the problems with dnf and yum locks with WSL1 are fixed.
+* With this version, the problems with dnf and yum locks with WSL1 are fixed.
 
 32.1.0
 * Upgraded to Fedora Remix 32
@@ -13,7 +13,7 @@ Existing users can update immediately by running $ upgrade.sh
 31.5.2
 
 * Fixed a problem with ssh connections and X forwarding
-* Fixed a problem with Windows Fonts not correctly being seen in GUI apps.
+* Fixed an issue with Windows Fonts not correctly being seen in GUI apps.
 * Improved application icons and light theme
 
 31.5.1
@@ -22,15 +22,15 @@ Existing users can update immediately by running $ upgrade.sh
 
 Older
 
-Now dbus-daemon is automatically launched if it is installed
-A problem was fixed when the windows home is a shared network drive
-WSLU was upgraded to 3.0 giving a lot of improvements and a fix in shortcut generation wslusc
-A new upgrade.sh is included to easy the upgrade process
+Now dbus-daemon is automatically launched if it is installed.
+A problem was fixed when the windows home is a shared network drive.
+WSLU was upgraded to 3.0, giving a lot of improvements and a fix in shortcut generation wslusc
+A new upgrade.sh is included to ease the upgrade process
 
 Support kernel upgrade in WSL2
 
 Fixed a problem with /etc/os-release
 Made it compatible with WSL 2 now DISPLAY variable have the right value for WSL2
-A symbolic link called winhome is automatically created pointing to the user's home folder
+A symbolic link called winhome is automatically created, pointing to the user's home folder.
 
-Fedora Remix for WSL is powered by Pengwin Enterprise from Whitewater Foundry. To learn more about a custom Pengwin Enterprise build for your workplace, visit https://www.whitewaterfoundry.com.
+Pengwin Enterprise from Whitewater Foundry powers Fedora Remix for WSL. To learn more about a custom Pengwin Enterprise build for your workplace, visit https://www.whitewaterfoundry.com/pengwin-enterprise.
