@@ -11,4 +11,4 @@ HOME_URL="https://github.com/WhitewaterFoundry/Fedora-Remix-for-WSL"
 SUPPORT_URL="https://github.com/WhitewaterFoundry/Fedora-Remix-for-WSL"
 BUG_REPORT_URL="https://github.com/WhitewaterFoundry/Fedora-Remix-for-WSL/issues"
 PRIVACY_POLICY_URL="https://github.com/WhitewaterFoundry/Fedora-Remix-for-WSL/blob/master/PRIVACY.md"
-FEDORA_REMIX_VERSION=33.2.1
+FEDORA_REMIX_VERSION=33.4.0

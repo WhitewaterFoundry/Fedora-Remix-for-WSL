@@ -1,5 +1,8 @@
 Existing users can update immediately by running $ upgrade.sh
 
+33.4.0
+* If the DISPLAY variable is already set, it won't be modified
+
 33.2.0
 * Fixed a problem with ss -a downgrading and locking iproute2 to 5.8
 
