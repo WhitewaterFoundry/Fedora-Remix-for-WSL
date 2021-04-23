@@ -1,5 +1,8 @@
 Existing users can update immediately by running $ upgrade.sh
 
+34.0.0
+* Upgraded to Fedora Remix 34
+
 33.4.0
 * If the DISPLAY variable is already set, it won't be modified
 
