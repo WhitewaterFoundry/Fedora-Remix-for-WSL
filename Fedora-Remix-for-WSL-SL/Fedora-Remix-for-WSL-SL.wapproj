@@ -52,7 +52,7 @@
   <PropertyGroup>
     <ProjectGuid>acca81f1-6810-492b-8b09-2fcce5e4c91a</ProjectGuid>
     <TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.17134.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <EntryPointProjectUniqueName>..\DistroLauncher\DistroLauncher.vcxproj</EntryPointProjectUniqueName>

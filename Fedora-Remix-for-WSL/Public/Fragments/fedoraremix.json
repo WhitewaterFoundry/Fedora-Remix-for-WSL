@@ -1,0 +1,10 @@
+{
+  "profiles": [
+    {
+      "updates": "{d3f31bee-5823-5ed8-8e04-f31ed54f2cd9}",
+      "commandline": "fedoraremix.exe",
+      "icon": "%LOCALAPPDATA%\\Packages\\WhitewaterFoundryLtd.Co.FedoraRemixforWSL_kd1vv0z0vy70w\\LocalState\\fedoraremix.png",
+      "name": "Fedora Remix for WSL"
+    }
+  ]
+}
