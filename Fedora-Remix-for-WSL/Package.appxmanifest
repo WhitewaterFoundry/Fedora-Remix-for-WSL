@@ -1,62 +1,80 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Package
-  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
-  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
-  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
-  IgnorableNamespaces="uap rescap">
+        xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+        xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+        xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+        xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+        xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+        IgnorableNamespaces="uap rescap">
 
-  <Identity
-    Name="WhitewaterFoundryLtd.Co.FedoraRemixforWSL"
-    Publisher="CN=9879127B-9E92-4DE5-9C32-0B1F09F95DCF"
-    Version="34.4.3.0" />
+    <Identity
+            Name="WhitewaterFoundryLtd.Co.FedoraRemixforWSL"
+            Publisher="CN=9879127B-9E92-4DE5-9C32-0B1F09F95DCF"
+            Version="34.4.4.0"/>
 
-  <Properties>
-    <DisplayName>Fedora Remix for WSL</DisplayName>
-    <PublisherDisplayName>Whitewater Foundry</PublisherDisplayName>
-    <Logo>Images\StoreLogo.png</Logo>
-  </Properties>
+    <Properties>
+        <DisplayName>Fedora Remix for WSL</DisplayName>
+        <PublisherDisplayName>Whitewater Foundry</PublisherDisplayName>
+        <Logo>Images\StoreLogo.png</Logo>
+    </Properties>
 
-  <Dependencies>
-    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17134.0" MaxVersionTested="10.0.18362.0" />
-    <PackageDependency Name="Microsoft.VCLibs.140.00.UWPDesktop" MinVersion="14.0.24217.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"/>
-  </Dependencies>
+    <Dependencies>
+        <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0"/>
+        <PackageDependency Name="Microsoft.VCLibs.140.00.UWPDesktop" MinVersion="14.0.24217.0"
+                           Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"/>
+    </Dependencies>
 
-  <Resources>
-    <Resource Language="x-generate"/>
-  </Resources>
+    <Resources>
+        <Resource Language="x-generate"/>
+    </Resources>
 
-  <Applications>
-    <Application Id="App"
-      Executable="$targetnametoken$.exe"
-      EntryPoint="$targetentrypoint$">
-      <uap:VisualElements
-        DisplayName="Fedora Remix for WSL"
-        Description="Fedora Remix for WSL. Powered by Pengwin Enterprise."
-        BackgroundColor="black"
-        Square150x150Logo="Images\Square150x150Logo.png"
-        Square44x44Logo="Images\Square44x44Logo.png">
-        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png"
-                         Square310x310Logo="Images\LargeTile.png" Square71x71Logo="Images\SmallTile.png"
-                         ShortName="Fedora Remix">
-        </uap:DefaultTile>
-        <uap:SplashScreen Image="Images\SplashScreen.png" BackgroundColor="black"/>
-      </uap:VisualElements>
-      <Extensions>
-        <uap3:Extension Category="windows.appExecutionAlias" Executable="DistroLauncher\fedoraremix.exe" EntryPoint="Windows.FullTrustApplication">
-          <uap3:AppExecutionAlias>
-            <desktop:ExecutionAlias Alias="fedoraremix.exe" />
-          </uap3:AppExecutionAlias>
-        </uap3:Extension>
-      </Extensions>
+    <Applications>
+        <Application Id="App"
+                     Executable="$targetnametoken$.exe"
+                     EntryPoint="$targetentrypoint$">
+            <uap:VisualElements
+                    DisplayName="Fedora Remix for WSL"
+                    Description="Fedora Remix for WSL. Powered by Pengwin Enterprise."
+                    BackgroundColor="black"
+                    Square150x150Logo="Images\Square150x150Logo.png"
+                    Square44x44Logo="Images\Square44x44Logo.png">
+                <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png"
+                                 Square310x310Logo="Images\LargeTile.png" Square71x71Logo="Images\SmallTile.png"
+                                 ShortName="Fedora Remix">
+                </uap:DefaultTile>
+                <uap:SplashScreen Image="Images\SplashScreen.png" BackgroundColor="black"/>
+            </uap:VisualElements>
+            <Extensions>
+                <uap3:Extension Category="windows.appExecutionAlias" Executable="DistroLauncher\fedoraremix.exe"
+                                EntryPoint="Windows.FullTrustApplication">
+                    <uap3:AppExecutionAlias>
+                        <desktop:ExecutionAlias Alias="fedoraremix.exe"/>
+                    </uap3:AppExecutionAlias>
+                </uap3:Extension>
+                <uap3:Extension Category="windows.appExtension">
+                    <uap3:AppExtension Name="com.microsoft.windows.terminal.settings"
+                                       Id="fedoraremix"
+                                       PublicFolder="Public"
+                                       DisplayName="Fedora Remix for WSL">
+                    </uap3:AppExtension>
+                </uap3:Extension>
+                <desktop:Extension
+                        Category="windows.startupTask"
+                        Executable="DistroLauncher\fedoraremix.exe"
+                        EntryPoint="Windows.FullTrustApplication">
+                    <desktop:StartupTask
+                            TaskId="fedoraremix"
+                            Enabled="false"
+                            DisplayName="Fedora Remix for WSL"/>
+                </desktop:Extension>
+            </Extensions>
 
-    </Application>
-  </Applications>
+        </Application>
+    </Applications>
 
-  <Capabilities>
-    <Capability Name="internetClient" />
-    <rescap:Capability Name="runFullTrust" />
-  </Capabilities>
+    <Capabilities>
+        <Capability Name="internetClient"/>
+        <rescap:Capability Name="runFullTrust"/>
+    </Capabilities>
 </Package>

@@ -18,12 +18,15 @@ namespace DistributionInfo
     // The title bar for the console window while the distribution is installing.
     const std::wstring WindowTitle = L"Fedora Remix for WSL";
 
-	// Set root user password
-	bool SetRootPassword();
+    // Set root user password
+    bool SetRootPassword();
 
     // Create and configure a user account.
     bool CreateUser(std::wstring_view userName);
 
     // Query the UID of the user account.
     ULONG QueryUid(std::wstring_view userName);
+
+    // Changes the default user in /etc/wsl.conf
+    void ChangeDefaultUserInWslConf(std::wstring_view userName);
 }

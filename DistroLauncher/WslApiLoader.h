@@ -11,40 +11,41 @@
 #define ERROR_LINUX_SUBSYSTEM_NOT_PRESENT 414L
 #endif // !ERROR_LINUX_SUBSYSTEM_NOT_PRESENT
 
-typedef BOOL    (STDAPICALLTYPE* WSL_IS_DISTRIBUTION_REGISTERED)(PCWSTR);
-typedef HRESULT (STDAPICALLTYPE* WSL_REGISTER_DISTRIBUTION)(PCWSTR, PCWSTR);
-typedef HRESULT (STDAPICALLTYPE* WSL_CONFIGURE_DISTRIBUTION)(PCWSTR, ULONG, WSL_DISTRIBUTION_FLAGS);
-typedef HRESULT (STDAPICALLTYPE* WSL_GET_DISTRIBUTION_CONFIGURATION)(PCWSTR, ULONG *, ULONG *, WSL_DISTRIBUTION_FLAGS *, PSTR **, ULONG *);
-typedef HRESULT (STDAPICALLTYPE* WSL_LAUNCH_INTERACTIVE)(PCWSTR, PCWSTR, BOOL, DWORD *);
-typedef HRESULT (STDAPICALLTYPE* WSL_LAUNCH)(PCWSTR, PCWSTR, BOOL, HANDLE, HANDLE, HANDLE, HANDLE *);
+using WSL_IS_DISTRIBUTION_REGISTERED = BOOL(STDAPICALLTYPE*)(PCWSTR);
+using WSL_REGISTER_DISTRIBUTION = HRESULT(STDAPICALLTYPE*)(PCWSTR, PCWSTR);
+using WSL_CONFIGURE_DISTRIBUTION = HRESULT(STDAPICALLTYPE*)(PCWSTR, ULONG, WSL_DISTRIBUTION_FLAGS);
+using WSL_GET_DISTRIBUTION_CONFIGURATION = HRESULT(STDAPICALLTYPE*)(PCWSTR, ULONG*, ULONG*, WSL_DISTRIBUTION_FLAGS*,
+                                                                    PSTR**, ULONG*);
+using WSL_LAUNCH_INTERACTIVE = HRESULT(STDAPICALLTYPE*)(PCWSTR, PCWSTR, BOOL, DWORD*);
+using WSL_LAUNCH = HRESULT(STDAPICALLTYPE*)(PCWSTR, PCWSTR, BOOL, HANDLE, HANDLE, HANDLE, HANDLE*);
 
 class WslApiLoader
 {
-  public:
+public:
     WslApiLoader(const std::wstring& distributionName);
     ~WslApiLoader();
 
-    BOOL WslIsOptionalComponentInstalled();
+    BOOL WslIsOptionalComponentInstalled() const;
 
-    BOOL WslIsDistributionRegistered();
+    BOOL WslIsDistributionRegistered() const;
 
-    HRESULT WslRegisterDistribution();
+    HRESULT WslRegisterDistribution() const;
 
     HRESULT WslConfigureDistribution(ULONG defaultUID,
-                                     WSL_DISTRIBUTION_FLAGS wslDistributionFlags);
+                                     WSL_DISTRIBUTION_FLAGS wslDistributionFlags) const;
 
     HRESULT WslLaunchInteractive(PCWSTR command,
                                  BOOL useCurrentWorkingDirectory,
-                                 DWORD *exitCode);
+                                 DWORD* exitCode) const;
 
     HRESULT WslLaunch(PCWSTR command,
                       BOOL useCurrentWorkingDirectory,
                       HANDLE stdIn,
                       HANDLE stdOut,
                       HANDLE stdErr,
-                      HANDLE *process);
+                      HANDLE* process) const;
 
-  private:
+private:
     std::wstring _distributionName;
     HMODULE _wslApiDll;
     WSL_IS_DISTRIBUTION_REGISTERED _isDistributionRegistered;

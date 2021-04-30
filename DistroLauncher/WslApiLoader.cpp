@@ -10,8 +10,10 @@ WslApiLoader::WslApiLoader(const std::wstring& distributionName) :
     _distributionName(distributionName)
 {
     _wslApiDll = LoadLibraryEx(L"wslapi.dll", nullptr, LOAD_LIBRARY_SEARCH_SYSTEM32);
-    if (_wslApiDll != nullptr) {
-        _isDistributionRegistered = (WSL_IS_DISTRIBUTION_REGISTERED)GetProcAddress(_wslApiDll, "WslIsDistributionRegistered");
+    if (_wslApiDll != nullptr)
+    {
+        _isDistributionRegistered = (WSL_IS_DISTRIBUTION_REGISTERED)GetProcAddress(
+            _wslApiDll, "WslIsDistributionRegistered");
         _registerDistribution = (WSL_REGISTER_DISTRIBUTION)GetProcAddress(_wslApiDll, "WslRegisterDistribution");
         _configureDistribution = (WSL_CONFIGURE_DISTRIBUTION)GetProcAddress(_wslApiDll, "WslConfigureDistribution");
         _launchInteractive = (WSL_LAUNCH_INTERACTIVE)GetProcAddress(_wslApiDll, "WslLaunchInteractive");
@@ -21,60 +23,67 @@ WslApiLoader::WslApiLoader(const std::wstring& distributionName) :
 
 WslApiLoader::~WslApiLoader()
 {
-    if (_wslApiDll != nullptr) {
+    if (_wslApiDll != nullptr)
+    {
         FreeLibrary(_wslApiDll);
     }
 }
 
-BOOL WslApiLoader::WslIsOptionalComponentInstalled()
+BOOL WslApiLoader::WslIsOptionalComponentInstalled() const
 {
-    return ((_wslApiDll != nullptr) && 
-            (_isDistributionRegistered != nullptr) &&
-            (_registerDistribution != nullptr) &&
-            (_configureDistribution != nullptr) &&
-            (_launchInteractive != nullptr) &&
-            (_launch != nullptr));
+    return ((_wslApiDll != nullptr) &&
+        (_isDistributionRegistered != nullptr) &&
+        (_registerDistribution != nullptr) &&
+        (_configureDistribution != nullptr) &&
+        (_launchInteractive != nullptr) &&
+        (_launch != nullptr));
 }
 
-BOOL WslApiLoader::WslIsDistributionRegistered()
+BOOL WslApiLoader::WslIsDistributionRegistered() const
 {
     return _isDistributionRegistered(_distributionName.c_str());
 }
 
-HRESULT WslApiLoader::WslRegisterDistribution()
+HRESULT WslApiLoader::WslRegisterDistribution() const
 {
-    HRESULT hr = _registerDistribution(_distributionName.c_str(), L"install.tar.gz");
-    if (FAILED(hr)) {
+    const HRESULT hr = _registerDistribution(_distributionName.c_str(), L"install.tar.gz");
+    if (FAILED(hr))
+    {
         Helpers::PrintMessage(MSG_WSL_REGISTER_DISTRIBUTION_FAILED, hr);
     }
 
     return hr;
 }
 
-HRESULT WslApiLoader::WslConfigureDistribution(ULONG defaultUID, WSL_DISTRIBUTION_FLAGS wslDistributionFlags)
+HRESULT WslApiLoader::WslConfigureDistribution(ULONG defaultUID, WSL_DISTRIBUTION_FLAGS wslDistributionFlags) const
 {
-    HRESULT hr = _configureDistribution(_distributionName.c_str(), defaultUID, wslDistributionFlags);
-    if (FAILED(hr)) {
+    const HRESULT hr = _configureDistribution(_distributionName.c_str(), defaultUID, wslDistributionFlags);
+    if (FAILED(hr))
+    {
         Helpers::PrintMessage(MSG_WSL_CONFIGURE_DISTRIBUTION_FAILED, hr);
     }
 
     return hr;
 }
 
-HRESULT WslApiLoader::WslLaunchInteractive(PCWSTR command, BOOL useCurrentWorkingDirectory, DWORD *exitCode)
+HRESULT WslApiLoader::WslLaunchInteractive(PCWSTR command, BOOL useCurrentWorkingDirectory, DWORD* exitCode) const
 {
-    HRESULT hr = _launchInteractive(_distributionName.c_str(), command, useCurrentWorkingDirectory, exitCode);
-    if (FAILED(hr)) {
+    const HRESULT hr = _launchInteractive(_distributionName.c_str(), command, useCurrentWorkingDirectory, exitCode);
+    if (FAILED(hr))
+    {
         Helpers::PrintMessage(MSG_WSL_LAUNCH_INTERACTIVE_FAILED, command, hr);
     }
 
     return hr;
 }
 
-HRESULT WslApiLoader::WslLaunch(PCWSTR command, BOOL useCurrentWorkingDirectory, HANDLE stdIn, HANDLE stdOut, HANDLE stdErr, HANDLE *process)
+HRESULT WslApiLoader::WslLaunch(PCWSTR command, BOOL useCurrentWorkingDirectory, HANDLE stdIn, HANDLE stdOut,
+                                HANDLE stdErr, HANDLE* process) const
 {
-    HRESULT hr = _launch(_distributionName.c_str(), command, useCurrentWorkingDirectory, stdIn, stdOut, stdErr, process);
-    if (FAILED(hr)) {
+    const HRESULT hr = _launch(_distributionName.c_str(), command, useCurrentWorkingDirectory, stdIn, stdOut, stdErr,
+                               process);
+    if (FAILED(hr))
+    {
         Helpers::PrintMessage(MSG_WSL_LAUNCH_FAILED, command, hr);
     }
 
