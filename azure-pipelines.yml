@@ -81,6 +81,18 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+- task: store-flight@0
+  continueOnError: true
+  timeoutInMinutes: 10
+  inputs:
+    serviceEndpoint: 'Whitewater Foundry'
+    appId: '9N6GDM4K2HNC'
+    flightName: 'Azure Pipelines'
+    packagePath: '$(Build.ArtifactStagingDirectory)\**\*bundle.appxupload'
+    force: true
+    skipPolling: false
+    deletePackages: true
+    numberOfPackagesToKeep: '2'
 - task: store-publish@0
   continueOnError: true
   timeoutInMinutes: 10
@@ -90,18 +102,6 @@ steps:
     metadataUpdateMethod: 'TextMetadata'
     metadataPath: '$(System.DefaultWorkingDirectory)\appMetadata'
     updateImages: false
-    packagePath: '$(Build.ArtifactStagingDirectory)\**\*bundle.appxupload'
-    force: true
-    skipPolling: false
-    deletePackages: true
-    numberOfPackagesToKeep: '2'
-- task: store-flight@0
-  continueOnError: true
-  timeoutInMinutes: 10
-  inputs:
-    serviceEndpoint: 'Whitewater Foundry'
-    appId: '9N6GDM4K2HNC'
-    flightName: 'Azure Pipelines'
     packagePath: '$(Build.ArtifactStagingDirectory)\**\*bundle.appxupload'
     force: true
     skipPolling: false
