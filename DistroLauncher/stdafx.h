@@ -11,23 +11,23 @@
 
 #include "targetver.h"
 
-#include <stdio.h>
-#include <tchar.h>
-#include <Windows.h>
-#include <stdio.h>
+#include <assert.h>
+#include <codecvt>
 #include <conio.h>
 #include <io.h>
-#include <string>
-#include <memory>
-#include <assert.h>
 #include <locale>
-#include <codecvt>
+#include <memory>
+#include <stdio.h>
+#include <stdio.h>
+#include <string>
 #include <string_view>
+#include <tchar.h>
 #include <vector>
+#include <Windows.h>
 #include <wslapi.h>
-#include "WslApiLoader.h"
-#include "Helpers.h"
 #include "DistributionInfo.h"
+#include "Helpers.h"
+#include "WslApiLoader.h"
 
 // Message strings compiled from .MC file.
 #include "messages.h"

@@ -55,7 +55,7 @@ HRESULT Helpers::PrintMessage(DWORD messageId, ...)
 {
     va_list argList;
     va_start(argList, messageId);
-    const HRESULT hr = PrintMessageVa(messageId, argList);
+    const auto hr = PrintMessageVa(messageId, argList);
     va_end(argList);
     return hr;
 }
@@ -71,13 +71,13 @@ namespace
     HRESULT FormatMessageHelperVa(DWORD messageId, va_list vaList, std::wstring* message)
     {
         PWSTR buffer = nullptr;
-        const DWORD written = FormatMessageW(FORMAT_MESSAGE_FROM_HMODULE | FORMAT_MESSAGE_ALLOCATE_BUFFER,
-                                             nullptr,
-                                             messageId,
-                                             0,
-                                             (PWSTR)&buffer,
-                                             10,
-                                             &vaList);
+        const auto written = FormatMessageW(FORMAT_MESSAGE_FROM_HMODULE | FORMAT_MESSAGE_ALLOCATE_BUFFER,
+                                            nullptr,
+                                            messageId,
+                                            0,
+                                            (PWSTR)&buffer,
+                                            10,
+                                            &vaList);
         *message = buffer;
         if (buffer != nullptr)
         {
@@ -90,7 +90,7 @@ namespace
     HRESULT PrintMessageVa(DWORD messageId, va_list vaList)
     {
         std::wstring message;
-        const HRESULT hr = FormatMessageHelperVa(messageId, vaList, &message);
+        const auto hr = FormatMessageHelperVa(messageId, vaList, &message);
         if (SUCCEEDED(hr))
         {
             wprintf(L"%ls", message.c_str());
