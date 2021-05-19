@@ -4,7 +4,42 @@
       "updates": "{d3f31bee-5823-5ed8-8e04-f31ed54f2cd9}",
       "commandline": "fedoraremix.exe",
       "icon": "%LOCALAPPDATA%\\Packages\\WhitewaterFoundryLtd.Co.FedoraRemixforWSL_kd1vv0z0vy70w\\LocalState\\fedoraremix.png",
-      "name": "Fedora Remix for WSL"
+      "name": "Fedora Remix for WSL",
+      "backgroundImage": "%LOCALAPPDATA%\\Packages\\WhitewaterFoundryLtd.Co.FedoraRemixforWSL_kd1vv0z0vy70w\\LocalState\\Fedora_remix_purple_darkbackground_370.png",
+      "backgroundImageAlignment": "bottomRight",
+      "backgroundImageOpacity": 0.15,
+      "backgroundImageStretchMode": "none",
+      "bellStyle": "none",
+      "colorScheme": "Fedora Remix for WSL",
+      "cursorShape": "filledBox",
+      "fontFace": "Cascadia Code"
+
+    }
+  ],
+  "schemes": [
+    {
+      "name": "Fedora Remix for WSL",
+
+      "background": "#1E1E1E",
+      "black": "#171421",
+      "blue": "#12488B",
+      "brightBlack": "#5E5C64",
+      "brightBlue": "#2A7BDE",
+      "brightCyan": "#33C7DE",
+      "brightGreen": "#33DA7A",
+      "brightPurple": "#C061CB",
+      "brightRed": "#F66151",
+      "brightWhite": "#FFFFFF",
+      "brightYellow": "#E9AD0C",
+      "cursorColor": "#FFFFFF",
+      "cyan": "#2AA1B3",
+      "foreground": "#E8E8E8",
+      "green": "#26A269",
+      "purple": "#A347BA",
+      "red": "#C01C28",
+      "selectionBackground": "#FFFFFF",
+      "white": "#D0CFCC",
+      "yellow": "#A2734C"
     }
   ]
 }

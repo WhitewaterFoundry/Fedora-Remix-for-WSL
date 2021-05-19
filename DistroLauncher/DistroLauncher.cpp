@@ -137,6 +137,28 @@ fire_and_forget SyncIcons()
     }
 }
 
+fire_and_forget SyncBackground()
+{
+    const int value = RetrieveCurrentTheme();
+    const hstring nameSuffix = L"";
+    const hstring backgroundName = L"Fedora_remix_purple_darkbackground_370";
+
+    const hstring extension = L".png";
+    const hstring composedPath = backgroundName + nameSuffix + extension;
+    const auto path = Uri(L"ms-appx:///Assets/" + composedPath);
+
+    try
+    {
+        const auto iconFile = StorageFile::GetFileFromApplicationUriAsync(path).get();
+
+        co_await iconFile.CopyAsync(ApplicationData::Current().LocalFolder(), backgroundName + extension,
+                                    NameCollisionOption::FailIfExists);
+    }
+    catch (...)
+    {
+    }
+}
+
 int wmain(int argc, const wchar_t* argv[])
 {
     // Update the title bar of the console window.
@@ -189,6 +211,7 @@ int wmain(int argc, const wchar_t* argv[])
     if ((SUCCEEDED(hr)) && (!installOnly))
     {
         SyncIcons();
+        SyncBackground();
 
         if (arguments.empty())
         {
