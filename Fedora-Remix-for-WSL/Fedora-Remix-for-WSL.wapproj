@@ -104,6 +104,7 @@
   <ItemGroup>
     <Content Include="Assets\fedoraremix.png" />
     <Content Include="Assets\fedoraremix.theme-dark.png" />
+    <Content Include="Assets\Fedora_remix_purple_darkbackground_370.png" />
     <Content Include="Images\LargeTile.scale-100.png" />
     <Content Include="Images\LargeTile.scale-125.png" />
     <Content Include="Images\LargeTile.scale-150.png" />
