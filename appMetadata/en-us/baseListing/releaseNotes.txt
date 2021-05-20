@@ -1,6 +1,6 @@
 Existing users can update immediately by running $ upgrade.sh
 
-34.5.3
+34.5.4
 * Automatically creates an entry with logo in Windows Terminal
 * In App Settings, it is possible to set Fedora Remix launch at startup
 * When a new distro is created, now the default user is written in wsl.conf. So, the default user is preserved on exports and imports
