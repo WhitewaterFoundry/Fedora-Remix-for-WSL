@@ -1,10 +1,11 @@
 Existing users can update immediately by running $ upgrade.sh
 
-34.5.2
+34.5.3
 * Automatically creates an entry with logo in Windows Terminal
 * In App Settings, it is possible to set Fedora Remix launch at startup
 * When a new distro is created, now the default user is written in wsl.conf. So, the default user is preserved on exports and imports
 * For Windows Terminal add Fedora default color theme and background
+* Fix a problem installing packages in WSL1
 
 34.4.2
 * Upgraded to Fedora Remix 34
