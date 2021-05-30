@@ -1,5 +1,9 @@
 Existing users can update immediately by running $ upgrade.sh
 
+34.5.6
+* Fixed a problem with dnf and WSL1
+* Fixed a connection problem with XServer when fish is the default shell
+
 34.5.5
 * Automatically creates an entry with logo in Windows Terminal
 * In App Settings, it is possible to set Fedora Remix launch at startup
@@ -34,11 +38,3 @@ Existing users can update immediately by running $ upgrade.sh
 31.5.1
 
 * Refreshed the logo to align it to the Pengwin suit
-
-Older
-
-Now dbus-daemon is automatically launched if it is installed.
-A problem was fixed when the windows home is a shared network drive.
-WSLU was upgraded to 3.0, giving a lot of improvements and a fix in shortcut generation wslusc
-A new upgrade.sh is included to ease the upgrade process
-
