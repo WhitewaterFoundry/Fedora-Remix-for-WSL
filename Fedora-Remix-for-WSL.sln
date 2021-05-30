@@ -9,6 +9,8 @@ Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "Fedora-Remix-for-WSL", "Fed
 EndProject
 Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "Fedora-Remix-for-WSL-SL", "Fedora-Remix-for-WSL-SL\Fedora-Remix-for-WSL-SL.wapproj", "{ACCA81F1-6810-492B-8B09-2FCCE5E4C91A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FedoraRemixWSLUI", "FedoraRemixWSLUI\FedoraRemixWSLUI.vcxproj", "{7BFCBECF-3DA8-442F-B43C-E7A349D490D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +70,21 @@ Global
 		{ACCA81F1-6810-492B-8B09-2FCCE5E4C91A}.Release|x64.Build.0 = Release|x64
 		{ACCA81F1-6810-492B-8B09-2FCCE5E4C91A}.Release|x64.Deploy.0 = Release|x64
 		{ACCA81F1-6810-492B-8B09-2FCCE5E4C91A}.Release|x86.ActiveCfg = Release|x86
+		{7BFCBECF-3DA8-442F-B43C-E7A349D490D6}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{7BFCBECF-3DA8-442F-B43C-E7A349D490D6}.Debug|ARM.ActiveCfg = Debug|ARM
+		{7BFCBECF-3DA8-442F-B43C-E7A349D490D6}.Debug|ARM.Build.0 = Debug|ARM
+		{7BFCBECF-3DA8-442F-B43C-E7A349D490D6}.Debug|ARM.Deploy.0 = Debug|ARM
+		{7BFCBECF-3DA8-442F-B43C-E7A349D490D6}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{7BFCBECF-3DA8-442F-B43C-E7A349D490D6}.Debug|x64.ActiveCfg = Debug|x64
+		{7BFCBECF-3DA8-442F-B43C-E7A349D490D6}.Debug|x64.Build.0 = Debug|x64
+		{7BFCBECF-3DA8-442F-B43C-E7A349D490D6}.Debug|x86.ActiveCfg = Debug|Win32
+		{7BFCBECF-3DA8-442F-B43C-E7A349D490D6}.Release|Any CPU.ActiveCfg = Release|Win32
+		{7BFCBECF-3DA8-442F-B43C-E7A349D490D6}.Release|ARM.ActiveCfg = Release|ARM
+		{7BFCBECF-3DA8-442F-B43C-E7A349D490D6}.Release|ARM64.ActiveCfg = Release|ARM64
+		{7BFCBECF-3DA8-442F-B43C-E7A349D490D6}.Release|ARM64.Build.0 = Release|ARM64
+		{7BFCBECF-3DA8-442F-B43C-E7A349D490D6}.Release|x64.ActiveCfg = Release|x64
+		{7BFCBECF-3DA8-442F-B43C-E7A349D490D6}.Release|x64.Build.0 = Release|x64
+		{7BFCBECF-3DA8-442F-B43C-E7A349D490D6}.Release|x86.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
