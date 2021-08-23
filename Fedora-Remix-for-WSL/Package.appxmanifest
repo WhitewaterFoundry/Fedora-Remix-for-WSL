@@ -68,6 +68,9 @@
                             Enabled="false"
                             DisplayName="Fedora Remix for WSL"/>
                 </desktop:Extension>
+	            <uap:Extension Category="windows.protocol" EntryPoint="FedoraRemixWSLUI.App" Executable="FedoraRemixWSLUI.exe">
+		            <uap:Protocol Name="fedoraremixwslui"/>
+	            </uap:Extension>
             </Extensions>
 
         </Application>
