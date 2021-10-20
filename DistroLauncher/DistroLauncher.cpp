@@ -6,14 +6,14 @@
 #include "stdafx.h"
 
 // Commandline arguments:
-#define ARG_CONFIG              L"config"
-#define ARG_CONFIG_DEFAULT_USER L"--default-user"
-#define ARG_INSTALL             L"install"
-#define ARG_INSTALL_ROOT        L"--root"
-#define ARG_RUN                 L"run"
-#define ARG_RUN_C               L"-c"
+constexpr auto ARG_CONFIG = L"config";
+constexpr auto ARG_CONFIG_DEFAULT_USER = L"--default-user";
+constexpr auto ARG_INSTALL = L"install";
+constexpr auto ARG_INSTALL_ROOT = L"--root";
+constexpr auto ARG_RUN = L"run";
+constexpr auto ARG_RUN_C = L"-c";
 
-#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Foundation.h> //do not remove
 #include <winrt/Windows.System.h>
 #include <winrt/Windows.Storage.h>
 
@@ -96,7 +96,7 @@ HRESULT SetDefaultUser(std::wstring_view userName)
 int RetrieveCurrentTheme()
 {
     DWORD value = 0;
-    DWORD size = sizeof(value);
+    DWORD size = sizeof value;
 
     // ReSharper disable once CppTooWideScope
     const auto status = RegGetValueW(HKEY_CURRENT_USER,
@@ -203,12 +203,12 @@ int wmain(int argc, const wchar_t* argv[])
     }
 
     // Install the distribution if it is not already.
-    const auto installOnly = ((arguments.size() > 0) && (arguments[0] == ARG_INSTALL));
+    const auto installOnly = arguments.size() > 0 && arguments[0] == ARG_INSTALL;
     auto hr = S_OK;
     if (!g_wslApi.WslIsDistributionRegistered())
     {
         // If the "--root" option is specified, do not create a user account.
-        const auto useRoot = ((installOnly) && (arguments.size() > 1) && (arguments[1] == ARG_INSTALL_ROOT));
+        const auto useRoot = installOnly && arguments.size() > 1 && arguments[1] == ARG_INSTALL_ROOT;
         hr = InstallDistribution(!useRoot);
         if (FAILED(hr))
         {
@@ -226,7 +226,7 @@ int wmain(int argc, const wchar_t* argv[])
     }
 
     // Parse the command line arguments.
-    if ((SUCCEEDED(hr)) && (!installOnly))
+    if (SUCCEEDED(hr) && !installOnly)
     {
         SyncIcons();
         SyncBackground();
@@ -243,8 +243,8 @@ int wmain(int argc, const wchar_t* argv[])
                 Helpers::PromptForInput();
             }
         }
-        else if ((arguments[0] == ARG_RUN) ||
-            (arguments[0] == ARG_RUN_C))
+        else if (arguments[0] == ARG_RUN ||
+            arguments[0] == ARG_RUN_C)
         {
             std::wstring command;
             for (size_t index = 1; index < arguments.size(); index += 1)
