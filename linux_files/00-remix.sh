@@ -69,7 +69,7 @@ alias clear='clear -x'
 alias ll='ls -al'
 
 # Check if we have Windows Path
-if (command -v cmd.exe >/dev/null 2>&1); then
+if [ -z "$WIN_HOME" ] && (command -v cmd.exe >/dev/null 2>&1); then
 
   # Create a symbolic link to the windows home
 
