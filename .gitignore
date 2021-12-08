@@ -299,3 +299,4 @@ DistroLauncher/messages.h
 /x64/install.tar.gz.bak
 /ARM64/install.tar.gz.bak
 /.vagrant
+/FedoraRemixWSLUI/Generated Files/

@@ -56,7 +56,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <EntryPointProjectUniqueName>..\DistroLauncher\DistroLauncher.vcxproj</EntryPointProjectUniqueName>
-    <PackageCertificateThumbprint>1135ED70FE5432B6365A160D89058876A18C8C85</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>25B3BE562C1D1E5C1DDAE535A667B74BCB7CFF0C</PackageCertificateThumbprint>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
