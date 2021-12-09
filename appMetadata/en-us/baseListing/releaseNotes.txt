@@ -1,5 +1,11 @@
 Existing users can update immediately by running $ upgrade.sh
 
+35.12.2
+* Upgraded to Fedora 35
+* Now the upgrade.sh script can be executed calling update.sh
+* Fixed and error for some configurations that Fedora Remix cannot be executed from Windows Terminal
+* Improved the logo in Windows 10 start menu
+
 34.5.6
 * Fixed a problem with dnf and WSL1
 * Fixed a connection problem with XServer when fish is the default shell

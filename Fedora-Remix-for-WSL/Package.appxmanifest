@@ -11,7 +11,7 @@
     <Identity
             Name="WhitewaterFoundryLtd.Co.FedoraRemixforWSL"
             Publisher="CN=9879127B-9E92-4DE5-9C32-0B1F09F95DCF"
-            Version="34.5.6.0"/>
+            Version="35.12.2.0"/>
 
     <Properties>
         <DisplayName>Fedora Remix for WSL</DisplayName>
@@ -36,7 +36,7 @@
             <uap:VisualElements
                     DisplayName="Fedora Remix for WSL"
                     Description="Fedora Remix for WSL. Powered by Pengwin Enterprise."
-                    BackgroundColor="black"
+                    BackgroundColor="transparent"
                     Square150x150Logo="Images\Square150x150Logo.png"
                     Square44x44Logo="Images\Square44x44Logo.png">
                 <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png"
