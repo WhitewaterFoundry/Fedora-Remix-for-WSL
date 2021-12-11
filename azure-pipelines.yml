@@ -69,11 +69,19 @@ steps:
     SourceFolder: '$(appxPackageDir)'
     Contents: '**\*bundle.msixupload'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+- task: DeleteFiles@1
+  inputs:
+    SourceFolder: '$(appxPackageDir)'
+    Contents: '**\*bundle.msixupload'
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(appxPackageDir)'
     Contents: '**\*.msixbundle'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+- task: DeleteFiles@1
+  inputs:
+    SourceFolder: '$(appxPackageDir)'
+    Contents: '**\*.msixbundle'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
