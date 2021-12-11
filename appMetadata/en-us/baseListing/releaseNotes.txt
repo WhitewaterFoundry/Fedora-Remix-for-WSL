@@ -36,11 +36,6 @@ Existing users can update immediately by running $ upgrade.sh
 * Upgraded to Fedora Remix 32
 
 31.5.2
-
 * Fixed a problem with ssh connections and X forwarding
 * Fixed an issue with Windows Fonts not correctly being seen in GUI apps.
 * Improved application icons and light theme
-
-31.5.1
-
-* Refreshed the logo to align it to the Pengwin suit
