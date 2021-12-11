@@ -1,6 +1,6 @@
 Existing users can update immediately by running $ upgrade.sh
 
-35.12.2
+35.12.3
 * Upgraded to Fedora 35
 * Now the upgrade.sh script can be executed calling update.sh
 * Fixed and error for some configurations that Fedora Remix cannot be executed from Windows Terminal

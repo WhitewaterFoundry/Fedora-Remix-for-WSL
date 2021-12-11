@@ -230,7 +230,10 @@ int wmain(int argc, const wchar_t* argv[])
     {
         SyncIcons();
         SyncBackground();
+
+#ifndef STANDALONE
         ShowFedoraRemixUi();
+#endif
 
         if (arguments.empty())
         {
