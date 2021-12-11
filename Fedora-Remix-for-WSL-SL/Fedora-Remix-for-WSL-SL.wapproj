@@ -64,7 +64,6 @@
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <AppxBundlePlatforms>x64|arm64</AppxBundlePlatforms>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
-    <DefineConstants>STANDALONE</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
     <AppxBundle>Always</AppxBundle>
@@ -257,6 +256,9 @@
     </Content>
     <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-light\Wide310x150Logo.scale-400.png">
       <Link>Images\contrast-standard\theme-light\Wide310x150Logo.scale-400.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\LargeTile.scale-100.png">
+      <Link>Images\LargeTile.scale-100.png</Link>
     </Content>
     <Content Include="..\Fedora-Remix-for-WSL\Images\SmallTile.scale-100.png">
       <Link>Images\SmallTile.scale-100.png</Link>
