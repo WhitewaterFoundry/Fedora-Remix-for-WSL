@@ -5,6 +5,8 @@
 
 #include "stdafx.h"
 
+//#define STANDALONE
+
 // Commandline arguments:
 constexpr auto ARG_CONFIG = L"config";
 constexpr auto ARG_CONFIG_DEFAULT_USER = L"--default-user";

@@ -52,17 +52,17 @@ steps:
     configuration: '$(buildConfiguration)'
     msbuildArchitecture: 'x64'
 
-- task: DownloadSecureFile@1
-  name: signingCert2
-  inputs:
-    secureFile: 'appsign.pfx'
-- task: VSBuild@1
-  inputs:
-    solution: '$(solution)'
-    msbuildArgs: '/t:Fedora-Remix-for-WSL-SL /p:AppxBundlePlatforms="x64" /p:DefineConstants="STANDALONE" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=SideloadOnly /p:PackageCertificateThumbprint=""  /p:PackageCertificateKeyFile="$(signingCert2.secureFilePath)" /p:PackageCertificatePassword="$(appsign)"'
-    platform: 'x64'
-    configuration: '$(buildConfiguration)'
-    msbuildArchitecture: 'x64'
+#- task: DownloadSecureFile@1
+#  name: signingCert2
+#  inputs:
+#    secureFile: 'appsign.pfx'
+#- task: VSBuild@1
+#  inputs:
+#    solution: '$(solution)'
+#    msbuildArgs: '/t:Fedora-Remix-for-WSL-SL /p:AppxBundlePlatforms="x64" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=SideloadOnly /p:PackageCertificateThumbprint=""  /p:PackageCertificateKeyFile="$(signingCert2.secureFilePath)" /p:PackageCertificatePassword="$(appsign)"'
+#    platform: 'x64'
+#    configuration: '$(buildConfiguration)'
+#    msbuildArchitecture: 'x64'
 
 - task: CopyFiles@2
   inputs:
