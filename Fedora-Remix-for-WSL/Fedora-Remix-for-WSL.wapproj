@@ -144,13 +144,25 @@
     <Content Include="Images\contrast-standard\theme-light\Wide310x150Logo.scale-200.png" />
     <Content Include="Images\contrast-standard\theme-light\Wide310x150Logo.scale-400.png" />
     <Content Include="Images\LargeTile.scale-100.png" />
+    <Content Include="Images\LargeTile.scale-125.png" />
+    <Content Include="Images\LargeTile.scale-150.png" />
+    <Content Include="Images\LargeTile.scale-200.png" />
+    <Content Include="Images\LargeTile.scale-400.png" />
     <Content Include="Images\SmallTile.scale-100.png" />
+    <Content Include="Images\SmallTile.scale-125.png" />
+    <Content Include="Images\SmallTile.scale-150.png" />
+    <Content Include="Images\SmallTile.scale-200.png" />
+    <Content Include="Images\SmallTile.scale-400.png" />
     <Content Include="Images\SplashScreen.scale-100.png" />
     <Content Include="Images\SplashScreen.scale-125.png" />
     <Content Include="Images\SplashScreen.scale-150.png" />
     <Content Include="Images\SplashScreen.scale-200.png" />
     <Content Include="Images\SplashScreen.scale-400.png" />
     <Content Include="Images\Square150x150Logo.scale-100.png" />
+    <Content Include="Images\Square150x150Logo.scale-125.png" />
+    <Content Include="Images\Square150x150Logo.scale-150.png" />
+    <Content Include="Images\Square150x150Logo.scale-200.png" />
+    <Content Include="Images\Square150x150Logo.scale-400.png" />
     <Content Include="Images\Square44x44Logo.altform-lightunplated_targetsize-16.png" />
     <Content Include="Images\Square44x44Logo.altform-lightunplated_targetsize-24.png" />
     <Content Include="Images\Square44x44Logo.altform-lightunplated_targetsize-256.png" />
@@ -179,6 +191,10 @@
     <Content Include="Images\contrast-standard\theme-dark" />
     <Content Include="Images\contrast-standard\theme-light" />
     <Content Include="Images\Wide310x150Logo.scale-100.png" />
+    <Content Include="Images\Wide310x150Logo.scale-125.png" />
+    <Content Include="Images\Wide310x150Logo.scale-150.png" />
+    <Content Include="Images\Wide310x150Logo.scale-200.png" />
+    <Content Include="Images\Wide310x150Logo.scale-400.png" />
     <Content Include="Public\Fragments\fedoraremix.json" />
     <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>

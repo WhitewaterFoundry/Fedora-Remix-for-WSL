@@ -1,5 +1,8 @@
 Existing users can update immediately by running $ upgrade.sh
 
+35.12.4
+* Improved the tiles in Start Menu in Windows 10 1809-1909
+
 35.12.3
 * Upgraded to Fedora 35
 * Now the upgrade.sh script can be executed calling update.sh

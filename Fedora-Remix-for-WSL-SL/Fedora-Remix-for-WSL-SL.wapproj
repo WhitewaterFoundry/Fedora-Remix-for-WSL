@@ -260,8 +260,32 @@
     <Content Include="..\Fedora-Remix-for-WSL\Images\LargeTile.scale-100.png">
       <Link>Images\LargeTile.scale-100.png</Link>
     </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\LargeTile.scale-125.png">
+      <Link>Images\LargeTile.scale-125.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\LargeTile.scale-150.png">
+      <Link>Images\LargeTile.scale-150.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\LargeTile.scale-200.png">
+      <Link>Images\LargeTile.scale-200.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\LargeTile.scale-400.png">
+      <Link>Images\LargeTile.scale-400.png</Link>
+    </Content>
     <Content Include="..\Fedora-Remix-for-WSL\Images\SmallTile.scale-100.png">
       <Link>Images\SmallTile.scale-100.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\SmallTile.scale-125.png">
+      <Link>Images\SmallTile.scale-125.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\SmallTile.scale-150.png">
+      <Link>Images\SmallTile.scale-150.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\SmallTile.scale-200.png">
+      <Link>Images\SmallTile.scale-200.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\SmallTile.scale-400.png">
+      <Link>Images\SmallTile.scale-400.png</Link>
     </Content>
     <Content Include="..\Fedora-Remix-for-WSL\Images\SplashScreen.scale-100.png">
       <Link>Images\SplashScreen.scale-100.png</Link>
@@ -280,6 +304,18 @@
     </Content>
     <Content Include="..\Fedora-Remix-for-WSL\Images\Square150x150Logo.scale-100.png">
       <Link>Images\Square150x150Logo.scale-100.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\Square150x150Logo.scale-125.png">
+      <Link>Images\Square150x150Logo.scale-125.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\Square150x150Logo.scale-150.png">
+      <Link>Images\Square150x150Logo.scale-150.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\Square150x150Logo.scale-200.png">
+      <Link>Images\Square150x150Logo.scale-200.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\Square150x150Logo.scale-400.png">
+      <Link>Images\Square150x150Logo.scale-400.png</Link>
     </Content>
     <Content Include="..\Fedora-Remix-for-WSL\Images\Square44x44Logo.altform-lightunplated_targetsize-16.png">
       <Link>Images\Square44x44Logo.altform-lightunplated_targetsize-16.png</Link>
@@ -358,6 +394,18 @@
     </Content>
     <Content Include="..\Fedora-Remix-for-WSL\Images\Wide310x150Logo.scale-100.png">
       <Link>Images\Wide310x150Logo.scale-100.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\Wide310x150Logo.scale-125.png">
+      <Link>Images\Wide310x150Logo.scale-125.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\Wide310x150Logo.scale-150.png">
+      <Link>Images\Wide310x150Logo.scale-150.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\Wide310x150Logo.scale-200.png">
+      <Link>Images\Wide310x150Logo.scale-200.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\Wide310x150Logo.scale-400.png">
+      <Link>Images\Wide310x150Logo.scale-400.png</Link>
     </Content>
     <Content Include="Public\Fragments\fedoraremix.json" />
   </ItemGroup>
