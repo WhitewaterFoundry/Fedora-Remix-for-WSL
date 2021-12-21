@@ -1,6 +1,7 @@
 Existing users can update immediately by running $ upgrade.sh
 
-35.12.4
+35.12.5
+* Added explicit error code and message for virtualization not present
 * Improved the tiles in Start Menu in Windows 10 1809-1909
 
 35.12.3

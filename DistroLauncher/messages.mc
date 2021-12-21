@@ -99,3 +99,9 @@ MessageId=1015 SymbolicName=MSG_WELCOME_MSG_PROMPT
 Language=English
 Welcome to Fedora Remix for WSL. Powered by Pengwin Enterprise.
 .
+
+MessageId=1016 SymbolicName=MSG_ENABLE_VIRTUALIZATION
+Language=English
+Please enable the Virtual Machine Platform Windows feature and ensure virtualization is enabled in the BIOS.
+For information please visit https://aka.ms/enablevirtualization
+.

@@ -296,6 +296,10 @@ int wmain(int argc, const wchar_t* argv[])
         {
             Helpers::PrintMessage(MSG_MISSING_OPTIONAL_COMPONENT);
         }
+        else if (hr == HCS_E_HYPERV_NOT_INSTALLED)
+        {
+            Helpers::PrintMessage(MSG_ENABLE_VIRTUALIZATION);
+        }
         else
         {
             Helpers::PrintErrorMessage(hr);
