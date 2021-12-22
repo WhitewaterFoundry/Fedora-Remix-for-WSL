@@ -26,13 +26,3 @@ Existing users can update immediately by running $ upgrade.sh
 34.4.2
 * Upgraded to Fedora Remix 34
 * Enable GPU acceleration for Windows Insider Preview build 21362+
-
-33.4.0
-* If the DISPLAY variable is already set, it won't be modified
-
-33.2.0
-* Fixed a problem with ss -a downgrading and locking iproute2 to 5.8
-
-33.1.0
-* Upgraded to Fedora Remix 33
-* With this version, the problems with dnf and yum locks with WSL1 are fixed.
