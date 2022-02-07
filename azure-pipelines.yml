@@ -12,7 +12,7 @@ pool:
 
 variables:
   solution: '**/*.sln'
-  buildPlatform: 'x64|ARM64'
+  buildPlatform: 'x64|arm64'
   buildConfiguration: 'Release'
   appxPackageDir: '$(System.DefaultWorkingDirectory)\AppxPackages'
 
@@ -47,23 +47,21 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
-    msbuildArgs: '/t:Launcher;Fedora-Remix-for-WSL /m /p:AppxBundlePlatforms="$(buildPlatform)" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=StoreUpload /p:PackageCertificateThumbprint=""  /p:PackageCertificateKeyFile="$(signingCert.secureFilePath)" /p:PackageCertificatePassword="1"'
+    msbuildArgs: '/t:Fedora-Remix-for-WSL /p:AppxBundlePlatforms="$(buildPlatform)" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=StoreUpload /p:PackageCertificateThumbprint=""  /p:PackageCertificateKeyFile="$(signingCert.secureFilePath)" /p:PackageCertificatePassword="1"'
     platform: 'x64'
     configuration: '$(buildConfiguration)'
-    maximumCpuCount: true
     msbuildArchitecture: 'x64'
 
-- task: DownloadSecureFile@1
-  name: signingCert2
-  inputs:
-    secureFile: 'appsign.pfx'
+#- task: DownloadSecureFile@1
+#  name: signingCert2
+#  inputs:
+#    secureFile: 'appsign.pfx'
 #- task: VSBuild@1
 #  inputs:
 #    solution: '$(solution)'
-#    msbuildArgs: '/t:Launcher;Fedora-Remix-for-WSL-SL /m /p:AppxBundlePlatforms="$(buildPlatform)" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=SideloadOnly /p:PackageCertificateThumbprint=""  /p:PackageCertificateKeyFile="$(signingCert2.secureFilePath)" /p:PackageCertificatePassword="$(appsign)"'
+#    msbuildArgs: '/t:Fedora-Remix-for-WSL-SL /p:AppxBundlePlatforms="x64" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=SideloadOnly /p:PackageCertificateThumbprint=""  /p:PackageCertificateKeyFile="$(signingCert2.secureFilePath)" /p:PackageCertificatePassword="$(appsign)"'
 #    platform: 'x64'
 #    configuration: '$(buildConfiguration)'
-#    maximumCpuCount: true
 #    msbuildArchitecture: 'x64'
 
 - task: CopyFiles@2
@@ -71,11 +69,19 @@ steps:
     SourceFolder: '$(appxPackageDir)'
     Contents: '**\*bundle.msixupload'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+- task: DeleteFiles@1
+  inputs:
+    SourceFolder: '$(appxPackageDir)'
+    Contents: '**\*bundle.msixupload'
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(appxPackageDir)'
     Contents: '**\*.msixbundle'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+- task: DeleteFiles@1
+  inputs:
+    SourceFolder: '$(appxPackageDir)'
+    Contents: '**\*.msixbundle'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'

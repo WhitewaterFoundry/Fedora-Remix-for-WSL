@@ -103,10 +103,160 @@
   <ItemGroup>
     <ProjectReference Include="..\DistroLauncher\DistroLauncher.vcxproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\" />
+  <ItemGroup Condition="'$(Platform)'=='x64'">
+    <Content Include="..\x64\install.tar.gz">
+      <CopyToOutputDirectory>true</CopyToOutputDirectory>
+      <Link>install.tar.gz</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Platform)'=='ARM64'">
+    <Content Include="..\ARM64\install.tar.gz">
+      <CopyToOutputDirectory>true</CopyToOutputDirectory>
+      <Link>install.tar.gz</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Platform)'=='x64'">
+    <Content Include="..\x64\$(Configuration)\fedoraremix.exe">
+      <CopyToOutputDirectory>true</CopyToOutputDirectory>
+      <Link>fedoraremix.exe</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Platform)'=='ARM64'">
+    <Content Include="..\ARM64\$(Configuration)\fedoraremix.exe">
+      <CopyToOutputDirectory>true</CopyToOutputDirectory>
+      <Link>fedoraremix.exe</Link>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\Fedora-Remix-for-WSL\Assets\fedoraremix.png">
+      <Link>Assets\fedoraremix.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Assets\fedoraremix.theme-dark.png">
+      <Link>Assets\fedoraremix.theme-dark.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Assets\Fedora_remix_purple_darkbackground_370.png">
+      <Link>Assets\Fedora_remix_purple_darkbackground_370.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-dark\LargeTile.scale-100.png">
+      <Link>Images\contrast-standard\theme-dark\LargeTile.scale-100.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-dark\LargeTile.scale-125.png">
+      <Link>Images\contrast-standard\theme-dark\LargeTile.scale-125.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-dark\LargeTile.scale-150.png">
+      <Link>Images\contrast-standard\theme-dark\LargeTile.scale-150.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-dark\LargeTile.scale-200.png">
+      <Link>Images\contrast-standard\theme-dark\LargeTile.scale-200.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-dark\LargeTile.scale-400.png">
+      <Link>Images\contrast-standard\theme-dark\LargeTile.scale-400.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-dark\SmallTile.scale-100.png">
+      <Link>Images\contrast-standard\theme-dark\SmallTile.scale-100.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-dark\SmallTile.scale-125.png">
+      <Link>Images\contrast-standard\theme-dark\SmallTile.scale-125.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-dark\SmallTile.scale-150.png">
+      <Link>Images\contrast-standard\theme-dark\SmallTile.scale-150.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-dark\SmallTile.scale-200.png">
+      <Link>Images\contrast-standard\theme-dark\SmallTile.scale-200.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-dark\SmallTile.scale-400.png">
+      <Link>Images\contrast-standard\theme-dark\SmallTile.scale-400.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-dark\Square150x150Logo.scale-100.png">
+      <Link>Images\contrast-standard\theme-dark\Square150x150Logo.scale-100.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-dark\Square150x150Logo.scale-125.png">
+      <Link>Images\contrast-standard\theme-dark\Square150x150Logo.scale-125.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-dark\Square150x150Logo.scale-150.png">
+      <Link>Images\contrast-standard\theme-dark\Square150x150Logo.scale-150.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-dark\Square150x150Logo.scale-200.png">
+      <Link>Images\contrast-standard\theme-dark\Square150x150Logo.scale-200.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-dark\Square150x150Logo.scale-400.png">
+      <Link>Images\contrast-standard\theme-dark\Square150x150Logo.scale-400.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-dark\Wide310x150Logo.scale-100.png">
+      <Link>Images\contrast-standard\theme-dark\Wide310x150Logo.scale-100.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-dark\Wide310x150Logo.scale-125.png">
+      <Link>Images\contrast-standard\theme-dark\Wide310x150Logo.scale-125.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-dark\Wide310x150Logo.scale-150.png">
+      <Link>Images\contrast-standard\theme-dark\Wide310x150Logo.scale-150.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-dark\Wide310x150Logo.scale-200.png">
+      <Link>Images\contrast-standard\theme-dark\Wide310x150Logo.scale-200.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-dark\Wide310x150Logo.scale-400.png">
+      <Link>Images\contrast-standard\theme-dark\Wide310x150Logo.scale-400.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-light\LargeTile.scale-100.png">
+      <Link>Images\contrast-standard\theme-light\LargeTile.scale-100.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-light\LargeTile.scale-125.png">
+      <Link>Images\contrast-standard\theme-light\LargeTile.scale-125.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-light\LargeTile.scale-150.png">
+      <Link>Images\contrast-standard\theme-light\LargeTile.scale-150.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-light\LargeTile.scale-200.png">
+      <Link>Images\contrast-standard\theme-light\LargeTile.scale-200.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-light\LargeTile.scale-400.png">
+      <Link>Images\contrast-standard\theme-light\LargeTile.scale-400.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-light\SmallTile.scale-100.png">
+      <Link>Images\contrast-standard\theme-light\SmallTile.scale-100.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-light\SmallTile.scale-125.png">
+      <Link>Images\contrast-standard\theme-light\SmallTile.scale-125.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-light\SmallTile.scale-150.png">
+      <Link>Images\contrast-standard\theme-light\SmallTile.scale-150.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-light\SmallTile.scale-200.png">
+      <Link>Images\contrast-standard\theme-light\SmallTile.scale-200.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-light\SmallTile.scale-400.png">
+      <Link>Images\contrast-standard\theme-light\SmallTile.scale-400.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-light\Square150x150Logo.scale-100.png">
+      <Link>Images\contrast-standard\theme-light\Square150x150Logo.scale-100.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-light\Square150x150Logo.scale-125.png">
+      <Link>Images\contrast-standard\theme-light\Square150x150Logo.scale-125.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-light\Square150x150Logo.scale-150.png">
+      <Link>Images\contrast-standard\theme-light\Square150x150Logo.scale-150.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-light\Square150x150Logo.scale-200.png">
+      <Link>Images\contrast-standard\theme-light\Square150x150Logo.scale-200.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-light\Square150x150Logo.scale-400.png">
+      <Link>Images\contrast-standard\theme-light\Square150x150Logo.scale-400.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-light\Wide310x150Logo.scale-100.png">
+      <Link>Images\contrast-standard\theme-light\Wide310x150Logo.scale-100.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-light\Wide310x150Logo.scale-125.png">
+      <Link>Images\contrast-standard\theme-light\Wide310x150Logo.scale-125.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-light\Wide310x150Logo.scale-150.png">
+      <Link>Images\contrast-standard\theme-light\Wide310x150Logo.scale-150.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-light\Wide310x150Logo.scale-200.png">
+      <Link>Images\contrast-standard\theme-light\Wide310x150Logo.scale-200.png</Link>
+    </Content>
+    <Content Include="..\Fedora-Remix-for-WSL\Images\contrast-standard\theme-light\Wide310x150Logo.scale-400.png">
+      <Link>Images\contrast-standard\theme-light\Wide310x150Logo.scale-400.png</Link>
+    </Content>
     <Content Include="..\Fedora-Remix-for-WSL\Images\LargeTile.scale-100.png">
       <Link>Images\LargeTile.scale-100.png</Link>
     </Content>
@@ -257,30 +407,12 @@
     <Content Include="..\Fedora-Remix-for-WSL\Images\Wide310x150Logo.scale-400.png">
       <Link>Images\Wide310x150Logo.scale-400.png</Link>
     </Content>
+    <Content Include="Public\Fragments\fedoraremix.json" />
   </ItemGroup>
-  <ItemGroup Condition="'$(Platform)'=='x64'">
-    <Content Include="..\x64\install.tar.gz">
-      <CopyToOutputDirectory>true</CopyToOutputDirectory>
-      <Link>install.tar.gz</Link>
-    </Content>
-  </ItemGroup>
-  <ItemGroup Condition="'$(Platform)'=='ARM64'">
-    <Content Include="..\ARM64\install.tar.gz">
-      <CopyToOutputDirectory>true</CopyToOutputDirectory>
-      <Link>install.tar.gz</Link>
-    </Content>
-  </ItemGroup>
-  <ItemGroup Condition="'$(Platform)'=='x64'">
-    <Content Include="..\x64\$(Configuration)\fedoraremix.exe">
-      <CopyToOutputDirectory>true</CopyToOutputDirectory>
-      <Link>fedoraremix.exe</Link>
-    </Content>
-  </ItemGroup>
-  <ItemGroup Condition="'$(Platform)'=='ARM64'">
-    <Content Include="..\ARM64\$(Configuration)\fedoraremix.exe">
-      <CopyToOutputDirectory>true</CopyToOutputDirectory>
-      <Link>fedoraremix.exe</Link>
-    </Content>
+  <ItemGroup>
+    <Folder Include="Assets\" />
+    <Folder Include="Images\contrast-standard\theme-light\" />
+    <Folder Include="Images\contrast-standard\theme-dark\" />
   </ItemGroup>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
 </Project>

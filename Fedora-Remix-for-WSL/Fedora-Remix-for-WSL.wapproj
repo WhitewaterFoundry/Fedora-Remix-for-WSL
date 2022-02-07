@@ -56,15 +56,13 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <EntryPointProjectUniqueName>..\DistroLauncher\DistroLauncher.vcxproj</EntryPointProjectUniqueName>
-    <PackageCertificateThumbprint>1135ED70FE5432B6365A160D89058876A18C8C85</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>25B3BE562C1D1E5C1DDAE535A667B74BCB7CFF0C</PackageCertificateThumbprint>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <AppxBundlePlatforms>x64|arm64</AppxBundlePlatforms>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
-    <AppInstallerUri>https://github.com/WhitewaterFoundry/Fedora-Remix-for-WSL/releases/download/1.31.10/Fedora-Remix-for-WSL_1.31.10.0_x64_arm64.appxbundle</AppInstallerUri>
-    <AppxPackageSigningTimestampServerUrl>http://timestamp.comodoca.com/%3f__hstc=116687193.ca0320fdf84fdaebb49c623303fc35cd.1574461157682.1575409935578.1578516608285.3&amp;__hssc=116687193.1.1578516608285&amp;__hsfp=100782785</AppxPackageSigningTimestampServerUrl>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AppxBundle>Always</AppxBundle>
@@ -105,6 +103,46 @@
     <Content Include="Assets\fedoraremix.png" />
     <Content Include="Assets\fedoraremix.theme-dark.png" />
     <Content Include="Assets\Fedora_remix_purple_darkbackground_370.png" />
+    <Content Include="Images\contrast-standard\theme-dark\LargeTile.scale-100.png" />
+    <Content Include="Images\contrast-standard\theme-dark\LargeTile.scale-125.png" />
+    <Content Include="Images\contrast-standard\theme-dark\LargeTile.scale-150.png" />
+    <Content Include="Images\contrast-standard\theme-dark\LargeTile.scale-200.png" />
+    <Content Include="Images\contrast-standard\theme-dark\LargeTile.scale-400.png" />
+    <Content Include="Images\contrast-standard\theme-dark\SmallTile.scale-100.png" />
+    <Content Include="Images\contrast-standard\theme-dark\SmallTile.scale-125.png" />
+    <Content Include="Images\contrast-standard\theme-dark\SmallTile.scale-150.png" />
+    <Content Include="Images\contrast-standard\theme-dark\SmallTile.scale-200.png" />
+    <Content Include="Images\contrast-standard\theme-dark\SmallTile.scale-400.png" />
+    <Content Include="Images\contrast-standard\theme-dark\Square150x150Logo.scale-100.png" />
+    <Content Include="Images\contrast-standard\theme-dark\Square150x150Logo.scale-125.png" />
+    <Content Include="Images\contrast-standard\theme-dark\Square150x150Logo.scale-150.png" />
+    <Content Include="Images\contrast-standard\theme-dark\Square150x150Logo.scale-200.png" />
+    <Content Include="Images\contrast-standard\theme-dark\Square150x150Logo.scale-400.png" />
+    <Content Include="Images\contrast-standard\theme-dark\Wide310x150Logo.scale-100.png" />
+    <Content Include="Images\contrast-standard\theme-dark\Wide310x150Logo.scale-125.png" />
+    <Content Include="Images\contrast-standard\theme-dark\Wide310x150Logo.scale-150.png" />
+    <Content Include="Images\contrast-standard\theme-dark\Wide310x150Logo.scale-200.png" />
+    <Content Include="Images\contrast-standard\theme-dark\Wide310x150Logo.scale-400.png" />
+    <Content Include="Images\contrast-standard\theme-light\LargeTile.scale-100.png" />
+    <Content Include="Images\contrast-standard\theme-light\LargeTile.scale-125.png" />
+    <Content Include="Images\contrast-standard\theme-light\LargeTile.scale-150.png" />
+    <Content Include="Images\contrast-standard\theme-light\LargeTile.scale-200.png" />
+    <Content Include="Images\contrast-standard\theme-light\LargeTile.scale-400.png" />
+    <Content Include="Images\contrast-standard\theme-light\SmallTile.scale-100.png" />
+    <Content Include="Images\contrast-standard\theme-light\SmallTile.scale-125.png" />
+    <Content Include="Images\contrast-standard\theme-light\SmallTile.scale-150.png" />
+    <Content Include="Images\contrast-standard\theme-light\SmallTile.scale-200.png" />
+    <Content Include="Images\contrast-standard\theme-light\SmallTile.scale-400.png" />
+    <Content Include="Images\contrast-standard\theme-light\Square150x150Logo.scale-100.png" />
+    <Content Include="Images\contrast-standard\theme-light\Square150x150Logo.scale-125.png" />
+    <Content Include="Images\contrast-standard\theme-light\Square150x150Logo.scale-150.png" />
+    <Content Include="Images\contrast-standard\theme-light\Square150x150Logo.scale-200.png" />
+    <Content Include="Images\contrast-standard\theme-light\Square150x150Logo.scale-400.png" />
+    <Content Include="Images\contrast-standard\theme-light\Wide310x150Logo.scale-100.png" />
+    <Content Include="Images\contrast-standard\theme-light\Wide310x150Logo.scale-125.png" />
+    <Content Include="Images\contrast-standard\theme-light\Wide310x150Logo.scale-150.png" />
+    <Content Include="Images\contrast-standard\theme-light\Wide310x150Logo.scale-200.png" />
+    <Content Include="Images\contrast-standard\theme-light\Wide310x150Logo.scale-400.png" />
     <Content Include="Images\LargeTile.scale-100.png" />
     <Content Include="Images\LargeTile.scale-125.png" />
     <Content Include="Images\LargeTile.scale-150.png" />
@@ -150,6 +188,8 @@
     <Content Include="Images\StoreLogo.scale-150.png" />
     <Content Include="Images\StoreLogo.scale-200.png" />
     <Content Include="Images\StoreLogo.scale-400.png" />
+    <Content Include="Images\contrast-standard\theme-dark" />
+    <Content Include="Images\contrast-standard\theme-light" />
     <Content Include="Images\Wide310x150Logo.scale-100.png" />
     <Content Include="Images\Wide310x150Logo.scale-125.png" />
     <Content Include="Images\Wide310x150Logo.scale-150.png" />
