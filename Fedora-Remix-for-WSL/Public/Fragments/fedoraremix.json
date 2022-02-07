@@ -12,8 +12,8 @@
       "bellStyle": "none",
       "colorScheme": "Fedora Remix for WSL",
       "cursorShape": "filledBox",
-      "fontFace": "Cascadia Code"
-
+      "fontFace": "Cascadia Code",
+      "startingDirectory": null
     }
   ],
   "schemes": [
