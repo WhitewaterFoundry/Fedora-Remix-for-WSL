@@ -14,6 +14,11 @@ constexpr auto ARG_INSTALL = L"install";
 constexpr auto ARG_INSTALL_ROOT = L"--root";
 constexpr auto ARG_RUN = L"run";
 constexpr auto ARG_RUN_C = L"-c";
+// ReSharper disable once IdentifierTypo
+// ReSharper disable once StringLiteralTypo
+constexpr auto ARG_SYSTEMD = L"--systemd";
+// ReSharper disable once IdentifierTypo
+constexpr auto ARG_SYSTEMD_D = L"-s";
 
 #include <winrt/Windows.Foundation.h> //do not remove
 #include <winrt/Windows.System.h>
@@ -258,6 +263,12 @@ int wmain(int argc, const wchar_t* argv[])
                 command += arguments[index];
             }
 
+            hr = g_wslApi.WslLaunchInteractive(command.c_str(), true, &exitCode);
+        }
+        else if (arguments[0] == ARG_SYSTEMD ||
+            arguments[0] == ARG_SYSTEMD_D)
+        {
+            const std::wstring command = L"sudo start-systemd";
             hr = g_wslApi.WslLaunchInteractive(command.c_str(), true, &exitCode);
         }
         else if (arguments[0] == ARG_CONFIG)

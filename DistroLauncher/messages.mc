@@ -28,12 +28,15 @@ Usage:
     <no args> 
         Launches the user's default shell in the user's home directory.
 
+    --systemd, -s
+        Launches the user's default shell in the user's home directory via SystemD.
+
     install [--root]
         Install the distribuiton and do not launch the shell when complete.
           --root
               Do not create a user account and leave the default user set to root.
 
-    run <command line> 
+    run, -c <command line> 
         Run the provided command line in the current working directory. If no
         command line is provided, the default shell is launched.
 
