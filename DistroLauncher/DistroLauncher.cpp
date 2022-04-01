@@ -5,7 +5,7 @@
 
 #include "stdafx.h"
 
-#define STANDALONE
+//#define STANDALONE
 
 // Commandline arguments:
 constexpr auto ARG_CONFIG = L"config";
