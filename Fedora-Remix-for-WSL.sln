@@ -11,6 +11,8 @@ Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "Fedora-Remix-for-WSL-SL", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FedoraRemixWSLUI", "FedoraRemixWSLUI\FedoraRemixWSLUI.vcxproj", "{7BFCBECF-3DA8-442F-B43C-E7A349D490D6}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FedoraRemixW", "FedoraRemixW\FedoraRemixW.vcxproj", "{E7A6CB29-5A74-4932-A74E-77A32269698E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM64 = Debug|ARM64
@@ -59,6 +61,14 @@ Global
 		{7BFCBECF-3DA8-442F-B43C-E7A349D490D6}.Release|ARM64.Build.0 = Release|ARM64
 		{7BFCBECF-3DA8-442F-B43C-E7A349D490D6}.Release|x64.ActiveCfg = Release|x64
 		{7BFCBECF-3DA8-442F-B43C-E7A349D490D6}.Release|x64.Build.0 = Release|x64
+		{E7A6CB29-5A74-4932-A74E-77A32269698E}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{E7A6CB29-5A74-4932-A74E-77A32269698E}.Debug|ARM64.Build.0 = Debug|ARM64
+		{E7A6CB29-5A74-4932-A74E-77A32269698E}.Debug|x64.ActiveCfg = Debug|x64
+		{E7A6CB29-5A74-4932-A74E-77A32269698E}.Debug|x64.Build.0 = Debug|x64
+		{E7A6CB29-5A74-4932-A74E-77A32269698E}.Release|ARM64.ActiveCfg = Release|ARM64
+		{E7A6CB29-5A74-4932-A74E-77A32269698E}.Release|ARM64.Build.0 = Release|ARM64
+		{E7A6CB29-5A74-4932-A74E-77A32269698E}.Release|x64.ActiveCfg = Release|x64
+		{E7A6CB29-5A74-4932-A74E-77A32269698E}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

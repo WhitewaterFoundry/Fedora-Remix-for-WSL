@@ -268,7 +268,7 @@ int wmain(int argc, const wchar_t* argv[])
         else if (arguments[0] == ARG_SYSTEMD ||
             arguments[0] == ARG_SYSTEMD_D)
         {
-            const std::wstring command = L"sudo start-systemd";
+            const std::wstring command = L"sudo start-systemd || (upgrade.sh && upgrade.sh && sudo start-systemd)";
             hr = g_wslApi.WslLaunchInteractive(command.c_str(), true, &exitCode);
         }
         else if (arguments[0] == ARG_CONFIG)
