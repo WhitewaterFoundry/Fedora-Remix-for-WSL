@@ -12,7 +12,7 @@
     <Identity
             Name="WhitewaterFoundryLtd.Co.FedoraRemixforWSL"
             Publisher="CN=9879127B-9E92-4DE5-9C32-0B1F09F95DCF"
-            Version="35.13.4.0"/>
+            Version="35.13.5.0"/>
 
     <Properties>
         <DisplayName>Fedora Remix for WSL</DisplayName>
@@ -96,19 +96,6 @@
                 </uap:DefaultTile>
                 <uap:SplashScreen Image="Images\SplashScreen.png" BackgroundColor="black"/>
             </uap:VisualElements>
-            <Extensions>
-                <desktop:Extension
-                        Category="windows.startupTask"
-                        Executable="DistroLauncher\fedoraremix.exe"
-                        EntryPoint="Windows.FullTrustApplication"
-                        uap10:Parameters="-s">
-                    <desktop:StartupTask
-                            TaskId="fedoraremix-systemd"
-                            Enabled="false"
-                            DisplayName="Fedora Remix for WSL (SystemD)"/>
-                </desktop:Extension>
-            </Extensions>
-
         </Application>
 	    <Application Id="App3"
 	                 Executable="FedoraRemixW\FedoraRemixW.exe"
@@ -133,20 +120,73 @@
 					    <desktop:ExecutionAlias Alias="FedoraRemixW.exe" />
 				    </uap3:AppExecutionAlias>
 			    </uap3:Extension>
+		    </Extensions>
+
+	    </Application>
+	    <Application Id="App4"
+	                 Executable="FedoraRemixSW\FedoraRemixSW.exe"
+	                 EntryPoint="Windows.FullTrustApplication" >
+		    <uap:VisualElements AppListEntry="none"
+		                        DisplayName="Fedora Remix for WSL (W)"
+		                        Description="Fedora Remix for WSL. Powered by Pengwin Enterprise."
+		                        BackgroundColor="#EBEBEB"
+		                        Square150x150Logo="Images\Square150x150Logo.png"
+		                        Square44x44Logo="Images\Square44x44Logo.png">
+			    <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png"
+			                     Square310x310Logo="Images\LargeTile.png" Square71x71Logo="Images\SmallTile.png"
+			                     ShortName="Fedora Remix SystemD (W)">
+			    </uap:DefaultTile>
+
+			    <uap:SplashScreen Image="Images\SplashScreen.png" BackgroundColor="black" />
+		    </uap:VisualElements>
+		    <Extensions>
+			    <uap3:Extension Category="windows.appExecutionAlias" Executable="FedoraRemixSW\FedoraRemixSW.exe"
+			                    EntryPoint="Windows.FullTrustApplication">
+				    <uap3:AppExecutionAlias>
+					    <desktop:ExecutionAlias Alias="FedoraRemixSW.exe" />
+				    </uap3:AppExecutionAlias>
+			    </uap3:Extension>
 			    <desktop:Extension
 				    Category="windows.startupTask"
-				    Executable="FedoraRemixW\FedoraRemixW.exe"
-				    EntryPoint="Windows.FullTrustApplication"
-				    uap10:Parameters="-s">
+				    Executable="FedoraRemixSW\FedoraRemixSW.exe"
+				    EntryPoint="Windows.FullTrustApplication">
 				    <desktop:StartupTask
 					    TaskId="fedoraremixw-systemd"
 					    Enabled="false"
-					    DisplayName="Fedora Remix for WSL (SystemD) (No Window)"/>
+					    DisplayName="Fedora Remix for WSL (SystemD) - No Window"/>
 			    </desktop:Extension>
 		    </Extensions>
 
 	    </Application>
+	    <Application Id="App6"
+	                 Executable="FedoraRemixS\FedoraRemixS.exe"
+	                 EntryPoint="Windows.FullTrustApplication" >
+		    <uap:VisualElements AppListEntry="none"
+		                        DisplayName="Fedora Remix for WSL (W)"
+		                        Description="Fedora Remix for WSL. Powered by Pengwin Enterprise."
+		                        BackgroundColor="#EBEBEB"
+		                        Square150x150Logo="Images\Square150x150Logo.png"
+		                        Square44x44Logo="Images\Square44x44Logo.png">
+			    <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png"
+			                     Square310x310Logo="Images\LargeTile.png" Square71x71Logo="Images\SmallTile.png"
+			                     ShortName="Fedora Remix SystemD">
+			    </uap:DefaultTile>
 
+			    <uap:SplashScreen Image="Images\SplashScreen.png" BackgroundColor="black" />
+		    </uap:VisualElements>
+		    <Extensions>
+			    <desktop:Extension
+				    Category="windows.startupTask"
+				    Executable="FedoraRemixS\FedoraRemixS.exe"
+				    EntryPoint="Windows.FullTrustApplication">
+				    <desktop:StartupTask
+					    TaskId="fedoraremix-systemd"
+					    Enabled="false"
+					    DisplayName="Fedora Remix for WSL (SystemD)"/>
+			    </desktop:Extension>
+		    </Extensions>
+
+	    </Application>
     </Applications>
 
     <Capabilities>
