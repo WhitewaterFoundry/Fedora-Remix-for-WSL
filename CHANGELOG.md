@@ -1,7 +1,5 @@
-Existing users can update immediately by running $ upgrade.sh
-
 35.13.5
-* Added SystemD optional support, creating a new Start Menu icon and a profile in Windows Terminal. Both have (SystemD) in their name.
+* Added SystemD optional support, adding an -s parameter to the fedoraremix.exe launcher.
 * Added a new command wslsystemctl to start services without starting SystemD, as other distros like Ubuntu does with the service command.
 * Added tweaks to be able to run snaps with WSLg.
 * Added tweaks to be able to run GNOME Desktop using Remote Desktop Connection.
@@ -23,3 +21,11 @@ Existing users can update immediately by running $ upgrade.sh
 34.5.6
 * Fixed a problem with dnf and WSL1
 * Fixed a connection problem with XServer when fish is the default shell
+
+34.5.5
+* Automatically creates an entry with logo in Windows Terminal
+* In App Settings, it is possible to set Fedora Remix launch at startup
+* When a new distro is created, now the default user is written in wsl.conf. So, the default user is preserved on exports and imports
+* For Windows Terminal add Fedora default color theme and background
+* Fix a problem installing packages in WSL1
+* Upgrade WSLU to 3.2.3
