@@ -31,7 +31,6 @@
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
-    <EntryPointProjectUniqueName>..\DistroLauncher\DistroLauncher.vcxproj</EntryPointProjectUniqueName>
     <PackageCertificateThumbprint>25B3BE562C1D1E5C1DDAE535A667B74BCB7CFF0C</PackageCertificateThumbprint>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
@@ -39,6 +38,7 @@
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <AppxBundlePlatforms>x64|arm64</AppxBundlePlatforms>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
+    <EntryPointProjectUniqueName>..\DistroLauncher\DistroLauncher.vcxproj</EntryPointProjectUniqueName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
     <AppxBundle>Always</AppxBundle>
@@ -182,6 +182,8 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DistroLauncher\DistroLauncher.vcxproj" />
+    <ProjectReference Include="..\FedoraRemixSW\FedoraRemixSW.vcxproj" />
+    <ProjectReference Include="..\FedoraRemixS\FedoraRemixS.vcxproj" />
     <ProjectReference Include="..\FedoraRemixWSLUI\FedoraRemixWSLUI.vcxproj" />
     <ProjectReference Include="..\FedoraRemixW\FedoraRemixW.vcxproj" />
   </ItemGroup>

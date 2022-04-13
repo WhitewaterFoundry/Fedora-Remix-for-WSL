@@ -13,6 +13,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FedoraRemixWSLUI", "FedoraR
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FedoraRemixW", "FedoraRemixW\FedoraRemixW.vcxproj", "{E7A6CB29-5A74-4932-A74E-77A32269698E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FedoraRemixSW", "FedoraRemixSW\FedoraRemixSW.vcxproj", "{8FC0DC14-D5AB-4DCD-B5A3-BAF7A57B1C4A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FedoraRemixS", "FedoraRemixS\FedoraRemixS.vcxproj", "{0255DDB7-7239-4A41-A5B0-80DF36681F3E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM64 = Debug|ARM64
@@ -69,6 +73,22 @@ Global
 		{E7A6CB29-5A74-4932-A74E-77A32269698E}.Release|ARM64.Build.0 = Release|ARM64
 		{E7A6CB29-5A74-4932-A74E-77A32269698E}.Release|x64.ActiveCfg = Release|x64
 		{E7A6CB29-5A74-4932-A74E-77A32269698E}.Release|x64.Build.0 = Release|x64
+		{8FC0DC14-D5AB-4DCD-B5A3-BAF7A57B1C4A}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{8FC0DC14-D5AB-4DCD-B5A3-BAF7A57B1C4A}.Debug|ARM64.Build.0 = Debug|ARM64
+		{8FC0DC14-D5AB-4DCD-B5A3-BAF7A57B1C4A}.Debug|x64.ActiveCfg = Debug|x64
+		{8FC0DC14-D5AB-4DCD-B5A3-BAF7A57B1C4A}.Debug|x64.Build.0 = Debug|x64
+		{8FC0DC14-D5AB-4DCD-B5A3-BAF7A57B1C4A}.Release|ARM64.ActiveCfg = Release|ARM64
+		{8FC0DC14-D5AB-4DCD-B5A3-BAF7A57B1C4A}.Release|ARM64.Build.0 = Release|ARM64
+		{8FC0DC14-D5AB-4DCD-B5A3-BAF7A57B1C4A}.Release|x64.ActiveCfg = Release|x64
+		{8FC0DC14-D5AB-4DCD-B5A3-BAF7A57B1C4A}.Release|x64.Build.0 = Release|x64
+		{0255DDB7-7239-4A41-A5B0-80DF36681F3E}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{0255DDB7-7239-4A41-A5B0-80DF36681F3E}.Debug|ARM64.Build.0 = Debug|ARM64
+		{0255DDB7-7239-4A41-A5B0-80DF36681F3E}.Debug|x64.ActiveCfg = Debug|x64
+		{0255DDB7-7239-4A41-A5B0-80DF36681F3E}.Debug|x64.Build.0 = Debug|x64
+		{0255DDB7-7239-4A41-A5B0-80DF36681F3E}.Release|ARM64.ActiveCfg = Release|ARM64
+		{0255DDB7-7239-4A41-A5B0-80DF36681F3E}.Release|ARM64.Build.0 = Release|ARM64
+		{0255DDB7-7239-4A41-A5B0-80DF36681F3E}.Release|x64.ActiveCfg = Release|x64
+		{0255DDB7-7239-4A41-A5B0-80DF36681F3E}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
