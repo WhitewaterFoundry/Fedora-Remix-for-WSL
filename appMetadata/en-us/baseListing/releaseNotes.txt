@@ -31,7 +31,3 @@ Existing users can update immediately by running $ upgrade.sh
 * For Windows Terminal add Fedora default color theme and background
 * Fix a problem installing packages in WSL1
 * Upgrade WSLU to 3.2.3
-
-34.4.2
-* Upgraded to Fedora Remix 34
-* Enable GPU acceleration for Windows Insider Preview build 21362+
