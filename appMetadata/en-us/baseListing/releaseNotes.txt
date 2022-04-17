@@ -1,5 +1,8 @@
 Existing users can update immediately by running $ upgrade.sh
 
+36.0.0
+* Upgraded to Fedora 36
+
 35.13.5
 * Added SystemD optional support, creating a new Start Menu icon and a profile in Windows Terminal. Both have (SystemD) in their name.
 * Added a new command wslsystemctl to start services without starting SystemD, as other distros like Ubuntu does with the service command.
