@@ -43,7 +43,7 @@ steps:
 - task: DownloadSecureFile@1
   name: signingCert
   inputs:
-    secureFile: 'store.pfx'
+    secureFile: 'store-DCF.pfx'
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
