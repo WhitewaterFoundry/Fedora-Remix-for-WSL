@@ -1,3 +1,6 @@
+36.0.0
+* Upgraded to Fedora 36
+
 35.13.5
 * Added SystemD optional support, adding an -s parameter to the fedoraremix.exe launcher.
 * Added a new command wslsystemctl to start services without starting SystemD, as other distros like Ubuntu does with the service command.
