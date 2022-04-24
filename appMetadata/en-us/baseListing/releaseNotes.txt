@@ -1,6 +1,6 @@
 Existing users can update immediately by running $ upgrade.sh
 
-36.0.0
+36.0.1
 * Upgraded to Fedora 36
 
 35.13.5
