@@ -31,7 +31,7 @@
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
-    <PackageCertificateThumbprint>25B3BE562C1D1E5C1DDAE535A667B74BCB7CFF0C</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>7E32F26C94BDABC6CEC2CF3F41BB86716616F86C</PackageCertificateThumbprint>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
@@ -61,6 +61,7 @@
     <Content Include="Assets\fedoraremix.png" />
     <Content Include="Assets\fedoraremix.theme-dark.png" />
     <Content Include="Assets\Fedora_remix_purple_darkbackground_370.png" />
+    <None Include="Fedora-Remix-for-WSL_TemporaryKey.pfx" />
     <Content Include="Images\contrast-standard\theme-dark\LargeTile.scale-100.png" />
     <Content Include="Images\contrast-standard\theme-dark\LargeTile.scale-125.png" />
     <Content Include="Images\contrast-standard\theme-dark\LargeTile.scale-150.png" />
