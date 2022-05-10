@@ -12,7 +12,7 @@
     <Identity
             Name="WhitewaterFoundryLtd.Co.FedoraRemixforWSL"
             Publisher="CN=9879127B-9E92-4DE5-9C32-0B1F09F95DCF"
-            Version="36.0.3.0"/>
+            Version="36.0.4.0"/>
 
     <Properties>
         <DisplayName>Fedora Remix for WSL</DisplayName>
