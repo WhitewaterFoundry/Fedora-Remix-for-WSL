@@ -57,7 +57,7 @@ Whitewater Foundry devs monitor the Fedora Remix for WSL GitHub issues page; how
 [Whitewater Foundry, Ltd. Co.](https://www.whitewaterfoundry.com/) is an open-source startup that created Pengwin (formerly WLinux), the first Linux distribution designed for Windows Subsystem for Linux on Windows 10. Pengwin has since become a top developer tool on the Microsoft Store, and Whitewater Foundry has grown to a worldwide team of independent developers. Whitewater Foundry recently debuted Pengwin Enterprise and joined the Red Hat Business Partners program to offer a customizable, secure, and reliable WSL solution for large organizations powered by Red Hat Enterprise Linux.
 
 - [Whitewater Foundry](https://www.whitewaterfoundry.com/)
-- [Pengwin Enterprise](https://www.whitewaterfoundry.com/Pengwin-enterprise/)
+- [Pengwin Enterprise](https://www.whitewaterfoundry.com/pengwin-enterprise/)
 - Microsoft Store: [Pengwin](https://www.microsoft.com/en-us/p/wlinux/9nv1gv1pxz6p)
 - Microsoft Store: [Pengwin Enterprise (Demo)](https://www.microsoft.com/en-us/p/wlinux-enterprise/9n8lp0x93vcp)
 - Microsoft Store: [Fedora Remix for WSL](https://www.microsoft.com/en-us/p/fedora-remix-for-wsl/9n6gdm4k2hnc)
