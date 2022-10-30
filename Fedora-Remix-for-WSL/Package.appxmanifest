@@ -12,7 +12,7 @@
     <Identity
             Name="WhitewaterFoundryLtd.Co.FedoraRemixforWSL"
             Publisher="CN=9879127B-9E92-4DE5-9C32-0B1F09F95DCF"
-            Version="37.0.0.0"/>
+            Version="37.0.1.0"/>
 
     <Properties>
         <DisplayName>Fedora Remix for WSL</DisplayName>
@@ -108,8 +108,7 @@
 		                        Square44x44Logo="Images\Square44x44Logo.png">
 			    <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png"
 			                     Square310x310Logo="Images\LargeTile.png" Square71x71Logo="Images\SmallTile.png"
-			                     ShortName="Fedora Remix (W)">
-			    </uap:DefaultTile>
+			                     ShortName="Fedora Remix (W)"/>
 
 			    <uap:SplashScreen Image="Images\SplashScreen.png" BackgroundColor="black" />
 		    </uap:VisualElements>
@@ -162,14 +161,14 @@
 	                 Executable="FedoraRemixS\FedoraRemixS.exe"
 	                 EntryPoint="Windows.FullTrustApplication" >
 		    <uap:VisualElements AppListEntry="none"
-		                        DisplayName="Fedora Remix for WSL (W)"
+		                        DisplayName="Fedora Remix for WSL (SystemD)"
 		                        Description="Fedora Remix for WSL. Powered by Pengwin Enterprise."
 		                        BackgroundColor="#EBEBEB"
 		                        Square150x150Logo="Images\Square150x150Logo.png"
 		                        Square44x44Logo="Images\Square44x44Logo.png">
 			    <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png"
 			                     Square310x310Logo="Images\LargeTile.png" Square71x71Logo="Images\SmallTile.png"
-			                     ShortName="Fedora Remix SystemD">
+			                     ShortName="SystemD">
 			    </uap:DefaultTile>
 
 			    <uap:SplashScreen Image="Images\SplashScreen.png" BackgroundColor="black" />
