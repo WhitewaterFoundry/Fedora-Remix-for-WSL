@@ -1,5 +1,9 @@
 Existing users can update immediately by running $ upgrade.sh
 
+37.0.2
+* Upgraded to Fedora 37
+* Improved compatibility with the Windows built-in SystemD
+
 36.0.1
 * Upgraded to Fedora 36
 
