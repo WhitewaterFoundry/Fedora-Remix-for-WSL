@@ -1,6 +1,9 @@
 ---
 name: WSL Error on Launch
 about: Report errors like 0x800320306 on launch.
+title: ''
+labels: ''
+assignees: ''
 
 ---
 

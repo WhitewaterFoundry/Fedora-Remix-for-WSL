@@ -1,6 +1,9 @@
 ---
 name: Bug report
 about: Create a report to help us improve
+title: ''
+labels: ''
+assignees: ''
 
 ---
 
@@ -37,9 +40,10 @@ What other troubleshooting have you attempted?
 
 Insert here:
 
-**WLinux Version**
+**Fedora Remix for WSL Version**
 
-Find: Settings->Apps->Apps & features->WLinux->Advanced Options->Version.
+Find: Settings->Apps->Apps & features->Fedora Remix for WSL Version->Advanced Options->Version.
+Also, `cat /etc/os-release`
 
 Insert here:
 
