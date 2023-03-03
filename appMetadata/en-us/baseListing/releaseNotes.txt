@@ -1,6 +1,6 @@
 Existing users can update immediately by running $ upgrade.sh
 
-37.1.1
+37.1.2
 * Support GPU video decoding and encoding in WSLg
 
 37.1.0
