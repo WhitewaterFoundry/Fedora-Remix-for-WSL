@@ -1,3 +1,6 @@
+37.1.2
+* Support GPU video decoding and encoding in WSLg
+
 37.1.0
 * Upgrade Mesa to 22.3.6
 * Fix ping in WSL1
