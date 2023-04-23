@@ -1,4 +1,8 @@
-37.1.2
+37.2.0
+* Latest update for Fedora 37
+* Upgraded mesa to 23.0.2 which includes some fixes to the VP9 video decoder
+
+* 37.1.2
 * Support GPU video decoding and encoding in WSLg
 
 37.1.0
