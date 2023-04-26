@@ -14,20 +14,6 @@
       "cursorShape": "filledBox",
       "fontFace": "Cascadia Code",
       "startingDirectory": null
-    },
-    {
-      "commandline": "%LOCALAPPDATA%\\Microsoft\\WindowsApps\\fedoraremix.exe -s",
-      "icon": "%LOCALAPPDATA%\\Packages\\WhitewaterFoundryLtd.Co.FedoraRemixforWSL_kd1vv0z0vy70w\\LocalState\\fedoraremix.png",
-      "name": "Fedora Remix for WSL (SystemD)",
-      "backgroundImage": "%LOCALAPPDATA%\\Packages\\WhitewaterFoundryLtd.Co.FedoraRemixforWSL_kd1vv0z0vy70w\\LocalState\\Fedora_remix_purple_darkbackground_370.png",
-      "backgroundImageAlignment": "bottomRight",
-      "backgroundImageOpacity": 0.15,
-      "backgroundImageStretchMode": "none",
-      "bellStyle": "none",
-      "colorScheme": "Fedora Remix for WSL",
-      "cursorShape": "filledBox",
-      "fontFace": "Cascadia Code",
-      "startingDirectory": null
     }
   ],
   "schemes": [

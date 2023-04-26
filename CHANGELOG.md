@@ -1,3 +1,8 @@
+
+38.0.0
+* Upgraded to Fedora 38
+* Made a custom Mesa 23 compilation with Direct 3D 12 support and video codes
+
 37.2.0
 * Latest update for Fedora 37
 * Upgraded mesa to 23.0.2 which includes some fixes to the VP9 video decoder
