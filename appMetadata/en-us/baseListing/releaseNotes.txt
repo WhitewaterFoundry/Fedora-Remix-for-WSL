@@ -1,7 +1,20 @@
 Existing users can update immediately by running $ upgrade.sh
 
+38.0.0
+* Upgraded to Fedora 38
+* Made a custom Mesa 23 compilation with Direct 3D 12 support and video codes
+
+37.2.0
+* Latest update for Fedora 37
+* Upgraded mesa to 23.0.2 which includes some fixes to the VP9 video decoder
+
+37.1.2
+* Support GPU video decoding and encoding in WSLg
+
 37.1.0
 * Upgrade Mesa to 22.3.6
+* Fix ping in WSL1
+* Upgrade to WSL Utilities 4.1.1
 
 37.0.4
 * Stop trying to upgrade fedora remix if the SystemD script fails
@@ -26,13 +39,4 @@ Existing users can update immediately by running $ upgrade.sh
 * Added explicit error code and message for virtualization not present
 * Improved the tiles in Start Menu in Windows 10 1809-1909
 
-35.12.3
-* Upgraded to Fedora 35
-* Now the upgrade.sh script can be executed calling update.sh
-* Fixed an error for some configurations that Fedora Remix cannot be executed from Windows Terminal
-* Improved the logo in Windows 10 start menu
-* Upgraded Mesa to 21.2.3, the latest version 21.3.1 provided by upstream Fedora 35 has a serious performance issue with GPU and WSLg
 
-34.5.6
-* Fixed a problem with dnf and WSL1
-* Fixed a connection problem with XServer when fish is the default shell

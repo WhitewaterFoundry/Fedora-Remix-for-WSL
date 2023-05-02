@@ -12,9 +12,9 @@ void RunProcess(LPWSTR cmdline)
     PROCESS_INFORMATION pi;
 
     // set the size of the structures
-    ZeroMemory(&si, sizeof(si));
-    si.cb = sizeof(si);
-    ZeroMemory(&pi, sizeof(pi));
+    ZeroMemory(&si, sizeof si);
+    si.cb = sizeof si;
+    ZeroMemory(&pi, sizeof pi);
 
     // start the program up
     CreateProcessW
@@ -41,7 +41,6 @@ void RunProcess(LPWSTR cmdline)
 
 void DistributionInfo::ChangeDefaultUserInWslConf(std::wstring_view userName)
 {
-    DWORD exitCode;
     wchar_t buff[255];
     _swprintf_p(buff, _countof(buff),
                 L"wsl.exe -d %1$s -u root -- if [ $(grep -c \"\\[user\\]\" /etc/wsl.conf) -eq \"0\" ]; then echo -e \"\\n[user]\\ndefault=%2$s\">>/etc/wsl.conf; else sed -i \"s/\\(default=\\)\\(.*\\)/\\1%2$s/\" /etc/wsl.conf ; fi",
@@ -57,16 +56,16 @@ bool DistributionInfo::CreateUser(std::wstring_view userName)
     std::wstring commandLine = L"/usr/sbin/useradd -m ";
     commandLine += userName;
     auto hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
-    if ((FAILED(hr)) || (exitCode != 0))
+    if (FAILED(hr) || exitCode != 0)
     {
         return false;
     }
 
     // Add the user account to relevant groups.
-    commandLine = L"/usr/sbin/usermod -aG adm,cdrom,wheel ";
+    commandLine = L"/usr/sbin/usermod -aG adm,cdrom,wheel,video,wsl-video ";
     commandLine += userName;
     hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
-    if ((FAILED(hr)) || (exitCode != 0))
+    if (FAILED(hr) || exitCode != 0)
     {
         // Delete the user if the group add command failed.
         commandLine = L"/usr/sbin/userdel ";
@@ -80,7 +79,7 @@ bool DistributionInfo::CreateUser(std::wstring_view userName)
     commandLine += userName;
     hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
 
-    if ((FAILED(hr)) || (exitCode != 0))
+    if (FAILED(hr) || exitCode != 0)
     {
         return false;
     }
@@ -106,7 +105,7 @@ ULONG DistributionInfo::QueryUid(std::wstring_view userName)
     // Create a pipe to read the output of the launched process.
     HANDLE readPipe;
     HANDLE writePipe;
-    SECURITY_ATTRIBUTES sa{sizeof(sa), nullptr, true};
+    SECURITY_ATTRIBUTES sa{sizeof sa, nullptr, true};
     auto uid = UID_INVALID;
     if (CreatePipe(&readPipe, &writePipe, &sa, 0))
     {
@@ -122,7 +121,7 @@ ULONG DistributionInfo::QueryUid(std::wstring_view userName)
             // Wait for the child to exit and ensure process exited successfully.
             WaitForSingleObject(child, INFINITE);
             DWORD exitCode;
-            if ((GetExitCodeProcess(child, &exitCode) == false) || (exitCode != 0))
+            if (GetExitCodeProcess(child, &exitCode) == false || exitCode != 0)
             {
                 hr = E_INVALIDARG;
             }
@@ -134,7 +133,7 @@ ULONG DistributionInfo::QueryUid(std::wstring_view userName)
                 DWORD bytesRead;
 
                 // Read the output of the command from the pipe and convert to a UID.
-                if (ReadFile(readPipe, buffer, (sizeof(buffer) - 1), &bytesRead, nullptr))
+                if (ReadFile(readPipe, buffer, sizeof buffer - 1, &bytesRead, nullptr))
                 {
                     buffer[bytesRead] = ANSI_NULL;
                     try

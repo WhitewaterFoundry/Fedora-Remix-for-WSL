@@ -1,4 +1,28 @@
-36.0.0
+
+38.0.0
+* Upgraded to Fedora 38
+* Made a custom Mesa 23 compilation with Direct 3D 12 support and video codes
+
+37.2.0
+* Latest update for Fedora 37
+* Upgraded mesa to 23.0.2 which includes some fixes to the VP9 video decoder
+
+* 37.1.2
+* Support GPU video decoding and encoding in WSLg
+
+37.1.0
+* Upgrade Mesa to 22.3.6
+* Fix ping in WSL1
+* Upgrade to WSL Utilities 4.1.1
+
+37.0.4
+* Stop trying to upgrade fedora remix if the SystemD script fails
+
+37.0.2
+* Upgraded to Fedora 37
+* Improved compatibility with the Windows built-in SystemD
+
+36.0.1
 * Upgraded to Fedora 36
 
 35.13.5
