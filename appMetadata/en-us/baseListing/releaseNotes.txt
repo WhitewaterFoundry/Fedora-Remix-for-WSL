@@ -1,4 +1,11 @@
-Existing users can update immediately by running $ upgrade.sh
+Existing users can update immediately by running $ update.sh
+
+39.0.0
+* Upgraded to Fedora 39
+* Fedora Linux 39 now features a coloured Bash prompt by default!
+* Added experimental prompt escape sequences for Windows Terminal 1.18 Shell Integration.
+* When the distro is being installed, now a progress icon appears in the Windows Terminal tab.
+* Upgraded mesa to 23.1.9 with improvements in video decoding and encoding, also added AV1 support.
 
 38.0.0
 * Upgraded to Fedora 38
@@ -25,18 +32,4 @@ Existing users can update immediately by running $ upgrade.sh
 
 36.0.1
 * Upgraded to Fedora 36
-
-35.13.5
-* Added SystemD optional support, creating a new Start Menu icon and a profile in Windows Terminal. Both have (SystemD) in their name.
-* Added a new command wslsystemctl to start services without starting SystemD, as other distros like Ubuntu does with the service command.
-* Added tweaks to be able to run snaps with WSLg.
-* Added tweaks to be able to run GNOME Desktop using Remote Desktop Connection.
-
-35.12.6
-* Fix a launch error with Windows Terminal 1.12
-
-35.12.5
-* Added explicit error code and message for virtualization not present
-* Improved the tiles in Start Menu in Windows 10 1809-1909
-
 

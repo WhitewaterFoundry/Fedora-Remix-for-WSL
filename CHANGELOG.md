@@ -1,4 +1,11 @@
 
+39.0.0
+* Upgraded to Fedora 39
+* Fedora Linux 39 now features a coloured Bash prompt by default!
+* Added experimental prompt escape sequences for Windows Terminal 1.18 Shell Integration.
+* When the distro is being installed, now a progress icon appears in the Windows Terminal tab.
+* Upgraded mesa to 23.1.9 with improvements in video decoding and encoding, also added AV1 support.
+
 38.0.0
 * Upgraded to Fedora 38
 * Made a custom Mesa 23 compilation with Direct 3D 12 support and video codes

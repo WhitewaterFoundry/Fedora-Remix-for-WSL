@@ -42,6 +42,7 @@ static HRESULT SetDefaultUser(std::wstring_view userName);
 HRESULT InstallDistribution(bool createUser)
 {
     // Register the distribution.
+    Helpers::SendStartProcessSignal();
     Helpers::PrintMessage(MSG_STATUS_INSTALLING);
     auto hr = g_wslApi.WslRegisterDistribution();
     if (FAILED(hr))
@@ -56,6 +57,8 @@ HRESULT InstallDistribution(bool createUser)
     {
         return hr;
     }
+
+    Helpers::SendStopProcessSignal();
 
     // Create a user account.
     if (createUser)
@@ -173,7 +176,7 @@ fire_and_forget ShowFedoraRemixUi()
     const auto file =
         co_await ApplicationData::Current().LocalFolder().TryGetItemAsync(L"MicrosoftStoreEngagementSDKId.txt");
 
-    if (! file)
+    if (!file)
     {
         // ReSharper disable once StringLiteralTypo
         const hstring str = L"fedoraremixwslui://";

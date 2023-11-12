@@ -13,7 +13,9 @@
       "colorScheme": "Fedora Remix for WSL",
       "cursorShape": "filledBox",
       "fontFace": "Cascadia Code",
-      "startingDirectory": null
+      "startingDirectory": null,
+      "experimental.showMarksOnScrollbar": true,
+      "experimental.autoMarkPrompts": true
     }
   ],
   "schemes": [

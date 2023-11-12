@@ -66,6 +66,16 @@ void Helpers::PromptForInput()
     _getwch();
 }
 
+void Helpers::SendStartProcessSignal()
+{
+    wprintf(L"\033]9;4;3;100\033\\");
+}
+
+void Helpers::SendStopProcessSignal()
+{
+    wprintf(L"\033]9;4;0;100\033\\");
+}
+
 namespace
 {
     HRESULT FormatMessageHelperVa(DWORD messageId, va_list vaList, std::wstring* message)
