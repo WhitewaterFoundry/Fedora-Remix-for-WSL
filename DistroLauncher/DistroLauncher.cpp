@@ -173,7 +173,8 @@ fire_and_forget SyncBackground()
 fire_and_forget ShowFedoraRemixUi()
 {
     // ReSharper disable once CppTooWideScope
-    const auto file =
+    // ReSharper disable once CppTooWideScopeInitStatement
+    const IStorageItem file =
         co_await ApplicationData::Current().LocalFolder().TryGetItemAsync(L"MicrosoftStoreEngagementSDKId.txt");
 
     if (!file)
@@ -185,6 +186,32 @@ fire_and_forget ShowFedoraRemixUi()
 
         co_await Launcher::LaunchUriAsync(uri);
     }
+}
+
+bool IsCurrentDirNotSystem32()
+{
+    wchar_t system32Dir[MAX_PATH];
+    GetSystemDirectoryW(system32Dir, MAX_PATH);
+
+    wchar_t currentDir[MAX_PATH];
+    GetCurrentDirectoryW(MAX_PATH, currentDir);
+
+    return _wcsicmp(system32Dir, currentDir) != 0;
+}
+
+void CheckIfAResetWasMade()
+{
+    const auto localStateFolder = ApplicationData::Current().LocalFolder();
+    const auto files = localStateFolder.GetFilesAsync().get();
+    const bool isLocalStateEmpty = files.Size() == 0;
+
+    if (!isLocalStateEmpty || !g_wslApi.WslIsDistributionRegistered())
+    {
+        return;
+    }
+
+    // ReSharper disable once CppExpressionWithoutSideEffects
+    g_wslApi.WslUnregisterDistribution();
 }
 
 int wmain(int argc, const wchar_t* argv[])
@@ -211,6 +238,8 @@ int wmain(int argc, const wchar_t* argv[])
 
         return exitCode;
     }
+
+    CheckIfAResetWasMade();
 
     // Install the distribution if it is not already.
     const auto installOnly = arguments.size() > 0 && arguments[0] == ARG_INSTALL;
@@ -247,7 +276,11 @@ int wmain(int argc, const wchar_t* argv[])
 
         if (arguments.empty())
         {
-            hr = g_wslApi.WslLaunchInteractive(L"", false, &exitCode);
+            /* If the current working dir is not System32 then it was called from Open with Terminal
+            option or from command line. In this case is better to start the distro in the current directory */
+            const bool useCurrentWorkingDirectory = IsCurrentDirNotSystem32();
+
+            hr = g_wslApi.WslLaunchInteractive(L"", useCurrentWorkingDirectory, &exitCode);
 
             // Check exitCode to see if wsl.exe returned that it could not start the Linux process
             // then prompt users for input so they can view the error message.
@@ -292,8 +325,9 @@ int wmain(int argc, const wchar_t* argv[])
         }
         else
         {
+            // ReSharper disable once CppFunctionResultShouldBeUsed
             Helpers::PrintMessage(MSG_USAGE);
-            return exitCode;
+            return static_cast<int>(exitCode);
         }
     }
 

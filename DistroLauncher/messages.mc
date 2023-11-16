@@ -108,3 +108,8 @@ Language=English
 Please enable the Virtual Machine Platform Windows feature and ensure virtualization is enabled in the BIOS.
 For information please visit https://aka.ms/enablevirtualization
 .
+
+MessageId=1017 SymbolicName=MSG_WSL_UN_REGISTER_DISTRIBUTION_FAILED
+Language=English
+WslUnRegisterDistribution failed with error: 0x%1!x!
+.

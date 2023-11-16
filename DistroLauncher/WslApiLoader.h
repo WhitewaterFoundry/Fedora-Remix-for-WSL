@@ -13,6 +13,7 @@
 
 using WSL_IS_DISTRIBUTION_REGISTERED = BOOL(STDAPICALLTYPE*)(PCWSTR);
 using WSL_REGISTER_DISTRIBUTION = HRESULT(STDAPICALLTYPE*)(PCWSTR, PCWSTR);
+using WSL_UN_REGISTER_DISTRIBUTION = HRESULT(STDAPICALLTYPE*)(PCWSTR);
 using WSL_CONFIGURE_DISTRIBUTION = HRESULT(STDAPICALLTYPE*)(PCWSTR, ULONG, WSL_DISTRIBUTION_FLAGS);
 using WSL_GET_DISTRIBUTION_CONFIGURATION = HRESULT(STDAPICALLTYPE*)(PCWSTR, ULONG*, ULONG*, WSL_DISTRIBUTION_FLAGS*,
                                                                     PSTR**, ULONG*);
@@ -25,31 +26,34 @@ public:
     WslApiLoader(const std::wstring& distributionName);
     ~WslApiLoader();
 
-    BOOL WslIsOptionalComponentInstalled() const;
+    BOOL WslIsOptionalComponentInstalled();
 
-    BOOL WslIsDistributionRegistered() const;
+    BOOL WslIsDistributionRegistered();
 
-    HRESULT WslRegisterDistribution() const;
+    HRESULT WslRegisterDistribution();
+
+    HRESULT WslUnregisterDistribution() const;
 
     HRESULT WslConfigureDistribution(ULONG defaultUID,
-                                     WSL_DISTRIBUTION_FLAGS wslDistributionFlags) const;
+                                     WSL_DISTRIBUTION_FLAGS wslDistributionFlags);
 
     HRESULT WslLaunchInteractive(PCWSTR command,
                                  BOOL useCurrentWorkingDirectory,
-                                 DWORD* exitCode) const;
+                                 DWORD* exitCode);
 
     HRESULT WslLaunch(PCWSTR command,
                       BOOL useCurrentWorkingDirectory,
                       HANDLE stdIn,
                       HANDLE stdOut,
                       HANDLE stdErr,
-                      HANDLE* process) const;
+                      HANDLE* process);
 
 private:
     std::wstring _distributionName;
     HMODULE _wslApiDll;
     WSL_IS_DISTRIBUTION_REGISTERED _isDistributionRegistered;
     WSL_REGISTER_DISTRIBUTION _registerDistribution;
+    WSL_UN_REGISTER_DISTRIBUTION _unRegisterDistribution;
     WSL_CONFIGURE_DISTRIBUTION _configureDistribution;
     WSL_LAUNCH_INTERACTIVE _launchInteractive;
     WSL_LAUNCH _launch;

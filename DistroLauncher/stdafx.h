@@ -25,6 +25,10 @@
 #include <vector>
 #include <Windows.h>
 #include <wslapi.h>
+
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Foundation.Collections.h>
+
 #include "DistributionInfo.h"
 #include "Helpers.h"
 #include "WslApiLoader.h"

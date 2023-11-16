@@ -1,5 +1,12 @@
 Existing users can update immediately by running $ update.sh
 
+39.0.1
+* A new script, "install-desktop.sh", allows installing GNOME, KDE, XFCE, or LXDE Desktops Environments with minimal manual steps or configuration.
+* Improved Windows Terminal Shell Integration with built-in support for "Opening new tabs in the same working directory" and
+"Show marks for each command in the scrollbar," and by adding some actions in the settings.json file, "Automatically jump between commands," and "Select the entire output of a command."
+* [FIX] After performing a Reset in App Settings, the distro can be installed again without reinstalling the app.
+* [FIX] Now, if you configure Fedora Remix as your Default Profile in Windows Terminal, right-click a folder in File Explorer, and select Open in Terminal, it will correctly open in the desired directory.
+
 39.0.0
 * Upgraded to Fedora 39
 * Fedora Linux 39 now features a coloured Bash prompt by default!
@@ -14,22 +21,3 @@ Existing users can update immediately by running $ update.sh
 37.2.0
 * Latest update for Fedora 37
 * Upgraded mesa to 23.0.2 which includes some fixes to the VP9 video decoder
-
-37.1.2
-* Support GPU video decoding and encoding in WSLg
-
-37.1.0
-* Upgrade Mesa to 22.3.6
-* Fix ping in WSL1
-* Upgrade to WSL Utilities 4.1.1
-
-37.0.4
-* Stop trying to upgrade fedora remix if the SystemD script fails
-
-37.0.2
-* Upgraded to Fedora 37
-* Improved compatibility with the Windows built-in SystemD
-
-36.0.1
-* Upgraded to Fedora 36
-
