@@ -173,8 +173,7 @@ fire_and_forget SyncBackground()
 fire_and_forget ShowFedoraRemixUi()
 {
     // ReSharper disable once CppTooWideScope
-    // ReSharper disable once CppTooWideScopeInitStatement
-    const IStorageItem file =
+    const auto file =
         co_await ApplicationData::Current().LocalFolder().TryGetItemAsync(L"MicrosoftStoreEngagementSDKId.txt");
 
     if (!file)
@@ -201,11 +200,16 @@ bool IsCurrentDirNotSystem32()
 
 void CheckIfAResetWasMade()
 {
-    const auto localStateFolder = ApplicationData::Current().LocalFolder();
-    const auto files = localStateFolder.GetFilesAsync().get();
-    const bool isLocalStateEmpty = files.Size() == 0;
+    if (!g_wslApi.WslIsDistributionRegistered())
+    {
+        return;
+    }
 
-    if (!isLocalStateEmpty || !g_wslApi.WslIsDistributionRegistered())
+    const auto localStateFolder = ApplicationData::Current().LocalFolder();
+    // ReSharper disable once CppTooWideScopeInitStatement
+    const auto files = localStateFolder.GetFilesAsync().get();
+
+    if (files.Size() != 0)
     {
         return;
     }
@@ -236,10 +240,10 @@ int wmain(int argc, const wchar_t* argv[])
             Helpers::PromptForInput();
         }
 
-        return exitCode;
+        return static_cast<int>(exitCode);
     }
 
-    CheckIfAResetWasMade();
+    //CheckIfAResetWasMade();
 
     // Install the distribution if it is not already.
     const auto installOnly = arguments.size() > 0 && arguments[0] == ARG_INSTALL;

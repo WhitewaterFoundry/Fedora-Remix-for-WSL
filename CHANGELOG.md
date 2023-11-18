@@ -2,7 +2,7 @@
 * A new script, "install-desktop.sh", allows installing GNOME, KDE, XFCE, or LXDE Desktops Environments with minimal manual steps or configuration.
 * Improved Windows Terminal Shell Integration with built-in support for "Opening new tabs in the same working directory" and
   "Show marks for each command in the scrollbar," and by adding some actions in the settings.json file, "Automatically jump between commands," and "Select the entire output of a command."
-* [FIX] After performing a Reset in App Settings, the distro can be installed again without reinstalling the app.
+* The color prompt has been improved, read /etc/profile.d/bash-color-prompt.sh to see what you can do with the PROMPT_* environment variables.
 * [FIX] Now, if you configure Fedora Remix as your Default Profile in Windows Terminal, right-click a folder in File Explorer, and select Open in Terminal, it will correctly open in the desired directory.
 
 39.0.0

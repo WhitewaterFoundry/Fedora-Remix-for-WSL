@@ -12,7 +12,7 @@
     <Identity
             Name="WhitewaterFoundryLtd.Co.FedoraRemixforWSL"
             Publisher="CN=9879127B-9E92-4DE5-9C32-0B1F09F95DCF"
-            Version="39.0.1.0"/>
+            Version="39.0.2.0"/>
 
     <Properties>
         <DisplayName>Fedora Remix for WSL</DisplayName>
@@ -21,7 +21,7 @@
     </Properties>
 
     <Dependencies>
-        <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0"/>
+        <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.22621.0"/>
         <PackageDependency Name="Microsoft.VCLibs.140.00.UWPDesktop" MinVersion="14.0.24217.0"
                            Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"/>
     </Dependencies>

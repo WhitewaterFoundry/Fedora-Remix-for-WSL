@@ -9,7 +9,7 @@
 WslApiLoader::WslApiLoader(const std::wstring& distributionName) :
     _distributionName(distributionName)
 {
-    _wslApiDll = LoadLibraryExW(L"wslapi.dll", nullptr, LOAD_LIBRARY_SEARCH_SYSTEM32);
+    _wslApiDll = LoadLibraryEx(L"wslapi.dll", nullptr, LOAD_LIBRARY_SEARCH_SYSTEM32);
     if (_wslApiDll != nullptr)
     {
         _isDistributionRegistered = (WSL_IS_DISTRIBUTION_REGISTERED)GetProcAddress(
@@ -30,24 +30,24 @@ WslApiLoader::~WslApiLoader()
     }
 }
 
-BOOL WslApiLoader::WslIsOptionalComponentInstalled()
+BOOL WslApiLoader::WslIsOptionalComponentInstalled() const
 {
-    return _wslApiDll != nullptr &&
-        _isDistributionRegistered != nullptr &&
-        _registerDistribution != nullptr &&
-        _configureDistribution != nullptr &&
-        _launchInteractive != nullptr &&
-        _launch != nullptr;
+    return ((_wslApiDll != nullptr) &&
+        (_isDistributionRegistered != nullptr) &&
+        (_registerDistribution != nullptr) &&
+        (_configureDistribution != nullptr) &&
+        (_launchInteractive != nullptr) &&
+        (_launch != nullptr));
 }
 
-BOOL WslApiLoader::WslIsDistributionRegistered()
+BOOL WslApiLoader::WslIsDistributionRegistered() const
 {
     return _isDistributionRegistered(_distributionName.c_str());
 }
 
-HRESULT WslApiLoader::WslRegisterDistribution()
+HRESULT WslApiLoader::WslRegisterDistribution() const
 {
-    const HRESULT hr = _registerDistribution(_distributionName.c_str(), L"install.tar.gz");
+    const auto hr = _registerDistribution(_distributionName.c_str(), L"install.tar.gz");
     if (FAILED(hr))
     {
         Helpers::PrintMessage(MSG_WSL_REGISTER_DISTRIBUTION_FAILED, hr);
@@ -68,9 +68,9 @@ HRESULT WslApiLoader::WslUnregisterDistribution() const
     return hr;
 }
 
-HRESULT WslApiLoader::WslConfigureDistribution(ULONG defaultUID, WSL_DISTRIBUTION_FLAGS wslDistributionFlags)
+HRESULT WslApiLoader::WslConfigureDistribution(ULONG defaultUID, WSL_DISTRIBUTION_FLAGS wslDistributionFlags) const
 {
-    const HRESULT hr = _configureDistribution(_distributionName.c_str(), defaultUID, wslDistributionFlags);
+    const auto hr = _configureDistribution(_distributionName.c_str(), defaultUID, wslDistributionFlags);
     if (FAILED(hr))
     {
         Helpers::PrintMessage(MSG_WSL_CONFIGURE_DISTRIBUTION_FAILED, hr);
@@ -79,9 +79,9 @@ HRESULT WslApiLoader::WslConfigureDistribution(ULONG defaultUID, WSL_DISTRIBUTIO
     return hr;
 }
 
-HRESULT WslApiLoader::WslLaunchInteractive(PCWSTR command, BOOL useCurrentWorkingDirectory, DWORD* exitCode)
+HRESULT WslApiLoader::WslLaunchInteractive(PCWSTR command, BOOL useCurrentWorkingDirectory, DWORD* exitCode) const
 {
-    const HRESULT hr = _launchInteractive(_distributionName.c_str(), command, useCurrentWorkingDirectory, exitCode);
+    const auto hr = _launchInteractive(_distributionName.c_str(), command, useCurrentWorkingDirectory, exitCode);
     if (FAILED(hr))
     {
         Helpers::PrintMessage(MSG_WSL_LAUNCH_INTERACTIVE_FAILED, command, hr);
@@ -91,10 +91,10 @@ HRESULT WslApiLoader::WslLaunchInteractive(PCWSTR command, BOOL useCurrentWorkin
 }
 
 HRESULT WslApiLoader::WslLaunch(PCWSTR command, BOOL useCurrentWorkingDirectory, HANDLE stdIn, HANDLE stdOut,
-                                HANDLE stdErr, HANDLE* process)
+                                HANDLE stdErr, HANDLE* process) const
 {
-    const HRESULT hr = _launch(_distributionName.c_str(), command, useCurrentWorkingDirectory, stdIn, stdOut, stdErr,
-                               process);
+    const auto hr = _launch(_distributionName.c_str(), command, useCurrentWorkingDirectory, stdIn, stdOut, stdErr,
+                            process);
     if (FAILED(hr))
     {
         Helpers::PrintMessage(MSG_WSL_LAUNCH_FAILED, command, hr);

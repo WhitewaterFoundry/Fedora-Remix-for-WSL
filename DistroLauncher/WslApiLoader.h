@@ -26,27 +26,27 @@ public:
     WslApiLoader(const std::wstring& distributionName);
     ~WslApiLoader();
 
-    BOOL WslIsOptionalComponentInstalled();
+    BOOL WslIsOptionalComponentInstalled() const;
 
-    BOOL WslIsDistributionRegistered();
+    BOOL WslIsDistributionRegistered() const;
 
-    HRESULT WslRegisterDistribution();
+    HRESULT WslRegisterDistribution() const;
 
     HRESULT WslUnregisterDistribution() const;
 
     HRESULT WslConfigureDistribution(ULONG defaultUID,
-                                     WSL_DISTRIBUTION_FLAGS wslDistributionFlags);
+                                     WSL_DISTRIBUTION_FLAGS wslDistributionFlags) const;
 
     HRESULT WslLaunchInteractive(PCWSTR command,
                                  BOOL useCurrentWorkingDirectory,
-                                 DWORD* exitCode);
+                                 DWORD* exitCode) const;
 
     HRESULT WslLaunch(PCWSTR command,
                       BOOL useCurrentWorkingDirectory,
                       HANDLE stdIn,
                       HANDLE stdOut,
                       HANDLE stdErr,
-                      HANDLE* process);
+                      HANDLE* process) const;
 
 private:
     std::wstring _distributionName;
