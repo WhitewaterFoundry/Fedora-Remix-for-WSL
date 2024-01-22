@@ -32,7 +32,7 @@ Usage:
         Launches the user's default shell in the user's home directory via SystemD.
 
     install [--root]
-        Install the distribuiton and do not launch the shell when complete.
+        Install the distribution and do not launch the shell when complete.
           --root
               Do not create a user account and leave the default user set to root.
 
