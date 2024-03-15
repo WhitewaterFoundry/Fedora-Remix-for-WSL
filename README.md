@@ -10,7 +10,11 @@ Fedora Remix for WSL contains modifications to the official Fedora distribution.
 
 Fedora Remix for WSL is provided on a community-support basis. There is no support available for Fedora Remix for WSL from the Fedora community other than that which is offered to all users.
 
-<a href='//www.microsoft.com/store/apps/9N6GDM4K2HNC?ocid=badge'><img src='https://getbadgecdn.azureedge.net/images/en-us%20dark.svg' alt='Purchase from the Microsoft Store' height=50/></a>
+<a href="https://apps.microsoft.com/detail/Fedora%20Remix%20for%20WSL/9n6gdm4k2hnc?launch=true
+	&cid=github
+	&mode=full">
+	<img src="https://get.microsoft.com/images/en-us%20dark.svg" width="200"/>
+</a>
 
 ## Documentation
 
