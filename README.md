@@ -10,10 +10,8 @@ Fedora Remix for WSL contains modifications to the official Fedora distribution.
 
 Fedora Remix for WSL is provided on a community-support basis. There is no support available for Fedora Remix for WSL from the Fedora community other than that which is offered to all users.
 
-<a href="https://apps.microsoft.com/detail/Fedora%20Remix%20for%20WSL/9n6gdm4k2hnc?launch=true
-	&cid=github
-	&mode=full">
-	<img src="https://get.microsoft.com/images/en-us%20dark.svg" width="200"/>
+<a href="https://apps.microsoft.com/detail/Fedora%20Remix%20for%20WSL/9n6gdm4k2hnc?launch=true&cid=github&mode=full">
+  <img src="https://get.microsoft.com/images/en-us%20dark.svg" width="200"/>
 </a>
 
 ## Documentation
@@ -71,7 +69,9 @@ Whitewater Foundry devs monitor the Fedora Remix for WSL GitHub issues page; how
 
 Yes, Fedora is free. You should [go get it](https://getfedora.org/) and use it on your Linux workstation. We at Whitewater Foundry love Fedora and use it. Fedora Remix for WSL is not Fedora, though; it is a [remix](https://fedoraproject.org/wiki/Remix). The remix program allows individuals, groups, and companies to make Fedora derivatives for particular purposes that may contain modified/non-Fedora software. For example, there is the [Russian Fedora Remix](https://ru.fedoracommunity.org/stories/rfremix/), [FedBerry](http://fedberry.org/), and [Qubes OS](https://www.qubes-os.org/). We at Whitewater Foundry saw the demand for a Fedora distro for WSL. With [no official Fedora for WSL coming](https://twitter.com/mattdm/status/1058417653918896131), we invested the time and resources into making the Fedora Remix for WSL available as an alternative, building on our premium Pengwin Enterprise codebase. We charge for the official download through the Microsoft Store to continue optimizing, building, and packaging Fedora Remix for WSL, paying open-source developers, and building a sustainable open-source venture. Unlike Pengwin and Pengwin Enterprise, though, we also make signed downloads of Fedora Remix for WSL [available via GitHub](https://github.com/WhitewaterFoundry/WSLFedoraRemix/releases) that can be side-loaded for free.
 
-<a href='//www.microsoft.com/store/apps/9N6GDM4K2HNC?ocid=badge'><img src='https://getbadgecdn.azureedge.net/images/en-us%20dark.svg' alt='Purchase from the Microsoft Store' height=50/></a>
+<a href="https://apps.microsoft.com/detail/Fedora%20Remix%20for%20WSL/9n6gdm4k2hnc?launch=true&cid=github&mode=full">
+  <img src="https://get.microsoft.com/images/en-us%20dark.svg" width="200"/>
+</a>
 
 ## Legal
 
