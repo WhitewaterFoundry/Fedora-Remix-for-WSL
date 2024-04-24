@@ -10,7 +10,7 @@
 
     <Identity
             Name="WhitewaterFoundryLtd.Co.FedoraRemixforWSLSL"
-            Publisher="CN=&quot;Whitewater Foundry, Ltd. Co.&quot;, O=&quot;Whitewater Foundry, Ltd. Co.&quot;, STREET=233 12th Street, L=Columbus, S=Georgia, PostalCode=31901, C=US"
+            Publisher="CN=&quot;Whitewater Foundry, Ltd. Co.&quot;, O=&quot;Whitewater Foundry, Ltd. Co.&quot;, S=Florida, C=US"
             Version="39.0.1.0"/>
 
     <Properties>

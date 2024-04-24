@@ -33,7 +33,7 @@
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <EntryPointProjectUniqueName>..\DistroLauncher\DistroLauncher.vcxproj</EntryPointProjectUniqueName>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
-    <PackageCertificateThumbprint>B5B375E2F0F833B74CF20D5A7334386978E00C98</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>FC31D506C0E78DF64C933CB2D6990469AEE7E113</PackageCertificateThumbprint>
     <AppxPackageSigningTimestampServerUrl>http://timestamp.sectigo.com/</AppxPackageSigningTimestampServerUrl>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>

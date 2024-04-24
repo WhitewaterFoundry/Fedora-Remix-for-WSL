@@ -1,5 +1,9 @@
 Existing users can update immediately by running $ update.sh
 
+40.0.1
+* Upgraded to Fedora 40
+* Fixed a small typo in the fedoraremix.exe /? message
+
 39.0.2
 * A new script, "install-desktop.sh", allows installing GNOME, KDE, XFCE, or LXDE Desktops Environments with minimal manual steps or configuration.
 * Improved Windows Terminal Shell Integration with built-in support for "Opening new tabs in the same working directory" and
@@ -17,6 +21,3 @@ Existing users can update immediately by running $ update.sh
 38.0.0
 * Upgraded to Fedora 38
 * Made a custom Mesa 23 compilation with Direct 3D 12 support and video codes
-
-37.2.0
-* Upgraded mesa to 23.0.2 which includes some fixes to the VP9 video decoder
