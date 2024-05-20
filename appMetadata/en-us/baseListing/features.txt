@@ -1,6 +1,6 @@
 Fedora Remix for WSL includes wslu, a set of useful open-source utilities for interacting between WSL and Windows 10.
 An update script, accessible via $ upgrade.sh allows keeping your distro updated and the customizations.
-Built-in support for SystemD and for starting services without launching SystemD via the wslsystemctl command.
+Built-in support for systemd and for starting services without launching systemd via the wslsystemctl command.
 Support for many Linux graphical applications with no need to configure display or libGL.
 Custom Mesa compilation with Direct 3D 12 acceleration support and video codes.
 Install 28,728 open source packages via the dnf package management system from the vast Fedora repositories and any third-party repositories from outside projects.

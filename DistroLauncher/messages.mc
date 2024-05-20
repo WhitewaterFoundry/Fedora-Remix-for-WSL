@@ -29,7 +29,7 @@ Usage:
         Launches the user's default shell in the user's home directory.
 
     --systemd, -s
-        Launches the user's default shell in the user's home directory via SystemD.
+        Launches the user's default shell in the user's home directory via systemd.
 
     install [--root]
         Install the distribution and do not launch the shell when complete.
