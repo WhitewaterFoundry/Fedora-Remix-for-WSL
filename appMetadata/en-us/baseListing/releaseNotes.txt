@@ -1,12 +1,16 @@
 Existing users can update immediately by running $ update.sh
 
+40.1.0
+* Upgraded to Mesa 24.1.2, and the Microsoft D3D12 driver now supports OpenGL 4.6
+* Re-enabled the Windows Terminal Shell Integration due to the bug with version 1.21 was fixed.
+
 40.0.3
-* Be sure that the dbus-daemon is started once, regardless the number of times that Fedora is invoked.
-* Disabled the Windows Terminal Shell Integration until the bug with version 1.21 get fixed.
+* Be sure that the dbus-daemon is started once, regardless of the number of times that Fedora is invoked.
+* Disabled the Windows Terminal Shell Integration until the bug with version 1.21 gets fixed.
 
 40.0.1
 * Upgraded to Fedora 40
-* Upgraded to Mesa 24.0.5 and the Microsoft D3D12 driver now supports OpenGL 4.6
+* Upgraded to Mesa 24.0.5, and the Microsoft D3D12 driver now supports OpenGL 4.6
 * Fixed a small typo in the fedoraremix.exe /? message
 
 39.0.2
@@ -15,7 +19,3 @@ Existing users can update immediately by running $ update.sh
 "Show marks for each command in the scrollbar," and by adding some actions in the settings.json file, "Automatically jump between commands," and "Select the entire output of a command."
 * The color prompt has been improved, read /etc/profile.d/bash-color-prompt.sh to see what you can do with the PROMPT_* environment variables.
 * [FIX] Now, if you configure Fedora Remix as your Default Profile in Windows Terminal, right-click a folder in File Explorer, and select Open in Terminal, it will correctly open in the desired directory.
-
-39.0.0
-* Upgraded to Fedora 39
-* Fedora Linux 39 now features a coloured Bash prompt by default!

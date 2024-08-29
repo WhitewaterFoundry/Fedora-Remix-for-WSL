@@ -1,3 +1,16 @@
+40.1.0
+* Upgraded to Mesa 24.1.2, and the Microsoft D3D12 driver now supports OpenGL 4.6
+* Re-enabled the Windows Terminal Shell Integration due to the bug with version 1.21 was fixed.
+
+40.0.3
+* Be sure that the dbus-daemon is started once, regardless of the number of times that Fedora is invoked.
+* Disabled the Windows Terminal Shell Integration until the bug with version 1.21 gets fixed.
+
+40.0.1
+* Upgraded to Fedora 40
+* Upgraded to Mesa 24.0.5, and the Microsoft D3D12 driver now supports OpenGL 4.6
+* Fixed a small typo in the fedoraremix.exe /? message
+
 39.0.1
 * A new script, "install-desktop.sh", allows installing GNOME, KDE, XFCE, or LXDE Desktops Environments with minimal manual steps or configuration.
 * Improved Windows Terminal Shell Integration with built-in support for "Opening new tabs in the same working directory" and

@@ -1,10 +1,14 @@
+Built on top of Fedora, providing a cutting-edge and robust Linux distribution.
+Fully compatible with Windows Subsystem for Linux, allowing seamless integration with Windows 10/11.
+Uses the DNF package manager for managing software packages, including installation, updates, and removal.
+Access to the latest software packages and updates through Fedora repositories.
 Fedora Remix for WSL includes wslu, a set of useful open-source utilities for interacting between WSL and Windows 10.
 An update script, accessible via $ upgrade.sh allows keeping your distro updated and the customizations.
-Built-in support for systemd and for starting services without launching systemd via the wslsystemctl command.
-Support for many Linux graphical applications with no need to configure display or libGL.
+The install-desktop.sh script installs and configures a graphical desktop environment on Fedora Remix for WSL, enabling the use of GUI applications within the WSL environment.
+Built-in support for systemd in WSL2
+For WSL1 start services via the wslsystemctl command.
+Support for many Linux graphical applications with no need to configure display.
 Custom Mesa compilation with Direct 3D 12 acceleration support and video codes.
-Install 28,728 open source packages via the dnf package management system from the vast Fedora repositories and any third-party repositories from outside projects.
-A handful of unnecessary packages have been removed from the base image to reduce image size and increase stability.
 New features are actively developed based on community input.
 We give priority to WSL compatibility issues and adjust the package version to improve this.
 
