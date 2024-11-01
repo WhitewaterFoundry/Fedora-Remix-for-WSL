@@ -1,5 +1,13 @@
 Existing users can update immediately by running $ update.sh
 
+41.0.0
+* Upgraded to Fedora 41
+* GNOME 47 and KDE Plasma 6.2
+* Package updates such as LLVM 19, LXQt 2.0, Python 3.13, RPM 4.20, PyTorch 2.4, Perl 5.40, Golang 1.23, GIMP version 3
+* dnf5: Faster, more efficient package manager.
+* Upgraded to Mesa 24.2.5
+* GIMP 3
+
 40.1.0
 * Upgraded to Mesa 24.1.2, and the Microsoft D3D12 driver now supports OpenGL 4.6
 * Re-enabled the Windows Terminal Shell Integration due to the bug with version 1.21 was fixed.
@@ -17,5 +25,3 @@ Existing users can update immediately by running $ update.sh
 * A new script, "install-desktop.sh", allows installing GNOME, KDE, XFCE, or LXDE Desktops Environments with minimal manual steps or configuration.
 * Improved Windows Terminal Shell Integration with built-in support for "Opening new tabs in the same working directory" and
 "Show marks for each command in the scrollbar," and by adding some actions in the settings.json file, "Automatically jump between commands," and "Select the entire output of a command."
-* The color prompt has been improved, read /etc/profile.d/bash-color-prompt.sh to see what you can do with the PROMPT_* environment variables.
-* [FIX] Now, if you configure Fedora Remix as your Default Profile in Windows Terminal, right-click a folder in File Explorer, and select Open in Terminal, it will correctly open in the desired directory.

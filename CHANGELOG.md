@@ -1,3 +1,11 @@
+41.0.0
+* Upgraded to Fedora 41
+* GNOME 47 and KDE Plasma 6.2
+* Package updates such as LLVM 19, LXQt 2.0, Python 3.13, RPM 4.20, PyTorch 2.4, Perl 5.40, Golang 1.23, GIMP version 3
+* dnf5: Faster, more efficient package manager.
+* Upgraded to Mesa 24.2.5
+* GIMP 3
+
 40.1.0
 * Upgraded to Mesa 24.1.2, and the Microsoft D3D12 driver now supports OpenGL 4.6
 * Re-enabled the Windows Terminal Shell Integration due to the bug with version 1.21 was fixed.
