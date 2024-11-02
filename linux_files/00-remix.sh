@@ -73,6 +73,10 @@ if [ -z "$WIN_HOME" ] && (command -v cmd.exe >/dev/null 2>&1); then
 
   # Create a symbolic link to the windows home
 
+  # Running cmd.exe from within an other drive might silently fail
+  # moving to where cmd.exe is located might help
+  cd $(dirname $(command -v cmd.exe))
+
   # Here have a issue: %HOMEDRIVE% might be using a custom set location
   # moving cmd to where Windows is installed might help: %SYSTEMDRIVE%
   wHomeWinPath=$(cmd.exe /c 'cd %SYSTEMDRIVE%\ && echo %HOMEDRIVE%%HOMEPATH%' 2>/dev/null | tr -d '\r')
@@ -89,6 +93,9 @@ if [ -z "$WIN_HOME" ] && (command -v cmd.exe >/dev/null 2>&1); then
     ln -s -f "${WIN_HOME}" "${win_home_lnk}" >/dev/null 2>&1
   fi
 
-  unset win_home_lnk
+  # Move back to $OLDPWD
+  cd ~-
+
+  unset win_home_lnk wHomeWinPath
 
 fi
