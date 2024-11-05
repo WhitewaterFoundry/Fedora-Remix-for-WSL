@@ -56,7 +56,9 @@ fi
 
 # if dbus-launch is installed then load it
 if (command -v dbus-launch >/dev/null 2>&1); then
-  eval "$(timeout 2s dbus-launch --auto-syntax)"
+  if [ -z "$(pidof dbus-launch)" ]; then
+    eval "$(timeout 2s dbus-launch --auto-syntax)"
+  fi
 fi
 
 # speed up some GUI apps like gedit
