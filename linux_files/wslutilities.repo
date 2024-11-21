@@ -7,7 +7,7 @@ enabled=1
 gpgkey=https://packagecloud.io/whitewaterfoundry/wslu/gpgkey
 sslverify=1
 sslcacert=/etc/pki/tls/certs/ca-bundle.crt
-metadata_expire=300
+metadata_expire=30d
 
 [whitewaterfoundry_wslu-source]
 name=whitewaterfoundry_wslu-source
@@ -18,4 +18,4 @@ enabled=0
 gpgkey=https://packagecloud.io/whitewaterfoundry/wslu/gpgkey
 sslverify=1
 sslcacert=/etc/pki/tls/certs/ca-bundle.crt
-metadata_expire=300
+metadata_expire=30d
