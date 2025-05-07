@@ -3,9 +3,9 @@
     {
       "updates": "{d3f31bee-5823-5ed8-8e04-f31ed54f2cd9}",
       "commandline": "%LOCALAPPDATA%\\Microsoft\\WindowsApps\\fedoraremix.exe",
-      "icon": "%LOCALAPPDATA%\\Packages\\WhitewaterFoundryLtd.Co.FedoraRemixforWSLSL_zxdhfybd17krt\\LocalState\\fedoraremix.png",
+      "icon": "%LOCALAPPDATA%\\Packages\\WhitewaterFoundryLtd.Co.FedoraRemixforWSLSL_agy79bm74gxpp\\LocalState\\fedoraremix.png",
       "name": "Fedora Remix for WSL",
-      "backgroundImage": "%LOCALAPPDATA%\\Packages\\WhitewaterFoundryLtd.Co.FedoraRemixforWSLSL_zxdhfybd17krt\\LocalState\\Fedora_remix_purple_darkbackground_370.png",
+      "backgroundImage": "%LOCALAPPDATA%\\Packages\\WhitewaterFoundryLtd.Co.FedoraRemixforWSLSL_agy79bm74gxpp\\LocalState\\Fedora_remix_purple_darkbackground_370.png",
       "backgroundImageAlignment": "bottomRight",
       "backgroundImageOpacity": 0.15,
       "backgroundImageStretchMode": "none",

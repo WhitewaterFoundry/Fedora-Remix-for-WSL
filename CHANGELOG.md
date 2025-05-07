@@ -1,3 +1,17 @@
+42.0.0
+* Upgraded to Fedora 42
+* Now systemd is enabled by default, and it's the recommended mode
+* Upgraded to Mesa 25.0.4 and the D3D12 driver includes:
+  * OpenGL 4.6 support completed
+  * Expanded video encode/decode support (HEVC 4:2:2/4:4:4, H.264 Baseline)
+  * Added VP9 and AV1 codecs in GPU Video Acceleration
+* GNOME 48 with triple‑buffered rendering, notification stacking and well‑being timers
+* XFCE 4.20 (experimental Wayland session) and LXQt 2.1 (default Wayland via Miriway) refresh the lightweight spins
+* IBus 1.5.32 adds speech‑to‑text with offline VOSK models and Wayland‑IM‑v2 support
+* GNU tool‑chain refresh: GCC 15, glibc 2.41, binutils 2.44, GDB 15+
+* Ruby 3.4, PHP 8.4, Go 1.24, Haskell GHC 9.8/Stackage LTS 23, Tcl/Tk 9 all land as defaults
+* DNF 5 gains automatic purge of expired / obsolete repo keys, plus ongoing performance work
+
 41.0.0
 * Upgraded to Fedora 41
 * GNOME 47 and KDE Plasma 6.2
@@ -20,11 +34,11 @@
 * Fixed a small typo in the fedoraremix.exe /? message
 
 39.0.1
-* A new script, "install-desktop.sh", allows installing GNOME, KDE, XFCE, or LXDE Desktops Environments with minimal manual steps or configuration.
+* A new script, "install-desktop.sh," allows installing GNOME, KDE, XFCE, or LXDE Desktops Environments with minimal manual steps or configuration.
 * Improved Windows Terminal Shell Integration with built-in support for "Opening new tabs in the same working directory" and
   "Show marks for each command in the scrollbar," and by adding some actions in the settings.json file, "Automatically jump between commands," and "Select the entire output of a command."
 * The color prompt has been improved, read /etc/profile.d/bash-color-prompt.sh to see what you can do with the PROMPT_* environment variables.
-* [FIX] Now, if you configure Fedora Remix as your Default Profile in Windows Terminal, right-click a folder in File Explorer, and select Open in Terminal, it will correctly open in the desired directory.
+* [FIX] Now, if you configure Fedora Remix as your Default Profile in Windows Terminal, right-click a folder in File Explorer and select Open in Terminal, it will correctly open in the desired directory.
 
 39.0.0
 * Upgraded to Fedora 39
