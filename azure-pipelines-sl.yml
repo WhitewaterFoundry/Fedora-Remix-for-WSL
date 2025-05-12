@@ -1,0 +1,83 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-2022'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'x64|arm64'
+  buildConfiguration: 'Release'
+  appxPackageDir: '$(System.DefaultWorkingDirectory)\AppxPackages'
+
+steps:
+- task: DownloadBuildArtifacts@0
+  inputs:
+    buildType: 'specific'
+    project: '9cf82fa7-aab4-4f01-96a7-60ea713196c6'
+    pipeline: '4'
+    specificBuildWithTriggering: true
+    buildVersionToDownload: 'latest'
+    downloadType: 'single'
+    artifactName: 'drop'
+    downloadPath: '$(System.ArtifactsDirectory)'
+- task: CmdLine@2
+  inputs:
+    script: |
+      mkdir x64
+      move $(System.ArtifactsDirectory)\drop\install_x64_rootfs.tar.gz x64\install.tar.gz
+
+      mkdir ARM64
+      move $(System.ArtifactsDirectory)\drop\install_ARM64_rootfs.tar.gz ARM64\install.tar.gz
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
+
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      sed -i "s$// #define STANDALONE$#define STANDALONE$" DistroLauncher/DistroLauncher.cpp
+  continueOnError: true
+    
+- task: VSBuild@1
+  inputs:
+    solution: '$(solution)'
+    msbuildArgs: '/t:Fedora-Remix-for-WSL-SL /p:AppxBundlePlatforms="$(buildPlatform)" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=SideloadOnly /p:AppxPackageSigningEnabled=false'
+    platform: 'x64'
+    configuration: '$(buildConfiguration)'
+    msbuildArchitecture: 'x64'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(appxPackageDir)'
+    Contents: '**\*.msixbundle'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+- task: DeleteFiles@1
+  inputs:
+    SourceFolder: '$(appxPackageDir)'
+    Contents: '**\*.msixbundle'
+
+- task: TrustedSigning@0
+  inputs:
+    AzureTenantID: '$(tenant-id)'
+    AzureClientID: '$(client-id)'
+    AzureClientSecret: '$(client-secret)'
+    Endpoint: 'https://eus.codesigning.azure.net/'
+    TrustedSigningAccountName: 'WWFCodeSign'
+    CertificateProfileName: 'WWFAppSign'
+    FilesFolder: '$(Build.ArtifactStagingDirectory)'
+    FilesFolderFilter: 'msixbundle'
+    FilesFolderRecurse: true
+    FilesFolderDepth: 1
+    FileDigest: 'SHA256'
+    TimestampRfc3161: 'http://timestamp.acs.microsoft.com'
+    TimestampDigest: 'SHA256'
+    
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
