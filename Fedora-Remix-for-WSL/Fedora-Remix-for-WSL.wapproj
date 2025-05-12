@@ -39,7 +39,8 @@
     <AppxBundlePlatforms>x64|arm64</AppxBundlePlatforms>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <EntryPointProjectUniqueName>..\DistroLauncher\DistroLauncher.vcxproj</EntryPointProjectUniqueName>
-  </PropertyGroup>
+    <GenerateTemporaryStoreCertificate>True</GenerateTemporaryStoreCertificate>
+</PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
     <AppxBundle>Always</AppxBundle>
   </PropertyGroup>
@@ -188,5 +189,4 @@
     <ProjectReference Include="..\FedoraRemixWSLUI\FedoraRemixWSLUI.vcxproj" />
     <ProjectReference Include="..\FedoraRemixW\FedoraRemixW.vcxproj" />
   </ItemGroup>
-  <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
 </Project>

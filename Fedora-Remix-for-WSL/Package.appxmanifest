@@ -78,7 +78,7 @@
 	                 Executable="FedoraRemixW\FedoraRemixW.exe"
 	                 EntryPoint="Windows.FullTrustApplication" >
 		    <uap:VisualElements AppListEntry="none"
-		                        DisplayName="Fedora Remix for WSL (W)"
+		                        DisplayName="Fedora Remix for WSL - No Window"
 		                        Description="Fedora Remix for WSL. Powered by Pengwin Enterprise."
 		                        BackgroundColor="#EBEBEB"
 		                        Square150x150Logo="Images\Square150x150Logo.png"
@@ -103,7 +103,7 @@
 				    <desktop:StartupTask
 					    TaskId="fedoraremixw"
 					    Enabled="false"
-					    DisplayName="Fedora Remix for WSL (W)"/>
+					    DisplayName="Fedora Remix for WSL - No Window"/>
 			    </desktop:Extension>
 			</Extensions>
 
