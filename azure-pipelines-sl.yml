@@ -50,9 +50,9 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
-    msbuildArgs: '/t:Fedora-Remix-for-WSL-SL /p:AppxBundlePlatforms="$(buildPlatform)" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=SideloadOnly /p:AppxPackageSigningEnabled=false'
+    msbuildArgs: '/t:Fedora-Remix-for-WSL-SL /p:AppxBundlePlatforms="x64" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=SideloadOnly /p:AppxPackageSigningEnabled=false'
     platform: 'x64'
-    configuration: 'x64'
+    configuration: '$(buildConfiguration)'
     msbuildArchitecture: 'x64'
 
 - task: CopyFiles@2
