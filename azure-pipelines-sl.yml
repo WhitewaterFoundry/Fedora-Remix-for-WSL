@@ -39,7 +39,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      sed -i "s$// #define STANDALONE$#define STANDALONE$" DistroLauncher/DistroLauncher.cpp
+      sed -i 's$// #define STANDALONE$#define STANDALONE$' DistroLauncher/DistroLauncher.cpp
   continueOnError: true
     
 - task: VSBuild@1
