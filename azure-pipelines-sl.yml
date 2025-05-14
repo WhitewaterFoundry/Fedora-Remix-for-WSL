@@ -80,6 +80,7 @@ steps:
     FileDigest: 'SHA256'
     TimestampRfc3161: 'http://timestamp.acs.microsoft.com'
     TimestampDigest: 'SHA256'
+  continueOnError: true
     
 - task: PublishBuildArtifacts@1
   inputs:
