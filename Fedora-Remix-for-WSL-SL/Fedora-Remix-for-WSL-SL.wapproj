@@ -371,4 +371,5 @@
     <Folder Include="Images\contrast-standard\theme-light\" />
     <Folder Include="Images\contrast-standard\theme-dark\" />
   </ItemGroup>
+  <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
 </Project>
