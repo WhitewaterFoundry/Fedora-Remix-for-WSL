@@ -189,4 +189,5 @@
     <ProjectReference Include="..\FedoraRemixWSLUI\FedoraRemixWSLUI.vcxproj" />
     <ProjectReference Include="..\FedoraRemixW\FedoraRemixW.vcxproj" />
   </ItemGroup>
+  <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
 </Project>
