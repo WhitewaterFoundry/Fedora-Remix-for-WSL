@@ -6,13 +6,12 @@
         xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
         xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
         xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
-        xmlns:uap10="http://schemas.microsoft.com/appx/manifest/uap/windows10/10"
         IgnorableNamespaces="uap rescap">
 
     <Identity
             Name="WhitewaterFoundryLtd.Co.FedoraRemixforWSL"
             Publisher="CN=9879127B-9E92-4DE5-9C32-0B1F09F95DCF"
-            Version="42.0.2.0"/>
+            Version="42.0.3.0"/>
 
     <Properties>
         <DisplayName>Fedora Remix for WSL</DisplayName>
@@ -68,47 +67,48 @@
                             Enabled="false"
                             DisplayName="Fedora Remix for WSL"/>
                 </desktop:Extension>
-	            <uap:Extension Category="windows.protocol" EntryPoint="FedoraRemixWSLUI.App" Executable="FedoraRemixWSLUI.exe">
-		            <uap:Protocol Name="fedoraremixwslui"/>
-	            </uap:Extension>
+                <uap:Extension Category="windows.protocol" EntryPoint="FedoraRemixWSLUI.App"
+                               Executable="FedoraRemixWSLUI.exe">
+                    <uap:Protocol Name="fedoraremixwslui"/>
+                </uap:Extension>
             </Extensions>
 
         </Application>
-	    <Application Id="App3"
-	                 Executable="FedoraRemixW\FedoraRemixW.exe"
-	                 EntryPoint="Windows.FullTrustApplication" >
-		    <uap:VisualElements AppListEntry="none"
-		                        DisplayName="Fedora Remix for WSL - No Window"
-		                        Description="Fedora Remix for WSL. Powered by Pengwin Enterprise."
-		                        BackgroundColor="#EBEBEB"
-		                        Square150x150Logo="Images\Square150x150Logo.png"
-		                        Square44x44Logo="Images\Square44x44Logo.png">
-			    <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png"
-			                     Square310x310Logo="Images\LargeTile.png" Square71x71Logo="Images\SmallTile.png"
-			                     ShortName="Fedora Remix (W)"/>
+        <Application Id="App3"
+                     Executable="FedoraRemixW\FedoraRemixW.exe"
+                     EntryPoint="Windows.FullTrustApplication">
+            <uap:VisualElements AppListEntry="none"
+                                DisplayName="Fedora Remix for WSL - No Window"
+                                Description="Fedora Remix for WSL. Powered by Pengwin Enterprise."
+                                BackgroundColor="#EBEBEB"
+                                Square150x150Logo="Images\Square150x150Logo.png"
+                                Square44x44Logo="Images\Square44x44Logo.png">
+                <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png"
+                                 Square310x310Logo="Images\LargeTile.png" Square71x71Logo="Images\SmallTile.png"
+                                 ShortName="Fedora Remix (W)"/>
 
-			    <uap:SplashScreen Image="Images\SplashScreen.png" BackgroundColor="black" />
-		    </uap:VisualElements>
-		    <Extensions>
-			    <uap3:Extension Category="windows.appExecutionAlias" Executable="FedoraRemixW\FedoraRemixW.exe"
-			                    EntryPoint="Windows.FullTrustApplication">
-				    <uap3:AppExecutionAlias>
-					    <desktop:ExecutionAlias Alias="FedoraRemixW.exe" />
-				    </uap3:AppExecutionAlias>
-			    </uap3:Extension>
-			    <desktop:Extension
-				    Category="windows.startupTask"
-				    Executable="FedoraRemixW\FedoraRemixW.exe"
-				    EntryPoint="Windows.FullTrustApplication">
-				    <desktop:StartupTask
-					    TaskId="fedoraremixw"
-					    Enabled="false"
-					    DisplayName="Fedora Remix for WSL - No Window"/>
-			    </desktop:Extension>
-			</Extensions>
+                <uap:SplashScreen Image="Images\SplashScreen.png" BackgroundColor="black"/>
+            </uap:VisualElements>
+            <Extensions>
+                <uap3:Extension Category="windows.appExecutionAlias" Executable="FedoraRemixW\FedoraRemixW.exe"
+                                EntryPoint="Windows.FullTrustApplication">
+                    <uap3:AppExecutionAlias>
+                        <desktop:ExecutionAlias Alias="FedoraRemixW.exe"/>
+                    </uap3:AppExecutionAlias>
+                </uap3:Extension>
+                <desktop:Extension
+                        Category="windows.startupTask"
+                        Executable="FedoraRemixW\FedoraRemixW.exe"
+                        EntryPoint="Windows.FullTrustApplication">
+                    <desktop:StartupTask
+                            TaskId="fedoraremixw"
+                            Enabled="false"
+                            DisplayName="Fedora Remix for WSL - No Window"/>
+                </desktop:Extension>
+            </Extensions>
 
-	    </Application>
-	 
+        </Application>
+
     </Applications>
 
     <Capabilities>
