@@ -1,3 +1,6 @@
+42.0.4
+* Make a workaround to an error in WSL 2.5.x that prevented the GPU video acceleration from working.
+
 42.0.0
 * Upgraded to Fedora 42
 * Now systemd is enabled by default, and it's the recommended mode

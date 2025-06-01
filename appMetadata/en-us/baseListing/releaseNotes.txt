@@ -1,4 +1,7 @@
-Existing users can update immediately by running $ update.sh
+Existing users can update immediately by following: https://www.whitewaterfoundry.com/blog/2025/05/05/fedora-remix-for-wsl-42-released
+
+42.0.4
+* Make a workaround to an error in WSL 2.5.x that prevented the GPU video acceleration from working.
 
 42.0.0
 * Upgraded to Fedora 42
@@ -12,7 +15,7 @@ Existing users can update immediately by running $ update.sh
 * IBus 1.5.32 adds speech‑to‑text with offline VOSK models and Wayland‑IM‑v2 support
 * GNU tool‑chain refresh: GCC 15, glibc 2.41, binutils 2.44, GDB 15+
 * Ruby 3.4, PHP 8.4, Go 1.24, Haskell GHC 9.8/Stackage LTS 23, Tcl/Tk 9 all land as defaults
-* DNF 5 gains automatic purge of expired / obsolete repo keys, plus ongoing performance work 
+* DNF 5 gains automatic purge of expired / obsolete repo keys, plus ongoing performance work
 
 41.0.0
 * Upgraded to Fedora 41
