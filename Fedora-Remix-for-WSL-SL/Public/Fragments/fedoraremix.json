@@ -7,7 +7,7 @@
     {
       "guid": "{ea4902dd-27c5-53f5-9ce6-e90b5b784b45}",
       "commandline": "%LOCALAPPDATA%\\Microsoft\\WindowsApps\\fedoraremix.exe",
-      "icon": "https://raw.githubusercontent.com/WhitewaterFoundry/Fedora-Remix-for-WSL/refs/heads/master/Fedora-Remix-for-WSL/Assets/fedoraremix.png",
+      "icon": "https://raw.githubusercontent.com/WhitewaterFoundry/Fedora-Remix-for-WSL/refs/heads/master/Fedora-Remix-for-WSL/Assets/fedoraremix.theme-dark.png",
       "name": "Fedora Remix for WSL",
       "backgroundImage": "https://raw.githubusercontent.com/WhitewaterFoundry/Fedora-Remix-for-WSL/refs/heads/master/Fedora-Remix-for-WSL/Assets/Fedora_remix_purple_darkbackground_370.png",
       "backgroundImageAlignment": "bottomRight",
