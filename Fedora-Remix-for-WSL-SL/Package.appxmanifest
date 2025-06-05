@@ -12,7 +12,7 @@
     <Identity
             Name="WhitewaterFoundryLtd.Co.FedoraRemixforWSLSL"
             Publisher="CN=&quot;Whitewater Foundry, Ltd. Co.&quot;, O=&quot;Whitewater Foundry, Ltd. Co.&quot;, L=Miami, S=Florida, C=US"
-            Version="42.0.4.0"/>
+            Version="42.0.5.0"/>
 
     <Properties>
         <DisplayName>Fedora Remix for WSL</DisplayName>
