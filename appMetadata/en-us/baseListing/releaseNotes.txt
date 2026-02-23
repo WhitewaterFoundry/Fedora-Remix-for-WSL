@@ -1,5 +1,14 @@
 Existing users can update immediately by following: https://www.whitewaterfoundry.com/blog/2025/05/05/fedora-remix-for-wsl-42-released
 
+42.1.0
+
+* Standards-compliant environment setup: XDG directories are now automatically configured and created when missing.
+* More reliable GUI sessions in WSLg: improved handling of `/run/user/$UID` and audio runtime paths, including cleanup of stale sockets.
+* Better X11 fallback behavior: more robust Windows host IP detection.
+* Cleaner D-Bus sessions: per-user runtime storage with tighter environment reuse for improved isolation.
+* Improved shell experience: refreshed Bash prompt logic for Windows Terminal with fewer side-effects.
+* Stronger repo validation: more reliable Fedora Remix repository configuration checks.
+
 42.0.4
 * Make a workaround to an error in WSL 2.5.x that prevented the GPU video acceleration from working.
 

@@ -1,3 +1,47 @@
+## 42.1.0
+
+### Highlights
+
+* XDG (base directories) now consistently defined and auto-created for better standards compliance.
+* More reliable graphics/session bootstrap for WSLg: user runtime directories and audio paths are created/cleaned up safely.
+* D-Bus session environment is isolated per-user via runtime directories, with tighter exported variables.
+* Bash prompt logic rebuilt for clearer behavior and fewer side-effects.
+* More robust repository configuration validation for the Fedora Remix repo.
+
+### Changes
+
+#### Environment + XDG
+
+* Added `define_xdg_environment` to both shell init paths:
+
+  * `linux_files/00-remix.sh`
+  * `linux_files/00-remix.fish`
+* Ensures XDG base directories are set and created when missing (improves app compatibility and reduces “missing dir” edge cases).
+* Updated environment persistence (`save_environment`) to only save variables that are actually set (reduces noise and prevents invalid exports).
+
+#### Display + runtime directory handling (WSLg/X11)
+
+* Improved WSLg display setup to reliably manage `/run/user/$UID` plus PulseAudio runtime paths/symlinks.
+* Added a new `create_userpath` helper + sudoers entry to create required runtime paths when needed, including cleanup of stale sockets and missing directories.
+* Improved fallback logic to determine Windows host IP for X11 display using `route.exe` + `ip route` for higher reliability.
+
+#### D-Bus session management
+
+* D-Bus environment files now live under user-specific runtime directories (better isolation and security posture).
+* Only necessary variables are exported and reused, reducing cross-session contamination.
+
+#### Shell prompt + packaging
+
+* Rewrote `linux_files/bash-prompt-wsl.sh`:
+
+  * Applies prompt customization only in Bash and Windows Terminal.
+  * Uses clearer constants and export logic to reduce unexpected prompt behavior.
+* Ensures correct permissions for the new prompt script in `create-targz.sh`.
+
+#### Repo configuration check
+
+* Updated `linux_files/check-dnf` to directly modify repo files for disabling `gpgcheck` (more deterministic and scoped to the relevant repo).
+
 42.0.4
 * Make a workaround to an error in WSL 2.5.x that prevented the GPU video acceleration from working.
 
