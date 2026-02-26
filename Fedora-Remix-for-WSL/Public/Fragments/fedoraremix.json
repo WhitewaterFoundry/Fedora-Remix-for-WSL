@@ -21,7 +21,8 @@
       "showMarksOnScrollbar": true,
       "autoMarkPrompts": true,
       "pathTranslationStyle": "wsl",
-      "wsl.distribution-type": "fedora"
+      "wsl.distribution-type": "fedora",
+      "closeOnExit": "never"
     }
   ],
   "schemes": [
