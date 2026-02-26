@@ -19,7 +19,8 @@
       "fontFace": "Cascadia Code",
       "startingDirectory": null,
       "pathTranslationStyle": "wsl",
-      "wsl.distribution-type": "fedora"
+      "wsl.distribution-type": "fedora",
+      "closeOnExit": "never"
     }
   ],
   "schemes": [
