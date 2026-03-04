@@ -1,3 +1,56 @@
+## 43.0.0
+
+### Highlights
+
+* Updated to Fedora 43.
+* Updated logo to the new Fedora Remix branding.
+* First-run welcome message added (one-time per user) with support and upgrade guidance.
+* Major WSL1 compatibility fixes for Fedora 43 (gdk-pixbuf/glycin workaround with pinning + cleanup).
+* GNOME support removed due to lack of Xorg support; upgrade users must move to an alternative desktop.
+* Updated default desktop selection (Xfce) and improved terminal profile behavior.
+* Mesa install flow streamlined and updated for Fedora 43.
+
+### Changes
+
+#### Fedora 43 update
+
+* Updated scripts/CI to support Fedora 43.
+
+#### Desktop environments
+
+* **Removed GNOME support** due to lack of Xorg support.
+* Users upgrading from 42 will no longer be able to use GNOME.
+* Recommended migration path: uninstall GNOME and install **Xfce**, **KDE**, or **LXDE**.
+
+#### First-run UX (user experience)
+
+* Added a one-time welcome message on first run for:
+
+  * Bash/sh shells
+  * fish
+* Includes support resources, update recommendations, and WSL1-specific guidance.
+
+#### WSL1 compatibility (Fedora 43)
+
+* Implemented a targeted workaround for the Fedora 43 WSL1 gdk-pixbuf/glycin incompatibility:
+
+  * Version pinning (to avoid incompatible combinations)
+  * Removal of incompatible packages where needed
+  * Cache refresh/rebuild steps
+  * Executed both pre-update and post-update to reduce upgrade regressions
+
+#### Mesa and graphics stack
+
+* Updated Mesa installation logic and pinning to cover Fedora 43.
+* Direct3D 12 acceleration is now available on ARM64 via an upstream Fedora change.
+* Streamlined Mesa package lists in build and upgrade paths.
+
+#### Terminal and session behavior
+
+* Changed default desktop environment selection in the setup flow to **Xfce**.
+* Improved terminal profile defaults to prevent the terminal from auto-closing on exit.
+* Ensured shell history is flushed/saved before terminating WSL distributions in the desktop installer.
+
 ## 42.1.0
 
 ### Highlights

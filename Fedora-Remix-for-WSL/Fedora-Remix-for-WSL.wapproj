@@ -27,7 +27,7 @@
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.props" />
   <PropertyGroup>
     <ProjectGuid>0ee95c29-298e-48cd-b8d0-25f3250a161b</ProjectGuid>
-    <TargetPlatformVersion>10.0.22621.0</TargetPlatformVersion>
+    <TargetPlatformVersion>10.0.26100.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
@@ -40,7 +40,7 @@
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <EntryPointProjectUniqueName>..\DistroLauncher\DistroLauncher.vcxproj</EntryPointProjectUniqueName>
     <GenerateTemporaryStoreCertificate>True</GenerateTemporaryStoreCertificate>
-</PropertyGroup>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
     <AppxBundle>Always</AppxBundle>
   </PropertyGroup>
@@ -60,49 +60,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\fedoraremix.png" />
+    <Content Include="Assets\fedoraremix.png">
+	    <CopyToOutputDirectory>true</CopyToOutputDirectory>
+	    <Link>Public\Fragments\fedoraremix.png</Link>
+    </Content>
     <Content Include="Assets\fedoraremix.theme-dark.png" />
     <Content Include="Assets\Fedora_remix_purple_darkbackground_370.png" />
+    <Content Include="Assets\Fedora_remix_purple_darkbackground_370.png">
+	    <CopyToOutputDirectory>true</CopyToOutputDirectory>
+	    <Link>Public\Fragments\Fedora_remix_purple_darkbackground_370.png</Link>
+    </Content>
     <None Include="Fedora-Remix-for-WSL_TemporaryKey.pfx" />
-    <Content Include="Images\contrast-standard\theme-dark\LargeTile.scale-100.png" />
-    <Content Include="Images\contrast-standard\theme-dark\LargeTile.scale-125.png" />
-    <Content Include="Images\contrast-standard\theme-dark\LargeTile.scale-150.png" />
-    <Content Include="Images\contrast-standard\theme-dark\LargeTile.scale-200.png" />
-    <Content Include="Images\contrast-standard\theme-dark\LargeTile.scale-400.png" />
-    <Content Include="Images\contrast-standard\theme-dark\SmallTile.scale-100.png" />
-    <Content Include="Images\contrast-standard\theme-dark\SmallTile.scale-125.png" />
-    <Content Include="Images\contrast-standard\theme-dark\SmallTile.scale-150.png" />
-    <Content Include="Images\contrast-standard\theme-dark\SmallTile.scale-200.png" />
-    <Content Include="Images\contrast-standard\theme-dark\SmallTile.scale-400.png" />
-    <Content Include="Images\contrast-standard\theme-dark\Square150x150Logo.scale-100.png" />
-    <Content Include="Images\contrast-standard\theme-dark\Square150x150Logo.scale-125.png" />
-    <Content Include="Images\contrast-standard\theme-dark\Square150x150Logo.scale-150.png" />
-    <Content Include="Images\contrast-standard\theme-dark\Square150x150Logo.scale-200.png" />
-    <Content Include="Images\contrast-standard\theme-dark\Square150x150Logo.scale-400.png" />
-    <Content Include="Images\contrast-standard\theme-dark\Wide310x150Logo.scale-100.png" />
-    <Content Include="Images\contrast-standard\theme-dark\Wide310x150Logo.scale-125.png" />
-    <Content Include="Images\contrast-standard\theme-dark\Wide310x150Logo.scale-150.png" />
-    <Content Include="Images\contrast-standard\theme-dark\Wide310x150Logo.scale-200.png" />
-    <Content Include="Images\contrast-standard\theme-dark\Wide310x150Logo.scale-400.png" />
-    <Content Include="Images\contrast-standard\theme-light\LargeTile.scale-100.png" />
-    <Content Include="Images\contrast-standard\theme-light\LargeTile.scale-125.png" />
-    <Content Include="Images\contrast-standard\theme-light\LargeTile.scale-150.png" />
-    <Content Include="Images\contrast-standard\theme-light\LargeTile.scale-200.png" />
-    <Content Include="Images\contrast-standard\theme-light\LargeTile.scale-400.png" />
-    <Content Include="Images\contrast-standard\theme-light\SmallTile.scale-100.png" />
-    <Content Include="Images\contrast-standard\theme-light\SmallTile.scale-125.png" />
-    <Content Include="Images\contrast-standard\theme-light\SmallTile.scale-150.png" />
-    <Content Include="Images\contrast-standard\theme-light\SmallTile.scale-200.png" />
-    <Content Include="Images\contrast-standard\theme-light\SmallTile.scale-400.png" />
-    <Content Include="Images\contrast-standard\theme-light\Square150x150Logo.scale-100.png" />
-    <Content Include="Images\contrast-standard\theme-light\Square150x150Logo.scale-125.png" />
-    <Content Include="Images\contrast-standard\theme-light\Square150x150Logo.scale-150.png" />
-    <Content Include="Images\contrast-standard\theme-light\Square150x150Logo.scale-200.png" />
-    <Content Include="Images\contrast-standard\theme-light\Square150x150Logo.scale-400.png" />
-    <Content Include="Images\contrast-standard\theme-light\Wide310x150Logo.scale-100.png" />
-    <Content Include="Images\contrast-standard\theme-light\Wide310x150Logo.scale-125.png" />
-    <Content Include="Images\contrast-standard\theme-light\Wide310x150Logo.scale-150.png" />
-    <Content Include="Images\contrast-standard\theme-light\Wide310x150Logo.scale-200.png" />
-    <Content Include="Images\contrast-standard\theme-light\Wide310x150Logo.scale-400.png" />
     <Content Include="Images\LargeTile.scale-100.png" />
     <Content Include="Images\LargeTile.scale-125.png" />
     <Content Include="Images\LargeTile.scale-150.png" />
@@ -148,8 +116,6 @@
     <Content Include="Images\StoreLogo.scale-150.png" />
     <Content Include="Images\StoreLogo.scale-200.png" />
     <Content Include="Images\StoreLogo.scale-400.png" />
-    <Content Include="Images\contrast-standard\theme-dark" />
-    <Content Include="Images\contrast-standard\theme-light" />
     <Content Include="Images\Wide310x150Logo.scale-100.png" />
     <Content Include="Images\Wide310x150Logo.scale-125.png" />
     <Content Include="Images\Wide310x150Logo.scale-150.png" />
@@ -186,7 +152,6 @@
     <ProjectReference Include="..\DistroLauncher\DistroLauncher.vcxproj" />
     <ProjectReference Include="..\FedoraRemixSW\FedoraRemixSW.vcxproj" />
     <ProjectReference Include="..\FedoraRemixS\FedoraRemixS.vcxproj" />
-    <ProjectReference Include="..\FedoraRemixWSLUI\FedoraRemixWSLUI.vcxproj" />
     <ProjectReference Include="..\FedoraRemixW\FedoraRemixW.vcxproj" />
   </ItemGroup>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />

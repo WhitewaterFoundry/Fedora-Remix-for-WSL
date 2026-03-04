@@ -126,67 +126,6 @@ int RetrieveCurrentTheme()
     return -1;
 }
 
-fire_and_forget SyncIcons()
-{
-    const int value = RetrieveCurrentTheme();
-    const hstring nameSuffix = value == 0 ? L".theme-dark" : L"";
-    const hstring iconName = L"fedoraremix";
-
-    const hstring extension = L".png";
-    const hstring composedPath = iconName + nameSuffix + extension;
-    const auto path = Uri(L"ms-appx:///Assets/" + composedPath);
-
-    try
-    {
-        const auto iconFile = StorageFile::GetFileFromApplicationUriAsync(path).get();
-
-        co_await iconFile.CopyAsync(ApplicationData::Current().LocalFolder(), iconName + extension,
-                                    NameCollisionOption::ReplaceExisting);
-    }
-    catch (...)
-    {
-    }
-}
-
-fire_and_forget SyncBackground()
-{
-    const int value = RetrieveCurrentTheme();
-    const hstring nameSuffix = L"";
-    const hstring backgroundName = L"Fedora_remix_purple_darkbackground_370";
-
-    const hstring extension = L".png";
-    const hstring composedPath = backgroundName + nameSuffix + extension;
-    const auto path = Uri(L"ms-appx:///Assets/" + composedPath);
-
-    try
-    {
-        const auto iconFile = StorageFile::GetFileFromApplicationUriAsync(path).get();
-
-        co_await iconFile.CopyAsync(ApplicationData::Current().LocalFolder(), backgroundName + extension,
-                                    NameCollisionOption::FailIfExists);
-    }
-    catch (...)
-    {
-    }
-}
-
-fire_and_forget ShowFedoraRemixUi()
-{
-    // ReSharper disable once CppTooWideScope
-    const auto file =
-        co_await ApplicationData::Current().LocalFolder().TryGetItemAsync(L"MicrosoftStoreEngagementSDKId.txt");
-
-    if (!file)
-    {
-        // ReSharper disable once StringLiteralTypo
-        const hstring str = L"fedoraremixwslui://";
-
-        const auto uri = Uri(str);
-
-        co_await Launcher::LaunchUriAsync(uri);
-    }
-}
-
 bool IsCurrentDirNotSystem32()
 {
     wchar_t system32Dir[MAX_PATH];
@@ -271,13 +210,6 @@ int wmain(int argc, const wchar_t* argv[])
     // Parse the command line arguments.
     if (SUCCEEDED(hr) && !installOnly)
     {
-        SyncIcons();
-        SyncBackground();
-
-#ifndef STANDALONE
-        ShowFedoraRemixUi();
-#endif
-
         if (arguments.empty())
         {
             /* If the current working dir is not System32 then it was called from Open with Terminal
