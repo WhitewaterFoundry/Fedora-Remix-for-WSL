@@ -2,8 +2,8 @@ trigger:
 - master
 
 pool:
-  name: Windows
-  #vmImage: 'windows-latest'
+  #name: Windows
+  vmImage: 'windows-latest'
 
 variables:
 - group: 'trusted-signing-azure-client-secret'
