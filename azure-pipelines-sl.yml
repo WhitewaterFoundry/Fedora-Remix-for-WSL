@@ -66,22 +66,20 @@ steps:
     SourceFolder: '$(appxPackageDir)'
     Contents: '**\*.msixbundle'
 
-- task: TrustedSigning@0
+- task: ArtifactSigning@1
   inputs:
     AzureTenantID: '$(tenant-id)'
     AzureClientID: '$(client-id)'
     AzureClientSecret: '$(client-secret)'
     Endpoint: 'https://eus.codesigning.azure.net/'
-    TrustedSigningAccountName: 'WWFCodeSign'
+    ArtifactSigningAccountName: 'WWFCodeSign'
     CertificateProfileName: 'WWFAppSign'
     FilesFolder: '$(Build.ArtifactStagingDirectory)'
     FilesFolderFilter: 'msixbundle'
     FilesFolderRecurse: true
-    FilesFolderDepth: 1
+    FilesFolderDepth: '1'
     FileDigest: 'SHA256'
-    TimestampRfc3161: 'http://timestamp.acs.microsoft.com'
-    TimestampDigest: 'SHA256'
-  continueOnError: true
+  continueOnError: true    
     
 - task: PublishBuildArtifacts@1
   inputs:
