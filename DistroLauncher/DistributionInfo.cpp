@@ -39,16 +39,6 @@ void RunProcess(LPWSTR cmdline)
     CloseHandle(pi.hThread);
 }
 
-void DistributionInfo::ChangeDefaultUserInWslConf(std::wstring_view userName)
-{
-    wchar_t buff[255];
-    _swprintf_p(buff, _countof(buff),
-                L"wsl.exe -d %1$s -u root -- if [ $(grep -c \"\\[user\\]\" /etc/wsl.conf) -eq \"0\" ]; then echo -e \"\\n[user]\\ndefault=%2$s\">>/etc/wsl.conf; else sed -i \"s/\\(default=\\)\\(.*\\)/\\1%2$s/\" /etc/wsl.conf ; fi",
-                Name.c_str(), std::wstring(userName).c_str());
-
-    RunProcess(buff);
-}
-
 bool DistributionInfo::CreateUser(std::wstring_view userName)
 {
     // Create the user account.

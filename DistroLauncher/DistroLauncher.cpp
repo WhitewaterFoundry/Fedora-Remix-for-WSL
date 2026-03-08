@@ -98,8 +98,6 @@ HRESULT SetDefaultUser(std::wstring_view userName)
         return hr;
     }
 
-    DistributionInfo::ChangeDefaultUserInWslConf(userName);
-
     return hr;
 }
 
