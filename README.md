@@ -43,6 +43,42 @@ Fedora Remix for WSL is provided on a community-support basis. There is no suppo
 
 Whitewater Foundry devs monitor the Fedora Remix for WSL GitHub issues page; however, users who require dedicated end-user support for WSL should consider [Pengwin](https://github.com/WhitewaterFoundry/Pengwin) instead. Businesses and other organizations that would like to receive ongoing professional support should [e-mail us](mailto:enterprise@whitewaterfoundry.com) or visit [our website](https://www.whitewaterfoundry.com/wlinux-enterprise-edition/) to learn more about Pengwin Enterprise.
 
+### In-place Upgrading
+You can upgrade your existing installation of Fedora Remix with the following steps. 
+
+First, backup your installation:
+
+`wsl --export fedoraremix fedoraremix_backup.tar.gz`
+
+Then proceed:
+
+> NOTE: DO NOT PERFORM THE UPGRADE STARTING FEDORA REMIX WITH SYSTEMD; IT WILL RUIN YOUR INSTALLATION
+
+#Be sure that systemd is disabled
+`[ "$(grep -c "^systemd.*=.*true$" /etc/wsl.conf)" -ne 0 ] && sudo sed -i "s/^systemd.*=.*true$/systemd=false/" /etc/wsl.conf && wsl.exe --terminate ${WSL_DISTRO_NAME}`
+
+```bash
+next_version=$(echo "${VERSION_ID}+1" | bc)
+
+update.sh 
+sudo dnf -y upgrade --refresh  
+sudo dnf -y install dnf-plugin-system-upgrade  
+sudo rpm --import https://src.fedoraproject.org/rpms/fedora-repos/raw/rawhide/f/RPM-GPG-KEY-fedora-${next_version}-primary  
+sudo dnf -y install distribution-gpg-keys 
+sudo dnf -y system-upgrade --allowerasing --skip-broken download --releasever=${next_version}  
+sudo dnf -y system-upgrade reboot
+
+# At this point, it will raise an error, ignore it, and execute the following commands:
+
+sudo dnf -y system-upgrade upgrade   
+sudo dnf -y autoremove   
+sudo dnf -y clean all   
+sudo mandb  
+update.sh  
+cat /etc/fedora-release
+exit
+```
+
 ## About
 
 ### Fedora Project
