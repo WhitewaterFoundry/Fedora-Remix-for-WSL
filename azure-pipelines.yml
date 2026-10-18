@@ -11,8 +11,7 @@ workspace:
   clean: all
 
 pool:
-  name: Windows
-  #vmImage: 'windows-latest'
+  vmImage: 'windows-2025-vs2026'
 
 variables:
   solution: '**/*.sln'

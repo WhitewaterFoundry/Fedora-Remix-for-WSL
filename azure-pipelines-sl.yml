@@ -6,7 +6,7 @@ workspace:
 
 pool:
   #name: Windows
-  vmImage: 'windows-latest'
+  vmImage: 'windows-2025-vs2026'
 
 variables:
 - group: 'trusted-signing-azure-client-secret'
