@@ -43,7 +43,7 @@ bool DistributionInfo::CreateUser(std::wstring_view userName)
 {
     // Create the user account.
     DWORD exitCode;
-    std::wstring commandLine = L"/usr/sbin/useradd -m ";
+    std::wstring commandLine = L"/usr/sbin/useradd -m -s /bin/bash ";
     commandLine += userName;
     auto hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
     if (FAILED(hr) || exitCode != 0)
@@ -52,7 +52,7 @@ bool DistributionInfo::CreateUser(std::wstring_view userName)
     }
 
     // Add the user account to relevant groups.
-    commandLine = L"/usr/sbin/usermod -aG adm,cdrom,wheel,video,wsl-video ";
+    commandLine = L"/usr/sbin/usermod -aG adm,cdrom,wheel,video,wsl-video,render ";
     commandLine += userName;
     hr = g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
     if (FAILED(hr) || exitCode != 0)
@@ -71,6 +71,11 @@ bool DistributionInfo::CreateUser(std::wstring_view userName)
 
     if (FAILED(hr) || exitCode != 0)
     {
+        // Delete the user if the set password failed.
+        commandLine = L"/usr/sbin/userdel ";
+        commandLine += userName;
+        g_wslApi.WslLaunchInteractive(commandLine.c_str(), true, &exitCode);
+
         return false;
     }
 
