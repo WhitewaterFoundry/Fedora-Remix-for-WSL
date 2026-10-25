@@ -1,3 +1,66 @@
+# Changelog
+
+All notable changes to Fedora Remix for WSL are documented in this file.
+
+## [44.0.0] - 2026-10-25
+
+### Added
+
+- Added Fedora 44 root filesystem builds and release metadata for x64 and ARM64. ([rootfs change](https://github.com/WhitewaterFoundry/fedora-remix-rootfs-build/commit/48abde7edc45ef2dff69f2d0937e028178a89e4c))
+- Added an interactive GNOME desktop installer for Fedora 44 on WSL 2.
+- Added native headless GNOME Wayland sessions using GNOME Remote Desktop instead of xrdp.
+- Added guided configuration for the hostname, RDP port, RDP username, and RDP password.
+- Added automatic self-signed TLS certificate generation for RDP.
+- Added connection support through `localhost`, the configured `.local` hostname, or the WSL IP address.
+- Added automatic configuration of systemd, Avahi, Xwayland compatibility, and the GNOME headless-session services. ([desktop implementation](https://github.com/WhitewaterFoundry/fedora-remix-rootfs-build/commit/bddefba6775c572daf008cd91aeb23186e03b17c))
+- Added `install-desktop-xorg.sh` to preserve the existing Xorg/xrdp desktop setup on Fedora Remix 43 and earlier. ([legacy installer](https://github.com/WhitewaterFoundry/fedora-remix-rootfs-build/commit/32c4b8d29b7fb7e69ad6b9c5afb83db032874ad1))
+- Added `systemd-pam` to new root filesystems and WSL 2 upgrades. ([upgrade support](https://github.com/WhitewaterFoundry/fedora-remix-rootfs-build/commit/a84949f5bfea0cb8c9bb394029d032c5a308604a))
+- Added Fedora 44 support for the WSL-specific Mesa 26.2.4 graphics packages on x86_64. ([Mesa update](https://github.com/WhitewaterFoundry/fedora-remix-rootfs-build/commit/e7278d98bd23a856d13edeaf587ee32cbfdb3dad))
+- Added the `render` group to newly created Linux users. ([launcher changes](https://github.com/WhitewaterFoundry/Fedora-Remix-for-WSL/commit/39273eade5388aee82bd046db4bc53b19d7674be))
+
+### Changed
+
+- Changed the default root filesystem build target from Fedora 43 to Fedora 44.
+- Changed the Windows package version from 43.0.1.0 to 44.0.0.0.
+- Changed Fedora 44 desktop installation from xrdp/Xorg to GNOME Remote Desktop with a headless Wayland session.
+- Changed the desktop installer to require WSL 2 and execution as a regular Linux user.
+- Changed Bash and Fish session initialization to recognize headless desktop sessions and restore only the required WSL variables.
+- Changed WSL interoperability detection so restarted and remote sessions refresh the active interoperability socket without replacing their display or audio environment. ([environment handling](https://github.com/WhitewaterFoundry/fedora-remix-rootfs-build/commit/532e4928889c5843d987600ac2f8704315262533))
+- Changed `mesa-va-drivers` installation to a separate package-management operation to avoid dependency-resolution failures. ([VA-driver fix](https://github.com/WhitewaterFoundry/fedora-remix-rootfs-build/commit/97ccd1507992d68514c22bf6b61b5d00237bf2bd))
+- Changed newly created users to use `/bin/bash` explicitly as their login shell.
+- Changed failed password setup handling so incomplete user accounts are removed automatically.
+- Updated Microsoft C++/WinRT to 3.0.260818.1.
+- Updated Windows projects to Platform Toolset v145.
+- Updated Azure Pipelines to the `windows-2025-vs2026` image.
+- Updated package publisher and signing-certificate information. ([toolchain update](https://github.com/WhitewaterFoundry/Fedora-Remix-for-WSL/commit/0b2ccd7b35bc840d9712bc33138fc5740a5496a8), [signing update](https://github.com/WhitewaterFoundry/Fedora-Remix-for-WSL/commit/c5040f305bb49193580e0cc2a4d8bbcfbc7fe9ac))
+
+### Fixed
+
+- Fixed GNOME Remote Desktop startup failures caused by Mesa’s D3D12 Vulkan driver.
+- Fixed GTK 4 rendering problems in headless sessions by selecting the OpenGL renderer.
+- Fixed Xwayland startup when WSLg mounts `/tmp/.X11-unix` as read-only.
+- Fixed remote sessions overwriting their own Wayland, display, and audio variables with values captured from a terminal session.
+- Fixed GNOME Remote Desktop settings being silently discarded when no writable runtime directory or user D-Bus session was available.
+- Fixed WSL 1 upgrades on Fedora 43 and later when `gdk-pixbuf2` and Glycin require the unavailable `memfd` system call.
+- Added automatic installation or downgrade to compatible `gdk-pixbuf2` 2.42 packages on affected WSL 1 installations.
+- Added package locks to prevent incompatible `gdk-pixbuf2`, Glycin, and Mesa updates. ([WSL 1 fix](https://github.com/WhitewaterFoundry/fedora-remix-rootfs-build/commit/303e26cc87a8cabf03b661d93936cca2694b50ea), [final refinement](https://github.com/WhitewaterFoundry/fedora-remix-rootfs-build/commit/4decbaf27ad5d372106833a5a2a3ec74e7792f58))
+
+### Removed
+
+- Removed KDE Plasma from the Fedora 44 desktop selection menu because KRdp authentication with Windows Remote Desktop is not yet reliable. ([KDE menu change](https://github.com/WhitewaterFoundry/fedora-remix-rootfs-build/commit/126e183eda9cebd155281b8c9bb394029d032c5a308604a))
+- Removed obsolete launcher reset-detection logic.
+- Removed unused Windows packaging project references.
+
+### Known limitations
+
+- The Fedora 44 desktop installer supports WSL 2 only.
+- GNOME is the only supported desktop option presented by the Fedora 44 installer.
+- The first RDP connection displays a warning because the installer uses a self-signed certificate.
+- Keep a Fedora Remix terminal or another WSL process open while using the remote desktop. WSL may stop the distribution when no process remains active.
+- Windows App compatibility was reported during development, but the current installer documentation specifically describes connecting with Remote Desktop Connection (`mstsc.exe`).
+- The existing no-window launcher was not introduced or materially changed in this release.
+- `update.sh` updates Fedora Remix scripts and compatibility packages but does not by itself upgrade an existing installation to a new Fedora major version.
+
 ## 43.0.0
 
 ### Highlights
