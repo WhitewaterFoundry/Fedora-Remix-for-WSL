@@ -1,14 +1,20 @@
-Built on top of Fedora, providing a cutting-edge and robust Linux distribution.
-Fully compatible with Windows Subsystem for Linux, allowing seamless integration with Windows 10/11.
-Uses the DNF package manager for managing software packages, including installation, updates, and removal.
-Access to the latest software packages and updates through Fedora repositories.
-Fedora Remix for WSL includes wslu, a set of useful open-source utilities for interacting between WSL and Windows 10.
-An update script, accessible via $ upgrade.sh allows keeping your distro updated and the customizations.
-The install-desktop.sh script installs and configures a graphical desktop environment on Fedora Remix for WSL, enabling the use of GUI applications within the WSL environment.
-Built-in support for systemd in WSL2
-For WSL1 start services via the wslsystemctl command.
-Support for many Linux graphical applications with no need to configure display.
-Custom Mesa compilation with Direct 3D 12 acceleration support and video codes.
-New features are actively developed based on community input.
-We give priority to WSL compatibility issues and adjust the package version to improve this.
-
+Built on Fedora 44, bringing a modern Linux environment to Windows.
+Designed for Windows Subsystem for Linux, with support for WSL1 and WSL2.
+Available for x64 and ARM64 Windows devices.
+Access thousands of development tools, command-line utilities, and applications through Fedora repositories.
+Install, update, and remove software using the DNF package manager.
+Keep packages and Fedora Remix customizations current with the included update.sh and upgrade.sh commands.
+Run many Linux graphical applications through WSLg without manually configuring a display server.
+Install a full GNOME Wayland desktop on WSL2 with the guided install-desktop.sh script.
+Connect to your GNOME desktop using Windows App or Remote Desktop Connection.
+Automated desktop setup handles installation, services, certificates, and your chosen RDP connection settings.
+Built-in systemd support on WSL2 for managing Linux services and user sessions.
+Manage supported services on WSL1 using the included wslsystemctl command.
+WSL-optimized Mesa graphics packages on x64 provide Direct3D 12 acceleration and video acceleration support.
+Direct3D 12 graphics acceleration on ARM64 through Fedora’s graphics stack.
+Includes wslu utilities for convenient integration between Linux and Windows.
+Access Windows files and launch Windows programs from your Linux environment.
+Integrated Windows Terminal profile for convenient command-line access.
+WSL-aware shell configuration manages display, audio, runtime directories, and Windows interoperability.
+Targeted compatibility fixes and package version management address WSL-specific issues.
+Actively developed with improvements informed by community feedback.

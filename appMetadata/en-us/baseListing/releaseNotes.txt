@@ -1,20 +1,24 @@
-Existing users can update immediately by following: https://www.whitewaterfoundry.com/blog/2025/05/05/fedora-remix-for-wsl-42-released
+Existing users can update by following: https://www.whitewaterfoundry.com/blog/2025/05/05/fedora-remix-for-wsl-42-released
+
+44.0.0
+* Updated to Fedora 44.
+* GNOME desktop support is back! Run a full GNOME Wayland desktop on WSL2 and connect using Windows App or Remote Desktop Connection.
+* Automated desktop setup: run install-desktop.sh and choose your hostname, RDP port, username, and password.
+* Improved desktop reliability with fixes for GTK rendering, Xwayland startup, and display and audio settings.
+* Upgraded the x64 graphics stack to WSL-specific Mesa 26.2.4.
+* Improved systemd integration and installation of required desktop components.
+* Extended WSL1 compatibility fixes to Fedora 44, including gdk-pixbuf/glycin update protection.
+* Improved first-run user creation, graphics permissions, and cleanup after failed password setup.
+* Preserved the Xorg desktop installer for Fedora 43 and earlier.
+
+Note: Fedora 44 desktop setup requires WSL2 and currently offers GNOME only. Keep Fedora Remix running while using the desktop.
 
 43.0.0
 * Updated to Fedora 43.
-* GNOME is no longer supported due to lack of Xorg support. If you upgraded from 42, uninstall GNOME and install Xfce, KDE, or LXDE instead.
-* New first-run welcome message (shown once) with support links, update guidance, and WSL1 notes.
-* Improved WSL1 compatibility for Fedora 43, including automatic mitigation for gdk-pixbuf/glycin issues during updates.
-* Updated graphics stack setup: Mesa installation is refreshed and streamlined for Fedora 43.
-* Direct3D 12 acceleration is now available on ARM64 (via an upstream Fedora change).
-* Improved Windows Terminal defaults (no auto-close on exit).
+* Improved WSL1 compatibility, graphics setup, welcome guidance, and Windows Terminal defaults.
+* Added upstream Direct3D 12 acceleration on ARM64.
 
 42.1.0
-
-* Upgraded to Fedora 42
-* Standards-compliant environment setup: XDG directories are now automatically configured and created when missing.
-* More reliable GUI sessions in WSLg: improved handling of `/run/user/$UID` and audio runtime paths, including cleanup of stale sockets.
-* Better X11 fallback behavior: more robust Windows host IP detection.
-* Cleaner D-Bus sessions: per-user runtime storage with tighter environment reuse for improved isolation.
-* Now systemd is enabled by default, and it's the recommended mode
-* Upgraded to Mesa 25.0.4 
+* Updated to Fedora 42 and Mesa 25.0.4.
+* Enabled systemd by default.
+* Improved WSLg, audio, X11 fallback, D-Bus sessions, and XDG directory setup.
